@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<title>SeaHorn | A Verification Framework</title>
+		<meta name="description" content="The SeaHorn Verification Framework">
+		<meta name="author" content="htmlcoder.me">
+
+		<!-- Mobile Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="images/favicon.ico">
+
+		<!-- Web Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
+
+		<!-- Bootstrap core CSS -->
+		<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+		<!-- Font Awesome CSS -->
+		<link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+                <link rel="stylesheet" href="css/gh-fork-ribbon.css">
+
+		<!-- Plugins -->
+		<link href="css/animations.css" rel="stylesheet">
+
+		<!-- Worthy core CSS file -->
+		<link href="css/style.css" rel="stylesheet">
+
+		<!-- Custom css -->
+		<link href="css/custom.css" rel="stylesheet">
+	</head>
+
+	<body class="no-trans">
+		<!-- scrollToTop -->
+		<!-- ================ -->
+		<div class="scrollToTop"><i class="icon-up-open-big"></i></div>
+
+		<!-- header start -->
+		<!-- ================ -->
+		<header class="header fixed clearfix navbar navbar-fixed-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+
+
+						<!-- header-left start -->
+						<!-- ================ -->
+						<div class="header-left clearfix">
+
+							<!-- logo -->
+							<div class="logo smooth-scroll">
+								<!-- <a href="#banner"><img id="logo" src="images/logo.png" alt="SeaHorn"></a> -->
+							</div>
+
+							<!-- name-and-slogan -->
+							<div class="site-name-and-slogan smooth-scroll">
+								<div class="site-name"><a href="#banner">SeaHorn</a></div>
+								<!-- <div class="site-slogan">A Verification FrameWork </div> -->
+							</div>
+
+						</div>
+						<!-- header-left end -->
+
+					</div>
+					<div class="col-md-8">
+
+
+						<!-- header-right start -->
+						<!-- ================ -->
+						<div class="header-right clearfix">
+
+							<!-- main-navigation start -->
+							<!-- ================ -->
+							<div class="main-navigation animated">
+
+								<!-- navbar start -->
+								<!-- ================ -->
+								<nav class="navbar navbar-default" role="navigation">
+									<div class="container-fluid">
+
+										<!-- Toggle get grouped for better mobile display -->
+										<div class="navbar-header">
+											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+												<span class="sr-only">Toggle navigation</span>
+												<span class="icon-bar"></span>
+												<span class="icon-bar"></span>
+												<span class="icon-bar"></span>
+											</button>
+										</div>
+
+										<!-- Collect the nav links, forms, and other content for toggling -->
+										<div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
+											<ul class="nav navbar-nav navbar-right">
+												<li class="active"><a href="#banner">Home</a></li>
+												<li><a href="#about">About</a></li>
+												<li><a href="#publications">Publications</a></li>
+                                                                                                <li><a href="#people">People</a></li>
+												<!-- <li><a href="#contact">Contact</a></li> -->
+											</ul>
+										</div>
+
+									</div>
+								</nav>
+								<!-- navbar end -->
+
+							</div>
+							<!-- main-navigation end -->
+
+                                                  </div>
+						</div>
+						<!-- header-right end -->
+                                                    <div class="github-fork-ribbon-wrapper right">
+                                                    <div class="github-fork-ribbon">
+                                                      <a href="https://github.com/seahorn/seahorn">Fork me on GitHub</a>
+                                                    </div>
+
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- header end -->
+
+		<!-- banner start -->
+		<!-- ================ -->
+		<div id="banner" class="banner">
+			<div class="banner-image"></div>
+			<div class="banner-caption">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 object-non-visible" data-animation-effect="fadeIn">
+							<h1 class="text-center"> <span>SeaHorn</span></h1>
+							<p class="lead text-center">A fully automated verification framework for LLVM-based languages.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- banner end -->
+
+		<!-- section start -->
+		<!-- ================ -->
+		<div class="section clearfix object-non-visible" data-animation-effect="fadeIn">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1 id="about" class="title text-center"><span>About</span></h1>
+						<!-- <p class="lead text-center">automatic verification framework for LLVM-based languages</p> -->
+						<div class="space"></div>
+						<div class="row">
+							<div class="col-md-6">
+								<img src="images/seahorn_arch.png" alt="">
+								<div class="space"></div>
+							</div>
+							<div class="col-md-6">
+								<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+									<div class="panel panel-default">
+										<div class="panel-heading" role="tab" id="headingOne">
+											<h4 class="panel-title">
+												<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+												Front-End
+												</a>
+											</h4>
+										</div>
+										<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+											<div class="panel-body">
+                                                                                          Takes an LLVM based program (e.g., C) input
+  program and generates LLVM IR bitcode. Specifically, it performs the
+  pre-processing and optimization of the bitcode for verification
+  purposes.
+
+											</div>
+										</div>
+									</div>
+									<div class="panel panel-default">
+										<div class="panel-heading" role="tab" id="headingTwo">
+											<h4 class="panel-title">
+												<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+												Middle-End
+												</a>
+											</h4>
+										</div>
+										<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+											<div class="panel-body">
+                                                                                          Takes as input the optimized LLVM bitcode and
+  emits verification condition as Constrained Horn Clauses (CHC). The
+  middle-end is in charge of selecting encoding of the VCs and the
+  degree of precision.
+											</div>
+										</div>
+									</div>
+									<div class="panel panel-default">
+										<div class="panel-heading" role="tab" id="headingThree">
+											<h4 class="panel-title">
+											  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"> Back-End
+												</a>
+											</h4>
+										</div>
+										<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+											<div class="panel-body">
+Takes CHC as input and outputs the result of the
+  analysis. In principle, any verification engine that digests CHC
+  clauses could be used to discharge the VCs. Currently, <span>SeaHorn</span>
+  employs several SMT-based model checking engines based on
+  PDR/IC3. Complementary, <span>SeaHorn</span> uses the abstract
+  interpretation-based analyzer <span>IKOS</span> (Inference Kernel for Open Static
+  Analyzers) for providing numerical
+  invariants.
+											</div>
+										</div>
+									</div>
+								</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+		<!-- section end -->
+
+		<!-- section start -->
+		<!-- ================ -->
+		<div class="section">
+			<div class="container object-non-visible" data-animation-effect="fadeIn">
+				<h1 id="publications" class="title text-center"><span>Publications</span></h1>
+				<div class="row">
+				  <ul class="list-unstyled">
+				    <li><li><i class="fa fa-caret-right pr-10 text-colored"></i>A.Gurfinkel, T.Kahsai, J.Navas. <a href="http://clip.dia.fi.upm.es/~jorge/docs/seahorn-svcomp15.pdf">SeaHorn: A Framework for Verifying C Programs (Competition Contribution)</a>. At TACAS 2015, to appear.</li>
+				  </ul>
+				</div>
+			</div>
+		</div>
+
+                	<!-- section start -->
+		<!-- ================ -->
+		<div class="section">
+		  <div class="container object-non-visible" data-animation-effect="fadeIn">
+		    <h1 class="text-center title" id="people"><span>People</span></h1>
+
+	            <div class="filters text-center">
+	              <ul class="nav nav-pills">
+                        <li>
+                        <img class="circular"  src="images/arie.jpg" height="150" width="150">
+                          <a href="http://arieg.bitbucket.org">Arie Gurfinkel <br>(CMU /SEI)</a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li>
+                          <img class="circular"  src="images/teme.jpg" height="130" width="130">
+                          <a href="http://lememta.info">Temesghen Kahsai <br>(NASA Ames / CMU)</a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li>
+                          <img class="circular"  src="images/jorge.jpg" height="150" width="150">
+                          <a href="http://ti.arc.nasa.gov/profile/jorge/">Jorge Navas <br>(NASA Ames / SGT)</a>
+                        </li>
+                      </ul>
+		    </div>
+                  </div>
+		</div>
+		<!-- footer start -->
+		<!-- ================ -->
+		<footer id="footer">
+
+			<!-- .footer start -->
+			<!-- ================ -->
+			<!-- <div class="footer section"> -->
+			<!-- 	<div class="container"> -->
+			<!-- 		<h1 class="title text-center" id="contact">Contact</h1> -->
+			<!-- 		<div class="space"></div> -->
+			<!-- 		<div class="row"> -->
+			<!-- 			<div class="col-sm-6"> -->
+			<!-- 				<div class="footer-content"> -->
+			<!-- 					<ul class="list-icons"> -->
+			<!-- 						<li><i class="fa fa-envelope-o pr-10"></i> your@email.com</li> -->
+			<!-- 					</ul> -->
+			<!-- 				</div> -->
+			<!-- 			</div> -->
+			<!-- 		</div> -->
+			<!-- 	</div> -->
+			<!-- </div> -->
+			<!-- .footer end -->
+
+			<!-- .subfooter start -->
+			<!-- ================ -->
+			<div class="subfooter">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<p class="text-center">© Carnegie Mellon University 2015 | <a target="_blank"="http://twitter.github.io/bootstrap">Bootstrap</a>|<a target="_blank" href="http://htmlcoder.me">Worthy</a>.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- .subfooter end -->
+
+		</footer>
+		<!-- footer end -->
+
+		<!-- JavaScript files placed at the end of the document so the pages load faster
+		================================================== -->
+		<!-- Jquery and Bootstap core js files -->
+		<script type="text/javascript" src="plugins/jquery.min.js"></script>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- Modernizr javascript -->
+		<script type="text/javascript" src="plugins/modernizr.js"></script>
+
+		<!-- Isotope javascript -->
+		<script type="text/javascript" src="plugins/isotope/isotope.pkgd.min.js"></script>
+
+		<!-- Backstretch javascript -->
+		<script type="text/javascript" src="plugins/jquery.backstretch.min.js"></script>
+
+		<!-- Appear javascript -->
+		<script type="text/javascript" src="plugins/jquery.appear.js"></script>
+
+		<!-- Initialization of Plugins -->
+		<script type="text/javascript" src="js/template.js"></script>
+
+		<!-- Custom Scripts -->
+		<script type="text/javascript" src="js/custom.js"></script>
+
+	</body>
+</html>
