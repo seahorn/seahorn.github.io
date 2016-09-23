@@ -1,0 +1,442 @@
+
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<title>PDTG - Experimental Evaluation</title>
+
+
+		<!-- Mobile Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="images/favicon.ico">
+
+		<!-- Web Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
+
+		<!-- Bootstrap core CSS -->
+		<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+		<!-- Font Awesome CSS -->
+		<link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+                <link rel="stylesheet" href="css/gh-fork-ribbon.css">
+
+		<!-- Plugins -->
+		<link href="css/animations.css" rel="stylesheet">
+
+		<!-- Worthy core CSS file -->
+		<link href="css/style.css" rel="stylesheet">
+
+		<!-- Custom css -->
+		<link href="css/custom.css" rel="stylesheet">
+	</head>
+
+	<body class="no-trans">
+		<!-- scrollToTop -->
+		<!-- ================ -->
+		<div class="scrollToTop"><i class="icon-up-open-big"></i></div>
+
+		<!-- header start -->
+		<!-- ================ -->
+		<header class="header fixed clearfix navbar navbar-fixed-top">
+
+		</header>
+		<!-- header end -->
+		<div class="section">
+			<div class="container object-non-visible" data-animation-effect="fadeIn">
+				<h1 id="bench" class="title text-center"><span>PDTG - Experimental Evaluation</span></h1>
+
+<div  class="tabbable">
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#pl"><h3 id="bench" class="title text-center"><span>Product-Lines</span></h3></a></li>
+      <li class=""><a data-toggle="tab" href="#simple"><h3 id="bench" class="title text-center"><span>Simple</span></h3></a></li>
+      <li class=""><a data-toggle="tab" href="#ldv"><h3 id="bench" class="title text-center"><span>LDV</span></h3></a></li>
+      <li class=""><a data-toggle="tab" href="#cfg"><h3 id="bench" class="title text-center"><span>ControlFlowGraph</span></h3></a></li>
+      <li class=""><a data-toggle="tab" href="#loops"><h3 id="bench" class="title text-center"><span>Loops</span></h3></a></li>
+    </ul>
+      <div class="tab-content">
+        <div id="pl" class="tab-pane active">
+	   <table class="table">
+
+ <tr class = "danger">
+<td><b>Configuration</a></td>
+      <td><b>TOTAL N. BENCHMARK</a></td>
+      <td><b> NO HARNESS VALIDATION </a></td>
+    <td><b>HARNESS VALIDATION </b></td>
+<td><b>HARNESS NOT VALIDATED IN 3 Artifacts</b></td>
+<td>HARNESS VALIDATED IN AT LEAST 1 Artifacts</td>
+<td><b>HARNESS VALIDATED on ORIGINAL</b></td>
+<td><b>HARNESS VALIDATED on SEAPP</b></td>
+<td><b>HARNESS VALIDATED on OPTIMIZED</b></td>
+    </tr>
+
+
+ <tr class = "info">
+<td>0</td>
+      <td>530</td>
+      <td>25</td>
+    <td>116</td>
+<td><b>0</td>
+<td>116</td>
+<td>116</td>
+<td>116</td>
+<td>116</td>
+    </tr>
+
+
+ <tr class = "info">
+<td>1</td>
+      <td>530</td>
+      <td>23</td>
+    <td>136</td>
+<td><b>0</td>
+<td>136</td>
+<td>136</td>
+<td>136</td>
+<td>136</td>
+    </tr>
+
+
+ <tr class = "info">
+<td>2</td>
+      <td>530</td>
+      <td>129</td>
+    <td>121</td>
+<td><b>0</td>
+<td>121</td>
+<td>121</td>
+<td>121</td>
+<td>121</td>
+    </tr>
+
+
+ <tr >
+         <div id="pl_fig"></div>
+ </tr>
+   </table>
+</div>
+
+
+      <div id="cfg" class="tab-pane">
+        <table class="table">
+	  
+ <tr class = "danger">
+<td><b>Configuration</a></td>
+      <td><b>TOTAL N. BENCHMARK</a></td>
+      <td><b> NO HARNESS VALIDATION </a></td>
+    <td><b>HARNESS VALIDATION </b></td>
+<td><b>HARNESS NOT VALIDATED IN 3 Artifacts</b></td>
+<td><b>HARNESS VALIDATED IN AT LEAST 1 Artifacts</b></td>
+<td><b>HARNESS VALIDATED on ORIGINAL</b></td>
+<td><b>HARNESS VALIDATED on SEAPP</b></td>
+<td><b>HARNESS VALIDATED on OPTIMIZED</b></td>
+    </tr>
+
+
+ <tr class = "info">
+<td>0</td>
+      <td>36</td>
+      <td>0</td>
+    <td>8</td>
+<td><b>0</td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+    </tr>
+
+
+ <tr class = "info">
+<td>1</td>
+      <td>36</td>
+      <td>0</td>
+    <td>18</td>
+<td><b>0</td>
+<td>18</td>
+<td>18</td>
+<td>18</td>
+<td>18</td>
+    </tr>
+
+
+ <tr class = "info">
+<td>2</td>
+      <td>36</td>
+      <td>0</td>
+    <td>17</td>
+<td><b>0</td>
+<td>17</td>
+<td>17</td>
+<td>17</td>
+<td>17</td>
+ </tr>
+   <tr >
+         <div id="cfg_fig"></div>
+   </tr>
+   
+  </table>
+</div>
+
+      <div id="simple" class="tab-pane">
+        <table class="table">
+ <tr class = "danger">
+<td><b>Configuration</a></td>
+      <td><b>TOTAL N. BENCHMARK</a></td>
+      <td><b> NO HARNESS VALIDATION </a></td>
+    <td><b>HARNESS VALIDATION </b></td>
+<td><b>HARNESS NOT VALIDATED IN 3 Artifacts</b></td>
+<td><b>HARNESS VALIDATED IN AT LEAST 1 Artifacts</b></td>
+<td><b>HARNESS VALIDATED on ORIGINAL</b></td>
+<td><b>HARNESS VALIDATED on SEAPP</b></td>
+<td><b>HARNESS VALIDATED on OPTIMIZED</b></td>
+    </tr>
+
+
+ <tr class = "info">
+<td>0</td>
+      <td>48</td>
+      <td>5</td>
+    <td>13</td>
+<td><b>0</td>
+<td>13</td>
+<td>13</td>
+<td>13</td>
+<td>13</td>
+    </tr>
+
+
+ <tr class = "info">
+<td>1</td>
+      <td>48</td>
+      <td>2</td>
+    <td>16</td>
+<td><b>3</td>
+<td>13</td>
+<td>13</td>
+<td>13</td>
+<td>13</td>
+    </tr>
+
+
+ <tr class = "info">
+<td>2</td>
+      <td>48</td>
+      <td>2</td>
+    <td>16</td>
+<td><b>3</td>
+<td>13</td>
+<td>11</td>
+<td>13</td>
+<td>12</td>
+ </tr>
+   <tr >
+         <div id="simple_fig"></div>
+   </tr>
+        </table>
+      </div>
+
+      <div id="ldv" class="tab-pane">
+        <table class="table">
+ <tr class = "danger">
+<td><b>Configuration</a></td>
+      <td><b>TOTAL N. BENCHMARK</a></td>
+      <td><b> NO HARNESS VALIDATION </a></td>
+    <td><b>HARNESS VALIDATION </b></td>
+<td><b>HARNESS NOT VALIDATED IN 3 Artifacts</b></td>
+<td><b>HARNESS VALIDATED IN AT LEAST 1 Artifacts</b></td>
+<td><b>HARNESS VALIDATED on ORIGINAL</b></td>
+<td><b>HARNESS VALIDATED on SEAPP</b></td>
+<td><b>HARNESS VALIDATED on OPTIMIZED</b></td>
+    </tr>
+
+
+ <tr class = "info">
+<td>0</td>
+      <td>96</td>
+      <td>1</td>
+    <td>3</td>
+<td><b>1</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+    </tr>
+
+
+ <tr class = "info">
+<td>1</td>
+      <td>76</td>
+      <td>0</td>
+    <td>3</td>
+<td><b>1</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+    </tr>
+
+
+ <tr class = "info">
+<td>2</td>
+      <td>224</td>
+      <td>6</td>
+    <td>12</td>
+<td><b>1</td>
+<td>11</td>
+<td>9</td>
+<td>11</td>
+<td>11</td>
+ </tr>
+  <tr >
+         <div id="ldv_fig"></div>
+ </tr>
+        </table>
+      </div>
+
+         <div id="loops" class="tab-pane">
+        <table class="table">
+<tr class = "danger">
+<td><b>Configuration</a></td>
+      <td><b>TOTAL N. BENCHMARK</a></td>
+      <td><b> NO HARNESS VALIDATION </a></td>
+    <td><b>HARNESS VALIDATION </b></td>
+<td><b>HARNESS NOT VALIDATED IN 3 Artifacts</b></td>
+<td><b>HARNESS VALIDATED IN AT LEAST 1 Artifacts</b></td>
+<td><b>HARNESS VALIDATED on ORIGINAL</b></td>
+<td><b>HARNESS VALIDATED on SEAPP</b></td>
+<td><b>HARNESS VALIDATED on OPTIMIZED</b></td>
+    </tr>
+
+
+ <tr class = "info">
+<td>0</td>
+      <td>98</td>
+      <td>2</td>
+    <td>39</td>
+<td><b>0</td>
+<td>39</td>
+<td>39</td>
+<td>39</td>
+<td>39</td>
+    </tr>
+
+
+ <tr class = "info">
+<td>1</td>
+      <td>98</td>
+      <td>1</td>
+    <td>40</td>
+<td><b>0</td>
+<td>40</td>
+<td>40</td>
+<td>40</td>
+<td>40</td>
+    </tr>
+
+
+ <tr class = "info">
+<td>2</td>
+      <td>98</td>
+      <td>3</td>
+    <td>17</td>
+<td><b>0</td>
+<td>17</td>
+<td>17</td>
+<td>17</td>
+<td>17</td>
+ </tr>
+    <tr >
+         <div id="loops_fig"></div>
+   </tr>
+   
+        </table>
+      </div>
+
+              </div>
+
+			</div>
+		</div>
+
+
+
+
+
+
+
+		<!-- JavaScript files placed at the end of the document so the pages load faster
+		================================================== -->
+		<!-- Jquery and Bootstap core js files -->
+		<script type="text/javascript" src="plugins/jquery.min.js"></script>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- Modernizr javascript -->
+		<script type="text/javascript" src="plugins/modernizr.js"></script>
+
+		<!-- Isotope javascript -->
+		<script type="text/javascript" src="plugins/isotope/isotope.pkgd.min.js"></script>
+
+		<!-- Backstretch javascript -->
+		<script type="text/javascript" src="plugins/jquery.backstretch.min.js"></script>
+
+		<!-- Appear javascript -->
+		<script type="text/javascript" src="plugins/jquery.appear.js"></script>
+
+		<!-- Initialization of Plugins -->
+		<script type="text/javascript" src="js/template.js"></script>
+
+		<!-- Custom Scripts -->
+		<script type="text/javascript" src="js/custom.js"></script>
+		
+	      <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+	      <script type="text/javascript" src="http://mpld3.github.io/js/mpld3.v0.1.js"></script>
+	      <script type="text/javascript">
+  var pl_json = {"axes": [{"xlim": [0.0, 82.0], "yscale": "linear", "axesbg": "#FFFFFF", "texts": [], "zoomable": true, "images": [], "xdomain": [0.0, 82.0], "ylim": [0.0, 82.0], "paths": [], "sharey": [], "sharex": [], "axesbgalpha": null, "axes": [{"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "bottom", "nticks": 10, "tickvalues": null}, {"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "left", "nticks": 10, "tickvalues": null}], "lines": [{"color": "#000000", "yindex": 1, "coordinates": "data", "dasharray": "10,0", "zorder": 2, "alpha": 1, "xindex": 0, "linewidth": 1.0, "data": "data01", "id": "el872744469612496"}], "markers": [], "id": "el872744469057872", "ydomain": [0.0, 82.0], "collections": [{"paths": [[[[0.5, -9.184850993605148e-17], [-0.4999999999999999, 0.5000000000000001], [-0.5000000000000001, -0.4999999999999999]], ["M", "L", "L", "Z"]]], "edgecolors": ["#000000"], "edgewidths": [2.0], "offsets": "data02", "yindex": 1, "id": "el872744469610896", "pathtransforms": [[9.938079899999066, 0.0, 0.0, 9.938079899999066, 0.0, 0.0]], "pathcoordinates": "display", "offsetcoordinates": "data", "zorder": 1, "xindex": 0, "alphas": [null], "facecolors": ["#0000FF"]}], "xscale": "linear", "bbox": [0.125, 0.66470588235294115, 0.77500000000000002, 0.23529411764705888]}, {"xlim": [0.0, 82.0], "yscale": "linear", "axesbg": "#FFFFFF", "texts": [], "zoomable": true, "images": [], "xdomain": [0.0, 82.0], "ylim": [0.0, 82.0], "paths": [], "sharey": [], "sharex": [], "axesbgalpha": null, "axes": [{"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "bottom", "nticks": 10, "tickvalues": null}, {"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "left", "nticks": 10, "tickvalues": null}], "lines": [{"color": "#000000", "yindex": 0, "coordinates": "data", "dasharray": "10,0", "zorder": 2, "alpha": 1, "xindex": 0, "linewidth": 1.0, "data": "data01", "id": "el872744470173136"}, {"color": "#000000", "yindex": 0, "coordinates": "data", "dasharray": "10,0", "zorder": 2, "alpha": 1, "xindex": 0, "linewidth": 1.0, "data": "data01", "id": "el872744470173328"}], "markers": [], "id": "el872744469683216", "ydomain": [0.0, 82.0], "collections": [{"paths": [[[[0.0, -0.25], [0.066300775, -0.25], [0.12989496769621336, -0.22365842289706042], [0.1767766952966369, -0.1767766952966369], [0.22365842289706042, -0.12989496769621336], [0.25, -0.066300775], [0.25, 0.0], [0.25, 0.066300775], [0.22365842289706042, 0.12989496769621336], [0.1767766952966369, 0.1767766952966369], [0.12989496769621336, 0.22365842289706042], [0.066300775, 0.25], [0.0, 0.25], [-0.066300775, 0.25], [-0.12989496769621336, 0.22365842289706042], [-0.1767766952966369, 0.1767766952966369], [-0.22365842289706042, 0.12989496769621336], [-0.25, 0.066300775], [-0.25, 0.0], [-0.25, -0.066300775], [-0.22365842289706042, -0.12989496769621336], [-0.1767766952966369, -0.1767766952966369], [-0.12989496769621336, -0.22365842289706042], [-0.066300775, -0.25], [0.0, -0.25]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]], "edgecolors": ["#000000"], "edgewidths": [1.0], "offsets": "data03", "yindex": 1, "id": "el872744470170640", "pathtransforms": [[9.938079899999066, 0.0, 0.0, 9.938079899999066, 0.0, 0.0]], "pathcoordinates": "display", "offsetcoordinates": "data", "zorder": 1, "xindex": 0, "alphas": [null], "facecolors": ["#FF0000"]}], "xscale": "linear", "bbox": [0.125, 0.38235294117647056, 0.77500000000000002, 0.23529411764705888]}, {"xlim": [0.0, 82.0], "yscale": "linear", "axesbg": "#FFFFFF", "texts": [], "zoomable": true, "images": [], "xdomain": [0.0, 82.0], "ylim": [0.0, 82.0], "paths": [], "sharey": [], "sharex": [], "axesbgalpha": null, "axes": [{"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "bottom", "nticks": 10, "tickvalues": null}, {"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "left", "nticks": 10, "tickvalues": null}], "lines": [{"color": "#000000", "yindex": 0, "coordinates": "data", "dasharray": "10,0", "zorder": 2, "alpha": 1, "xindex": 0, "linewidth": 1.0, "data": "data01", "id": "el872744470808400"}, {"color": "#000000", "yindex": 0, "coordinates": "data", "dasharray": "10,0", "zorder": 2, "alpha": 1, "xindex": 0, "linewidth": 1.0, "data": "data01", "id": "el872744470857808"}], "markers": [], "id": "el872744470236368", "ydomain": [0.0, 82.0], "collections": [{"paths": [[[[0.0, -0.5], [0.13260155, -0.5], [0.25978993539242673, -0.44731684579412084], [0.3535533905932738, -0.3535533905932738], [0.44731684579412084, -0.25978993539242673], [0.5, -0.13260155], [0.5, 0.0], [0.5, 0.13260155], [0.44731684579412084, 0.25978993539242673], [0.3535533905932738, 0.3535533905932738], [0.25978993539242673, 0.44731684579412084], [0.13260155, 0.5], [0.0, 0.5], [-0.13260155, 0.5], [-0.25978993539242673, 0.44731684579412084], [-0.3535533905932738, 0.3535533905932738], [-0.44731684579412084, 0.25978993539242673], [-0.5, 0.13260155], [-0.5, 0.0], [-0.5, -0.13260155], [-0.44731684579412084, -0.25978993539242673], [-0.3535533905932738, -0.3535533905932738], [-0.25978993539242673, -0.44731684579412084], [-0.13260155, -0.5], [0.0, -0.5]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]], "edgecolors": ["#000000"], "edgewidths": [1.0], "offsets": "data04", "yindex": 1, "id": "el872744470805968", "pathtransforms": [[9.938079899999066, 0.0, 0.0, 9.938079899999066, 0.0, 0.0]], "pathcoordinates": "display", "offsetcoordinates": "data", "zorder": 1, "xindex": 0, "alphas": [null], "facecolors": ["#008000"]}], "xscale": "linear", "bbox": [0.125, 0.099999999999999867, 0.77500000000000002, 0.23529411764705888]}], "height": 480.0, "width": 640.0, "plugins": [{"type": "reset"}, {"enabled": false, "button": true, "type": "zoom"}, {"enabled": false, "button": true, "type": "boxzoom"}], "data": {"data04": [[0.49, 0.33], [0.65, 0.44], [0.58, 16.56], [0.53, 0.36], [0.48, 0.3], [16.12, 0.48], [15.88, 0.36], [16.89, 40.4], [15.69, 0.38], [21.96, 44.26], [0.62, 16.75], [17.93, 17.12], [0.54, 0.35], [15.7, 18.47], [0.42, 16.8], [20.82, 51.42], [0.52, 0.31], [0.53, 0.38], [31.88, 17.06], [54.43, 37.06], [0.62, 0.41], [0.48, 0.41], [15.62, 0.37], [0.55, 0.37], [188.08, 32.54], [16.44, 18.82], [21.42, 31.39], [67.41, 58.57], [0.5, 0.36], [32.94, 17.48], [0.55, 17.0], [17.39, 20.04], [16.62, 39.76], [17.0, 22.48], [16.92, 16.94], [0.55, 0.34], [0.46, 0.38], [72.26, 37.71], [17.46, 63.06], [0.5, 0.34], [22.34, 133.36], [0.56, 0.45], [15.56, 16.32], [15.67, 17.39], [16.94, 17.78], [33.64, 17.48], [18.63, 17.09], [0.45, 0.33], [17.2, 19.3], [32.14, 17.0], [0.54, 0.35], [0.55, 16.35], [18.34, 22.31], [0.51, 0.42], [200.71, 34.2], [22.47, 38.05], [16.69, 25.86], [0.56, 16.63], [17.84, 17.11], [0.45, 0.3], [0.87, 6.86], [15.89, 0.42], [62.69, 43.69], [16.72, 29.31], [0.65, 17.23], [15.71, 0.44], [0.55, 0.37], [22.77, 208.22], [0.66, 16.4], [0.46, 0.29], [17.16, 33.12], [21.17, 134.83], [16.33, 23.38], [34.22, 17.06], [21.22, 57.99], [0.46, 0.34], [0.58, 0.3], [56.44, 41.2], [21.56, 160.88], [20.97, 41.66], [21.74, 140.82], [15.55, 0.52], [0.45, 0.35], [0.5, 0.34], [16.79, 55.7], [0.32, 0.4], [0.57, 0.36], [20.62, 57.19], [0.57, 0.4], [21.41, 188.11], [0.47, 0.31], [81.1, 64.45], [0.48, 16.6], [0.62, 0.49], [0.54, 0.4], [19.3, 17.59], [16.39, 18.26], [16.88, 18.19], [16.75, 24.25], [15.57, 16.26], [17.05, 20.55], [0.48, 16.69], [0.57, 0.41], [0.66, 16.74], [0.57, 0.3], [16.55, 37.48], [0.64, 16.8], [15.67, 16.27], [0.56, 16.98], [20.96, 81.06]], "data02": [[0.49, 0.55], [0.65, 0.4], [112.0, 16.95], [16.52, 16.71], [0.53, 0.56], [0.48, 0.57], [16.12, 0.53], [15.88, 0.54], [16.89, 18.48], [15.69, 0.51], [21.96, 21.7], [0.62, 16.97], [17.93, 17.17], [0.54, 0.53], [15.7, 18.33], [78.99, 16.66], [0.42, 16.11], [20.82, 20.92], [0.58, 15.95], [0.52, 0.59], [0.53, 0.42], [31.88, 17.71], [54.43, 18.71], [0.62, 16.0], [0.48, 0.54], [15.62, 0.55], [0.55, 0.49], [188.08, 16.65], [16.44, 16.57], [16.87, 16.72], [21.42, 21.46], [33.64, 17.61], [18.63, 17.04], [0.5, 0.38], [32.94, 18.16], [0.55, 17.11], [17.39, 16.47], [16.62, 17.3], [17.0, 18.33], [16.92, 16.59], [0.55, 0.6], [0.46, 0.5], [72.26, 19.06], [17.46, 17.75], [0.5, 0.51], [22.34, 22.53], [0.56, 16.54], [15.56, 16.13], [15.67, 17.8], [16.94, 16.88], [32.14, 16.99], [67.41, 16.6], [0.45, 0.6], [17.2, 18.15], [128.01, 16.72], [0.54, 0.6], [0.55, 0.69], [18.34, 17.7], [0.51, 0.56], [127.81, 17.11], [200.71, 16.59], [22.47, 22.4], [16.69, 16.78], [0.56, 16.26], [17.84, 16.68], [0.45, 0.57], [0.87, 21.98], [15.89, 16.42], [62.69, 16.97], [16.72, 18.72], [0.65, 16.97], [15.71, 0.5], [0.55, 0.56], [22.77, 23.26], [0.66, 0.61], [0.46, 0.58], [17.16, 16.5], [21.17, 21.16], [16.33, 16.43], [34.22, 16.91], [21.22, 20.52], [0.46, 0.58], [0.58, 0.56], [56.44, 18.58], [21.56, 22.09], [20.97, 21.78], [21.74, 22.4], [15.55, 0.66], [0.45, 0.43], [0.5, 0.53], [16.79, 16.56], [0.32, 0.54], [0.57, 0.44], [20.62, 21.22], [0.57, 0.54], [21.41, 21.34], [0.47, 0.56], [81.1, 19.38], [0.48, 16.33], [0.62, 0.55], [0.54, 0.57], [19.3, 16.68], [16.39, 17.37], [16.88, 16.58], [16.75, 17.28], [15.57, 16.13], [17.05, 17.39], [0.48, 16.14], [0.57, 16.05], [0.66, 0.76], [0.57, 0.48], [16.55, 17.0], [0.64, 0.68], [15.67, 16.2], [0.56, 16.84], [20.96, 20.48]], "data03": [[0.55, 0.33], [1.36, 8.9], [0.4, 0.44], [15.95, 16.56], [0.56, 0.36], [17.71, 17.06], [0.53, 0.48], [17.47, 26.22], [0.54, 0.36], [18.48, 40.4], [0.51, 0.38], [21.7, 44.26], [16.97, 16.75], [17.17, 17.12], [16.63, 28.33], [0.53, 0.35], [18.33, 18.47], [16.11, 16.8], [20.92, 51.42], [21.78, 41.66], [21.88, 103.92], [17.0, 113.35], [17.46, 76.72], [0.59, 0.31], [0.42, 0.38], [16.57, 18.82], [18.71, 37.06], [16.0, 0.41], [16.94, 58.56], [0.54, 0.41], [0.55, 0.37], [0.49, 0.37], [16.65, 32.54], [21.46, 31.39], [16.6, 58.57], [1.34, 16.78], [0.38, 0.36], [18.16, 17.48], [17.11, 17.0], [16.78, 55.2], [16.47, 20.04], [17.3, 39.76], [18.33, 22.48], [16.59, 16.94], [0.6, 0.34], [0.5, 0.38], [19.06, 37.71], [16.68, 17.59], [0.51, 0.34], [22.53, 133.36], [16.54, 0.45], [16.13, 16.32], [17.8, 17.39], [16.88, 17.78], [17.61, 17.48], [17.04, 17.09], [0.6, 0.33], [18.15, 19.3], [16.99, 17.0], [0.6, 0.35], [0.69, 16.35], [16.59, 34.2], [0.56, 0.42], [22.4, 38.05], [0.57, 0.3], [16.78, 25.86], [16.26, 16.63], [16.68, 17.11], [0.57, 0.3], [21.98, 6.86], [16.42, 0.42], [16.97, 43.69], [18.72, 29.31], [16.97, 17.23], [0.5, 0.44], [17.7, 22.31], [0.56, 0.37], [23.26, 208.22], [0.61, 16.4], [0.58, 0.29], [16.5, 33.12], [21.16, 134.83], [16.43, 23.38], [16.91, 17.06], [20.52, 57.99], [0.58, 0.34], [0.56, 0.3], [18.58, 41.2], [22.09, 160.88], [16.62, 29.61], [22.4, 140.82], [0.66, 0.52], [17.27, 26.66], [0.43, 0.35], [0.53, 0.34], [16.56, 55.7], [0.54, 0.4], [0.44, 0.36], [21.22, 57.19], [0.54, 0.4], [21.34, 188.11], [0.56, 0.31], [19.38, 64.45], [16.33, 16.6], [0.55, 0.49], [0.57, 0.4], [17.75, 63.06], [17.37, 18.26], [16.58, 18.19], [17.28, 24.25], [16.13, 16.26], [17.39, 20.55], [16.14, 16.69], [16.05, 0.41], [0.76, 16.74], [0.48, 0.3], [17.0, 37.48], [0.68, 16.8], [16.2, 16.27], [16.84, 16.98], [20.48, 81.06]], "data01": [[0.0, 0.0], [1.0, 1.0], [2.0, 2.0], [3.0, 3.0], [4.0, 4.0], [5.0, 5.0], [6.0, 6.0], [7.0, 7.0], [8.0, 8.0], [9.0, 9.0], [10.0, 10.0], [11.0, 11.0], [12.0, 12.0], [13.0, 13.0], [14.0, 14.0], [15.0, 15.0], [16.0, 16.0], [17.0, 17.0], [18.0, 18.0], [19.0, 19.0], [20.0, 20.0], [21.0, 21.0], [22.0, 22.0], [23.0, 23.0], [24.0, 24.0], [25.0, 25.0], [26.0, 26.0], [27.0, 27.0], [28.0, 28.0], [29.0, 29.0], [30.0, 30.0], [31.0, 31.0], [32.0, 32.0], [33.0, 33.0], [34.0, 34.0], [35.0, 35.0], [36.0, 36.0], [37.0, 37.0], [38.0, 38.0], [39.0, 39.0], [40.0, 40.0], [41.0, 41.0], [42.0, 42.0], [43.0, 43.0], [44.0, 44.0], [45.0, 45.0], [46.0, 46.0], [47.0, 47.0], [48.0, 48.0], [49.0, 49.0], [50.0, 50.0], [51.0, 51.0], [52.0, 52.0], [53.0, 53.0], [54.0, 54.0], [55.0, 55.0], [56.0, 56.0], [57.0, 57.0], [58.0, 58.0], [59.0, 59.0], [60.0, 60.0], [61.0, 61.0], [62.0, 62.0], [63.0, 63.0], [64.0, 64.0], [65.0, 65.0], [66.0, 66.0], [67.0, 67.0], [68.0, 68.0], [69.0, 69.0], [70.0, 70.0], [71.0, 71.0], [72.0, 72.0], [73.0, 73.0], [74.0, 74.0], [75.0, 75.0], [76.0, 76.0], [77.0, 77.0], [78.0, 78.0], [79.0, 79.0], [80.0, 80.0], [81.0, 81.0], [82.0, 82.0]]}, "id": "el872744459170064"};
+ 
+  mpld3.draw_figure("pl_fig", pl_json);
+</script>
+
+  <script type="text/javascript">
+    var ldv_json =	      {"axes": [{"xlim": [0.0, 46.0], "yscale": "linear", "axesbg": "#FFFFFF", "texts": [{"v_baseline": "auto", "h_anchor": "start", "color": "#000000", "text": "None", "coordinates": "axes", "zorder": 1000003.0, "alpha": 1, "fontsize": 12.0, "position": [-0.16129032258064516, -2.8250000000000002], "rotation": -0.0, "id": "el876744404318480"}, {"v_baseline": "auto", "h_anchor": "start", "color": "#000000", "text": "p0 vs p1", "coordinates": "axes", "zorder": 1000003.0, "alpha": 1, "fontsize": 14.399999999999999, "position": [0.11935483870967742, 0.76624999999999943], "rotation": -0.0, "id": "el876744404227024"}], "zoomable": true, "images": [], "xdomain": [0.0, 46.0], "ylim": [0.0, 46.0], "paths": [{"edgecolor": "#000000", "facecolor": "#FFFFFF", "edgewidth": 1.0, "pathcodes": ["M", "L", "L", "L", "Z"], "yindex": 1, "coordinates": "axes", "dasharray": "10,0", "zorder": 1000001.0, "alpha": 1, "xindex": 0, "data": "data03", "id": "el876744404226512"}], "sharey": [], "sharex": [], "axesbgalpha": null, "axes": [{"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "bottom", "nticks": 6, "tickvalues": null}, {"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "left", "nticks": 6, "tickvalues": null}], "lines": [{"color": "#000000", "yindex": 1, "coordinates": "data", "dasharray": "10,0", "zorder": 2, "alpha": 1, "xindex": 0, "linewidth": 1.0, "data": "data01", "id": "el876744404224912"}], "markers": [], "id": "el876744403588176", "ydomain": [0.0, 46.0], "collections": [{"paths": [[[[0.5, -9.184850993605148e-17], [-0.4999999999999999, 0.5000000000000001], [-0.5000000000000001, -0.4999999999999999]], ["M", "L", "L", "Z"]]], "edgecolors": ["#000000"], "edgewidths": [2.0], "offsets": "data02", "yindex": 1, "id": "el876744404144592", "pathtransforms": [[9.938079899999066, 0.0, 0.0, 9.938079899999066, 0.0, 0.0]], "pathcoordinates": "display", "offsetcoordinates": "data", "zorder": 1, "xindex": 0, "alphas": [null], "facecolors": ["#0000FF"]}], "xscale": "linear", "bbox": [0.125, 0.66470588235294115, 0.77500000000000002, 0.23529411764705888]}, {"xlim": [0.0, 46.0], "yscale": "linear", "axesbg": "#FFFFFF", "texts": [{"v_baseline": "auto", "h_anchor": "start", "color": "#000000", "text": "None", "coordinates": "axes", "zorder": 1000003.0, "alpha": 1, "fontsize": 12.0, "position": [-0.16129032258064516, -1.6249999999999991], "rotation": -0.0, "id": "el876744404849680"}, {"v_baseline": "auto", "h_anchor": "start", "color": "#000000", "text": "p1 vs p2", "coordinates": "axes", "zorder": 1000003.0, "alpha": 1, "fontsize": 14.399999999999999, "position": [0.11935483870967742, 0.76624999999999988], "rotation": -0.0, "id": "el876744404848400"}], "zoomable": true, "images": [], "xdomain": [0.0, 46.0], "ylim": [0.0, 46.0], "paths": [{"edgecolor": "#000000", "facecolor": "#FFFFFF", "edgewidth": 1.0, "pathcodes": ["M", "L", "L", "L", "Z"], "yindex": 2, "coordinates": "axes", "dasharray": "10,0", "zorder": 1000001.0, "alpha": 1, "xindex": 0, "data": "data03", "id": "el876744404847888"}], "sharey": [], "sharex": [], "axesbgalpha": null, "axes": [{"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "bottom", "nticks": 6, "tickvalues": null}, {"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "left", "nticks": 6, "tickvalues": null}], "lines": [{"color": "#000000", "yindex": 0, "coordinates": "data", "dasharray": "10,0", "zorder": 2, "alpha": 1, "xindex": 0, "linewidth": 1.0, "data": "data01", "id": "el876744404791376"}, {"color": "#000000", "yindex": 0, "coordinates": "data", "dasharray": "10,0", "zorder": 2, "alpha": 1, "xindex": 0, "linewidth": 1.0, "data": "data01", "id": "el876744404791568"}], "markers": [], "id": "el876744404144912", "ydomain": [0.0, 46.0], "collections": [{"paths": [[[[0.0, -0.25], [0.066300775, -0.25], [0.12989496769621336, -0.22365842289706042], [0.1767766952966369, -0.1767766952966369], [0.22365842289706042, -0.12989496769621336], [0.25, -0.066300775], [0.25, 0.0], [0.25, 0.066300775], [0.22365842289706042, 0.12989496769621336], [0.1767766952966369, 0.1767766952966369], [0.12989496769621336, 0.22365842289706042], [0.066300775, 0.25], [0.0, 0.25], [-0.066300775, 0.25], [-0.12989496769621336, 0.22365842289706042], [-0.1767766952966369, 0.1767766952966369], [-0.22365842289706042, 0.12989496769621336], [-0.25, 0.066300775], [-0.25, 0.0], [-0.25, -0.066300775], [-0.22365842289706042, -0.12989496769621336], [-0.1767766952966369, -0.1767766952966369], [-0.12989496769621336, -0.22365842289706042], [-0.066300775, -0.25], [0.0, -0.25]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]], "edgecolors": ["#000000"], "edgewidths": [1.0], "offsets": "data02", "yindex": 2, "id": "el876744404739664", "pathtransforms": [[9.938079899999066, 0.0, 0.0, 9.938079899999066, 0.0, 0.0]], "pathcoordinates": "display", "offsetcoordinates": "data", "zorder": 1, "xindex": 1, "alphas": [null], "facecolors": ["#FF0000"]}], "xscale": "linear", "bbox": [0.125, 0.38235294117647056, 0.77500000000000002, 0.23529411764705888]}, {"xlim": [0.0, 46.0], "yscale": "linear", "axesbg": "#FFFFFF", "texts": [{"v_baseline": "auto", "h_anchor": "start", "color": "#000000", "text": "None", "coordinates": "axes", "zorder": 1000003.0, "alpha": 1, "fontsize": 12.0, "position": [-0.16129032258064516, -0.42499999999999932], "rotation": -0.0, "id": "el876744405482896"}, {"v_baseline": "auto", "h_anchor": "start", "color": "#000000", "text": "p0 vs p2", "coordinates": "axes", "zorder": 1000003.0, "alpha": 1, "fontsize": 14.399999999999999, "position": [0.11935483870967742, 0.7662500000000001], "rotation": -0.0, "id": "el876744405481616"}], "zoomable": true, "images": [], "xdomain": [0.0, 46.0], "ylim": [0.0, 46.0], "paths": [{"edgecolor": "#000000", "facecolor": "#FFFFFF", "edgewidth": 1.0, "pathcodes": ["M", "L", "L", "L", "Z"], "yindex": 2, "coordinates": "axes", "dasharray": "10,0", "zorder": 1000001.0, "alpha": 1, "xindex": 3, "data": "data03", "id": "el876744405435984"}], "sharey": [], "sharex": [], "axesbgalpha": null, "axes": [{"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "bottom", "nticks": 6, "tickvalues": null}, {"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "left", "nticks": 6, "tickvalues": null}], "lines": [{"color": "#000000", "yindex": 0, "coordinates": "data", "dasharray": "10,0", "zorder": 2, "alpha": 1, "xindex": 0, "linewidth": 1.0, "data": "data01", "id": "el876744405434384"}, {"color": "#000000", "yindex": 0, "coordinates": "data", "dasharray": "10,0", "zorder": 2, "alpha": 1, "xindex": 0, "linewidth": 1.0, "data": "data01", "id": "el876744405483472"}], "markers": [], "id": "el876744404850256", "ydomain": [0.0, 46.0], "collections": [{"paths": [[[[0.0, -0.5], [0.13260155, -0.5], [0.25978993539242673, -0.44731684579412084], [0.3535533905932738, -0.3535533905932738], [0.44731684579412084, -0.25978993539242673], [0.5, -0.13260155], [0.5, 0.0], [0.5, 0.13260155], [0.44731684579412084, 0.25978993539242673], [0.3535533905932738, 0.3535533905932738], [0.25978993539242673, 0.44731684579412084], [0.13260155, 0.5], [0.0, 0.5], [-0.13260155, 0.5], [-0.25978993539242673, 0.44731684579412084], [-0.3535533905932738, 0.3535533905932738], [-0.44731684579412084, 0.25978993539242673], [-0.5, 0.13260155], [-0.5, 0.0], [-0.5, -0.13260155], [-0.44731684579412084, -0.25978993539242673], [-0.3535533905932738, -0.3535533905932738], [-0.25978993539242673, -0.44731684579412084], [-0.13260155, -0.5], [0.0, -0.5]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]], "edgecolors": ["#000000"], "edgewidths": [1.0], "offsets": "data02", "yindex": 2, "id": "el876744405382736", "pathtransforms": [[9.938079899999066, 0.0, 0.0, 9.938079899999066, 0.0, 0.0]], "pathcoordinates": "display", "offsetcoordinates": "data", "zorder": 1, "xindex": 0, "alphas": [null], "facecolors": ["#008000"]}], "xscale": "linear", "bbox": [0.125, 0.099999999999999867, 0.77500000000000002, 0.23529411764705888]}], "height": 480.0, "width": 640.0, "plugins": [{"type": "reset"}, {"enabled": false, "button": true, "type": "zoom"}, {"enabled": false, "button": true, "type": "boxzoom"}], "data": {"data02": [[23.62, 24.41, 5.16], [45.45, 118.52, 131.44]], "data03": [[0.01612903225806453, 0.683020833333333, 0.6830208333333334, 0.01612903225806453], [0.2711189516129032, 0.683020833333333, 0.6830208333333334, 0.270866935483871], [0.2711189516129032, 0.9291666666666663, 0.9291666666666667, 0.270866935483871], [0.01612903225806453, 0.9291666666666663, 0.9291666666666667, 0.01612903225806453]], "data01": [[0.0, 0.0], [1.0, 1.0], [2.0, 2.0], [3.0, 3.0], [4.0, 4.0], [5.0, 5.0], [6.0, 6.0], [7.0, 7.0], [8.0, 8.0], [9.0, 9.0], [10.0, 10.0], [11.0, 11.0], [12.0, 12.0], [13.0, 13.0], [14.0, 14.0], [15.0, 15.0], [16.0, 16.0], [17.0, 17.0], [18.0, 18.0], [19.0, 19.0], [20.0, 20.0], [21.0, 21.0], [22.0, 22.0], [23.0, 23.0], [24.0, 24.0], [25.0, 25.0], [26.0, 26.0], [27.0, 27.0], [28.0, 28.0], [29.0, 29.0], [30.0, 30.0], [31.0, 31.0], [32.0, 32.0], [33.0, 33.0], [34.0, 34.0], [35.0, 35.0], [36.0, 36.0], [37.0, 37.0], [38.0, 38.0], [39.0, 39.0], [40.0, 40.0], [41.0, 41.0], [42.0, 42.0], [43.0, 43.0], [44.0, 44.0], [45.0, 45.0], [46.0, 46.0]]}, "id": "el876744393830608"}
+      mpld3.draw_figure("ldv_fig", ldv_json);
+</script>
+
+
+    <script type="text/javascript">
+    var cfg_json =
+  {"axes": [{"xlim": [0.0, 93.0], "yscale": "linear", "axesbg": "#FFFFFF", "texts": [{"v_baseline": "auto", "h_anchor": "start", "color": "#000000", "text": "None", "coordinates": "axes", "zorder": 1000003.0, "alpha": 1, "fontsize": 12.0, "position": [-0.16129032258064516, -2.8250000000000002], "rotation": -0.0, "id": "el876914513979984"}, {"v_baseline": "auto", "h_anchor": "start", "color": "#000000", "text": "p0 vs p1", "coordinates": "axes", "zorder": 1000003.0, "alpha": 1, "fontsize": 14.399999999999999, "position": [0.11935483870967742, 0.76624999999999943], "rotation": -0.0, "id": "el876914513978704"}], "zoomable": true, "images": [], "xdomain": [0.0, 93.0], "ylim": [0.0, 93.0], "paths": [{"edgecolor": "#000000", "facecolor": "#FFFFFF", "edgewidth": 1.0, "pathcodes": ["M", "L", "L", "L", "Z"], "yindex": 1, "coordinates": "axes", "dasharray": "10,0", "zorder": 1000001.0, "alpha": 1, "xindex": 0, "data": "data03", "id": "el876914513978192"}], "sharey": [], "sharex": [], "axesbgalpha": null, "axes": [{"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "bottom", "nticks": 6, "tickvalues": null}, {"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "left", "nticks": 6, "tickvalues": null}], "lines": [{"color": "#000000", "yindex": 1, "coordinates": "data", "dasharray": "10,0", "zorder": 2, "alpha": 1, "xindex": 0, "linewidth": 1.0, "data": "data01", "id": "el876914513894288"}], "markers": [], "id": "el876914513336400", "ydomain": [0.0, 93.0], "collections": [{"paths": [[[[0.5, -9.184850993605148e-17], [-0.4999999999999999, 0.5000000000000001], [-0.5000000000000001, -0.4999999999999999]], ["M", "L", "L", "Z"]]], "edgecolors": ["#000000"], "edgewidths": [2.0], "offsets": "data02", "yindex": 1, "id": "el876914513892176", "pathtransforms": [[9.938079899999066, 0.0, 0.0, 9.938079899999066, 0.0, 0.0]], "pathcoordinates": "display", "offsetcoordinates": "data", "zorder": 1, "xindex": 0, "alphas": [null], "facecolors": ["#0000FF"]}], "xscale": "linear", "bbox": [0.125, 0.66470588235294115, 0.77500000000000002, 0.23529411764705888]}, {"xlim": [0.0, 93.0], "yscale": "linear", "axesbg": "#FFFFFF", "texts": [{"v_baseline": "auto", "h_anchor": "start", "color": "#000000", "text": "None", "coordinates": "axes", "zorder": 1000003.0, "alpha": 1, "fontsize": 12.0, "position": [-0.16129032258064516, -1.6249999999999991], "rotation": -0.0, "id": "el876914514602000"}, {"v_baseline": "auto", "h_anchor": "start", "color": "#000000", "text": "p1 vs p2", "coordinates": "axes", "zorder": 1000003.0, "alpha": 1, "fontsize": 14.399999999999999, "position": [0.11935483870967742, 0.76624999999999988], "rotation": -0.0, "id": "el876914514600720"}], "zoomable": true, "images": [], "xdomain": [0.0, 93.0], "ylim": [0.0, 93.0], "paths": [{"edgecolor": "#000000", "facecolor": "#FFFFFF", "edgewidth": 1.0, "pathcodes": ["M", "L", "L", "L", "Z"], "yindex": 2, "coordinates": "axes", "dasharray": "10,0", "zorder": 1000001.0, "alpha": 1, "xindex": 0, "data": "data03", "id": "el876914514600208"}], "sharey": [], "sharex": [], "axesbgalpha": null, "axes": [{"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "bottom", "nticks": 6, "tickvalues": null}, {"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "left", "nticks": 6, "tickvalues": null}], "lines": [{"color": "#000000", "yindex": 0, "coordinates": "data", "dasharray": "10,0", "zorder": 2, "alpha": 1, "xindex": 0, "linewidth": 1.0, "data": "data01", "id": "el876914514539600"}, {"color": "#000000", "yindex": 0, "coordinates": "data", "dasharray": "10,0", "zorder": 2, "alpha": 1, "xindex": 0, "linewidth": 1.0, "data": "data01", "id": "el876914514539792"}], "markers": [], "id": "el876914513980368", "ydomain": [0.0, 93.0], "collections": [{"paths": [[[[0.0, -0.25], [0.066300775, -0.25], [0.12989496769621336, -0.22365842289706042], [0.1767766952966369, -0.1767766952966369], [0.22365842289706042, -0.12989496769621336], [0.25, -0.066300775], [0.25, 0.0], [0.25, 0.066300775], [0.22365842289706042, 0.12989496769621336], [0.1767766952966369, 0.1767766952966369], [0.12989496769621336, 0.22365842289706042], [0.066300775, 0.25], [0.0, 0.25], [-0.066300775, 0.25], [-0.12989496769621336, 0.22365842289706042], [-0.1767766952966369, 0.1767766952966369], [-0.22365842289706042, 0.12989496769621336], [-0.25, 0.066300775], [-0.25, 0.0], [-0.25, -0.066300775], [-0.22365842289706042, -0.12989496769621336], [-0.1767766952966369, -0.1767766952966369], [-0.12989496769621336, -0.22365842289706042], [-0.066300775, -0.25], [0.0, -0.25]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]], "edgecolors": ["#000000"], "edgewidths": [1.0], "offsets": "data04", "yindex": 1, "id": "el876914514491984", "pathtransforms": [[9.938079899999066, 0.0, 0.0, 9.938079899999066, 0.0, 0.0]], "pathcoordinates": "display", "offsetcoordinates": "data", "zorder": 1, "xindex": 0, "alphas": [null], "facecolors": ["#FF0000"]}], "xscale": "linear", "bbox": [0.125, 0.38235294117647056, 0.77500000000000002, 0.23529411764705888]}, {"xlim": [0.0, 93.0], "yscale": "linear", "axesbg": "#FFFFFF", "texts": [{"v_baseline": "auto", "h_anchor": "start", "color": "#000000", "text": "None", "coordinates": "axes", "zorder": 1000003.0, "alpha": 1, "fontsize": 12.0, "position": [-0.16129032258064516, -0.42499999999999932], "rotation": -0.0, "id": "el876914515231120"}, {"v_baseline": "auto", "h_anchor": "start", "color": "#000000", "text": "p0 vs p2", "coordinates": "axes", "zorder": 1000003.0, "alpha": 1, "fontsize": 14.399999999999999, "position": [0.11935483870967742, 0.7662500000000001], "rotation": -0.0, "id": "el876914515229840"}], "zoomable": true, "images": [], "xdomain": [0.0, 93.0], "ylim": [0.0, 93.0], "paths": [{"edgecolor": "#000000", "facecolor": "#FFFFFF", "edgewidth": 1.0, "pathcodes": ["M", "L", "L", "L", "Z"], "yindex": 2, "coordinates": "axes", "dasharray": "10,0", "zorder": 1000001.0, "alpha": 1, "xindex": 3, "data": "data03", "id": "el876914515184208"}], "sharey": [], "sharex": [], "axesbgalpha": null, "axes": [{"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "bottom", "nticks": 6, "tickvalues": null}, {"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "left", "nticks": 6, "tickvalues": null}], "lines": [{"color": "#000000", "yindex": 0, "coordinates": "data", "dasharray": "10,0", "zorder": 2, "alpha": 1, "xindex": 0, "linewidth": 1.0, "data": "data01", "id": "el876914515182608"}, {"color": "#000000", "yindex": 0, "coordinates": "data", "dasharray": "10,0", "zorder": 2, "alpha": 1, "xindex": 0, "linewidth": 1.0, "data": "data01", "id": "el876914515231696"}], "markers": [], "id": "el876914514602576", "ydomain": [0.0, 93.0], "collections": [{"paths": [[[[0.0, -0.5], [0.13260155, -0.5], [0.25978993539242673, -0.44731684579412084], [0.3535533905932738, -0.3535533905932738], [0.44731684579412084, -0.25978993539242673], [0.5, -0.13260155], [0.5, 0.0], [0.5, 0.13260155], [0.44731684579412084, 0.25978993539242673], [0.3535533905932738, 0.3535533905932738], [0.25978993539242673, 0.44731684579412084], [0.13260155, 0.5], [0.0, 0.5], [-0.13260155, 0.5], [-0.25978993539242673, 0.44731684579412084], [-0.3535533905932738, 0.3535533905932738], [-0.44731684579412084, 0.25978993539242673], [-0.5, 0.13260155], [-0.5, 0.0], [-0.5, -0.13260155], [-0.44731684579412084, -0.25978993539242673], [-0.3535533905932738, -0.3535533905932738], [-0.25978993539242673, -0.44731684579412084], [-0.13260155, -0.5], [0.0, -0.5]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]], "edgecolors": ["#000000"], "edgewidths": [1.0], "offsets": "data05", "yindex": 1, "id": "el876914515130960", "pathtransforms": [[9.938079899999066, 0.0, 0.0, 9.938079899999066, 0.0, 0.0]], "pathcoordinates": "display", "offsetcoordinates": "data", "zorder": 1, "xindex": 0, "alphas": [null], "facecolors": ["#008000"]}], "xscale": "linear", "bbox": [0.125, 0.099999999999999867, 0.77500000000000002, 0.23529411764705888]}], "height": 480.0, "width": 640.0, "plugins": [{"type": "reset"}, {"enabled": false, "button": true, "type": "zoom"}, {"enabled": false, "button": true, "type": "boxzoom"}], "data": {"data04": [[23.54, 23.19], [24.81, 27.02], [23.59, 25.27], [22.84, 24.29], [23.14, 22.22], [22.93, 24.61], [23.56, 25.21], [23.17, 24.5], [0.79, 12.64], [1.38, 18.87], [0.45, 0.41], [23.09, 0.82], [23.69, 24.75], [0.43, 0.44], [23.53, 22.34], [0.67, 2.1], [1.86, 36.26]], "data05": [[0.27, 0.41], [0.24, 0.44], [92.52, 12.64], [40.93, 0.82], [41.89, 2.1], [72.56, 22.22], [44.72, 36.26]], "data02": [[0.27, 0.45], [72.56, 23.14], [0.48, 0.73], [92.52, 0.79], [40.93, 23.09], [41.89, 0.67], [0.24, 0.43], [44.72, 1.86]], "data03": [[0.01612903225806453, 0.683020833333333, 0.6830208333333334, 0.01612903225806453], [0.2711189516129032, 0.683020833333333, 0.6830208333333334, 0.270866935483871], [0.2711189516129032, 0.9291666666666663, 0.9291666666666667, 0.270866935483871], [0.01612903225806453, 0.9291666666666663, 0.9291666666666667, 0.01612903225806453]], "data01": [[0.0, 0.0], [1.0, 1.0], [2.0, 2.0], [3.0, 3.0], [4.0, 4.0], [5.0, 5.0], [6.0, 6.0], [7.0, 7.0], [8.0, 8.0], [9.0, 9.0], [10.0, 10.0], [11.0, 11.0], [12.0, 12.0], [13.0, 13.0], [14.0, 14.0], [15.0, 15.0], [16.0, 16.0], [17.0, 17.0], [18.0, 18.0], [19.0, 19.0], [20.0, 20.0], [21.0, 21.0], [22.0, 22.0], [23.0, 23.0], [24.0, 24.0], [25.0, 25.0], [26.0, 26.0], [27.0, 27.0], [28.0, 28.0], [29.0, 29.0], [30.0, 30.0], [31.0, 31.0], [32.0, 32.0], [33.0, 33.0], [34.0, 34.0], [35.0, 35.0], [36.0, 36.0], [37.0, 37.0], [38.0, 38.0], [39.0, 39.0], [40.0, 40.0], [41.0, 41.0], [42.0, 42.0], [43.0, 43.0], [44.0, 44.0], [45.0, 45.0], [46.0, 46.0], [47.0, 47.0], [48.0, 48.0], [49.0, 49.0], [50.0, 50.0], [51.0, 51.0], [52.0, 52.0], [53.0, 53.0], [54.0, 54.0], [55.0, 55.0], [56.0, 56.0], [57.0, 57.0], [58.0, 58.0], [59.0, 59.0], [60.0, 60.0], [61.0, 61.0], [62.0, 62.0], [63.0, 63.0], [64.0, 64.0], [65.0, 65.0], [66.0, 66.0], [67.0, 67.0], [68.0, 68.0], [69.0, 69.0], [70.0, 70.0], [71.0, 71.0], [72.0, 72.0], [73.0, 73.0], [74.0, 74.0], [75.0, 75.0], [76.0, 76.0], [77.0, 77.0], [78.0, 78.0], [79.0, 79.0], [80.0, 80.0], [81.0, 81.0], [82.0, 82.0], [83.0, 83.0], [84.0, 84.0], [85.0, 85.0], [86.0, 86.0], [87.0, 87.0], [88.0, 88.0], [89.0, 89.0], [90.0, 90.0], [91.0, 91.0], [92.0, 92.0], [93.0, 93.0]]}, "id": "el876914503636176"}
+    mpld3.draw_figure("cfg_fig", cfg_json);
+
+</script>
+
+
+
+    <script type="text/javascript">
+    var loops_json =
+    {"axes": [{"xlim": [0.0, 61.0], "yscale": "linear", "axesbg": "#FFFFFF", "texts": [{"v_baseline": "auto", "h_anchor": "start", "color": "#000000", "text": "None", "coordinates": "axes", "zorder": 1000003.0, "alpha": 1, "fontsize": 12.0, "position": [-0.16129032258064516, -2.8250000000000002], "rotation": -0.0, "id": "el877104412636944"}, {"v_baseline": "auto", "h_anchor": "start", "color": "#000000", "text": "p0 vs p1", "coordinates": "axes", "zorder": 1000003.0, "alpha": 1, "fontsize": 14.399999999999999, "position": [0.11935483870967742, 0.76624999999999943], "rotation": -0.0, "id": "el877104412635664"}], "zoomable": true, "images": [], "xdomain": [0.0, 61.0], "ylim": [0.0, 61.0], "paths": [{"edgecolor": "#000000", "facecolor": "#FFFFFF", "edgewidth": 1.0, "pathcodes": ["M", "L", "L", "L", "Z"], "yindex": 1, "coordinates": "axes", "dasharray": "10,0", "zorder": 1000001.0, "alpha": 1, "xindex": 0, "data": "data03", "id": "el877104412635152"}], "sharey": [], "sharex": [], "axesbgalpha": null, "axes": [{"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "bottom", "nticks": 8, "tickvalues": null}, {"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "left", "nticks": 8, "tickvalues": null}], "lines": [{"color": "#000000", "yindex": 1, "coordinates": "data", "dasharray": "10,0", "zorder": 2, "alpha": 1, "xindex": 0, "linewidth": 1.0, "data": "data01", "id": "el877104412550992"}], "markers": [], "id": "el877104412022864", "ydomain": [0.0, 61.0], "collections": [{"paths": [[[[0.5, -9.184850993605148e-17], [-0.4999999999999999, 0.5000000000000001], [-0.5000000000000001, -0.4999999999999999]], ["M", "L", "L", "Z"]]], "edgecolors": ["#000000"], "edgewidths": [2.0], "offsets": "data02", "yindex": 1, "id": "el877104412549136", "pathtransforms": [[9.938079899999066, 0.0, 0.0, 9.938079899999066, 0.0, 0.0]], "pathcoordinates": "display", "offsetcoordinates": "data", "zorder": 1, "xindex": 0, "alphas": [null], "facecolors": ["#0000FF"]}], "xscale": "linear", "bbox": [0.125, 0.66470588235294115, 0.77500000000000002, 0.23529411764705888]}, {"xlim": [0.0, 61.0], "yscale": "linear", "axesbg": "#FFFFFF", "texts": [{"v_baseline": "auto", "h_anchor": "start", "color": "#000000", "text": "None", "coordinates": "axes", "zorder": 1000003.0, "alpha": 1, "fontsize": 12.0, "position": [-0.16129032258064516, -1.6249999999999991], "rotation": -0.0, "id": "el877104413301648"}, {"v_baseline": "auto", "h_anchor": "start", "color": "#000000", "text": "p1 vs p2", "coordinates": "axes", "zorder": 1000003.0, "alpha": 1, "fontsize": 14.399999999999999, "position": [0.11935483870967742, 0.76624999999999988], "rotation": -0.0, "id": "el877104413251152"}], "zoomable": true, "images": [], "xdomain": [0.0, 61.0], "ylim": [0.0, 61.0], "paths": [{"edgecolor": "#000000", "facecolor": "#FFFFFF", "edgewidth": 1.0, "pathcodes": ["M", "L", "L", "L", "Z"], "yindex": 2, "coordinates": "axes", "dasharray": "10,0", "zorder": 1000001.0, "alpha": 1, "xindex": 0, "data": "data03", "id": "el877104413250640"}], "sharey": [], "sharex": [], "axesbgalpha": null, "axes": [{"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "bottom", "nticks": 8, "tickvalues": null}, {"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "left", "nticks": 8, "tickvalues": null}], "lines": [{"color": "#000000", "yindex": 0, "coordinates": "data", "dasharray": "10,0", "zorder": 2, "alpha": 1, "xindex": 0, "linewidth": 1.0, "data": "data01", "id": "el877104413198224"}, {"color": "#000000", "yindex": 0, "coordinates": "data", "dasharray": "10,0", "zorder": 2, "alpha": 1, "xindex": 0, "linewidth": 1.0, "data": "data01", "id": "el877104413247632"}], "markers": [], "id": "el877104412748176", "ydomain": [0.0, 61.0], "collections": [{"paths": [[[[0.0, -0.25], [0.066300775, -0.25], [0.12989496769621336, -0.22365842289706042], [0.1767766952966369, -0.1767766952966369], [0.22365842289706042, -0.12989496769621336], [0.25, -0.066300775], [0.25, 0.0], [0.25, 0.066300775], [0.22365842289706042, 0.12989496769621336], [0.1767766952966369, 0.1767766952966369], [0.12989496769621336, 0.22365842289706042], [0.066300775, 0.25], [0.0, 0.25], [-0.066300775, 0.25], [-0.12989496769621336, 0.22365842289706042], [-0.1767766952966369, 0.1767766952966369], [-0.22365842289706042, 0.12989496769621336], [-0.25, 0.066300775], [-0.25, 0.0], [-0.25, -0.066300775], [-0.22365842289706042, -0.12989496769621336], [-0.1767766952966369, -0.1767766952966369], [-0.12989496769621336, -0.22365842289706042], [-0.066300775, -0.25], [0.0, -0.25]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]], "edgecolors": ["#000000"], "edgewidths": [1.0], "offsets": "data04", "yindex": 1, "id": "el877104413195728", "pathtransforms": [[9.938079899999066, 0.0, 0.0, 9.938079899999066, 0.0, 0.0]], "pathcoordinates": "display", "offsetcoordinates": "data", "zorder": 1, "xindex": 0, "alphas": [null], "facecolors": ["#FF0000"]}], "xscale": "linear", "bbox": [0.125, 0.38235294117647056, 0.77500000000000002, 0.23529411764705888]}, {"xlim": [0.0, 61.0], "yscale": "linear", "axesbg": "#FFFFFF", "texts": [{"v_baseline": "auto", "h_anchor": "start", "color": "#000000", "text": "None", "coordinates": "axes", "zorder": 1000003.0, "alpha": 1, "fontsize": 12.0, "position": [-0.16129032258064516, -0.42499999999999932], "rotation": -0.0, "id": "el877104413931856"}, {"v_baseline": "auto", "h_anchor": "start", "color": "#000000", "text": "p0 vs p2", "coordinates": "axes", "zorder": 1000003.0, "alpha": 1, "fontsize": 14.399999999999999, "position": [0.11935483870967742, 0.7662500000000001], "rotation": -0.0, "id": "el877104413889552"}], "zoomable": true, "images": [], "xdomain": [0.0, 61.0], "ylim": [0.0, 61.0], "paths": [{"edgecolor": "#000000", "facecolor": "#FFFFFF", "edgewidth": 1.0, "pathcodes": ["M", "L", "L", "L", "Z"], "yindex": 2, "coordinates": "axes", "dasharray": "10,0", "zorder": 1000001.0, "alpha": 1, "xindex": 3, "data": "data03", "id": "el877104413889040"}], "sharey": [], "sharex": [], "axesbgalpha": null, "axes": [{"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "bottom", "nticks": 8, "tickvalues": null}, {"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "left", "nticks": 8, "tickvalues": null}], "lines": [{"color": "#000000", "yindex": 0, "coordinates": "data", "dasharray": "10,0", "zorder": 2, "alpha": 1, "xindex": 0, "linewidth": 1.0, "data": "data01", "id": "el877104413887440"}, {"color": "#000000", "yindex": 0, "coordinates": "data", "dasharray": "10,0", "zorder": 2, "alpha": 1, "xindex": 0, "linewidth": 1.0, "data": "data01", "id": "el877104413932432"}], "markers": [], "id": "el877104413302224", "ydomain": [0.0, 61.0], "collections": [{"paths": [[[[0.0, -0.5], [0.13260155, -0.5], [0.25978993539242673, -0.44731684579412084], [0.3535533905932738, -0.3535533905932738], [0.44731684579412084, -0.25978993539242673], [0.5, -0.13260155], [0.5, 0.0], [0.5, 0.13260155], [0.44731684579412084, 0.25978993539242673], [0.3535533905932738, 0.3535533905932738], [0.25978993539242673, 0.44731684579412084], [0.13260155, 0.5], [0.0, 0.5], [-0.13260155, 0.5], [-0.25978993539242673, 0.44731684579412084], [-0.3535533905932738, 0.3535533905932738], [-0.44731684579412084, 0.25978993539242673], [-0.5, 0.13260155], [-0.5, 0.0], [-0.5, -0.13260155], [-0.44731684579412084, -0.25978993539242673], [-0.3535533905932738, -0.3535533905932738], [-0.25978993539242673, -0.44731684579412084], [-0.13260155, -0.5], [0.0, -0.5]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]], "edgecolors": ["#000000"], "edgewidths": [1.0], "offsets": "data04", "yindex": 1, "id": "el877104413835792", "pathtransforms": [[9.938079899999066, 0.0, 0.0, 9.938079899999066, 0.0, 0.0]], "pathcoordinates": "display", "offsetcoordinates": "data", "zorder": 1, "xindex": 2, "alphas": [null], "facecolors": ["#008000"]}], "xscale": "linear", "bbox": [0.125, 0.099999999999999867, 0.77500000000000002, 0.23529411764705888]}], "height": 480.0, "width": 640.0, "plugins": [{"type": "reset"}, {"enabled": false, "button": true, "type": "zoom"}, {"enabled": false, "button": true, "type": "boxzoom"}], "data": {"data04": [[0.28, 0.3, 0.23], [0.36, 0.38, 0.3], [0.38, 0.3, 0.31], [0.24, 0.46, 60.94], [0.26, 0.33, 20.4], [0.28, 0.46, 0.24], [0.4, 0.37, 0.38], [0.34, 1.11, 20.34], [0.3, 0.35, 19.63], [0.31, 0.38, 0.26], [21.26, 21.09, 20.47], [0.28, 0.38, 0.26], [0.32, 0.5, 20.66], [21.0, 21.58, 20.11], [21.65, 20.38, 39.09], [0.26, 0.32, 0.21], [0.32, 0.36, 22.41]], "data02": [[0.3, 0.36], [0.31, 0.38], [60.94, 0.24], [20.44, 20.98], [0.24, 0.28], [0.38, 0.4], [19.63, 0.3], [0.27, 0.33], [20.47, 21.26], [0.26, 0.28], [181.58, 0.68], [20.11, 21.0], [21.68, 0.31], [0.22, 0.28], [19.97, 21.95], [20.13, 0.3], [0.23, 0.27], [20.14, 0.26], [0.39, 0.38], [0.35, 0.32], [0.36, 0.34], [0.21, 0.32], [1.12, 1.01], [3.77, 2.17], [0.23, 0.31], [0.23, 0.3], [0.28, 0.24], [20.13, 21.28], [39.09, 21.65], [0.23, 0.28], [22.41, 0.32], [0.25, 0.3], [20.34, 0.34], [0.26, 0.31], [20.4, 0.26], [20.3, 0.27], [20.66, 0.32], [21.73, 45.18], [0.21, 0.26]], "data03": [[0.01612903225806453, 0.683020833333333, 0.6830208333333334, 0.01612903225806453], [0.2711189516129032, 0.683020833333333, 0.6830208333333334, 0.270866935483871], [0.2711189516129032, 0.9291666666666663, 0.9291666666666667, 0.270866935483871], [0.01612903225806453, 0.9291666666666663, 0.9291666666666667, 0.01612903225806453]], "data01": [[0.0, 0.0], [1.0, 1.0], [2.0, 2.0], [3.0, 3.0], [4.0, 4.0], [5.0, 5.0], [6.0, 6.0], [7.0, 7.0], [8.0, 8.0], [9.0, 9.0], [10.0, 10.0], [11.0, 11.0], [12.0, 12.0], [13.0, 13.0], [14.0, 14.0], [15.0, 15.0], [16.0, 16.0], [17.0, 17.0], [18.0, 18.0], [19.0, 19.0], [20.0, 20.0], [21.0, 21.0], [22.0, 22.0], [23.0, 23.0], [24.0, 24.0], [25.0, 25.0], [26.0, 26.0], [27.0, 27.0], [28.0, 28.0], [29.0, 29.0], [30.0, 30.0], [31.0, 31.0], [32.0, 32.0], [33.0, 33.0], [34.0, 34.0], [35.0, 35.0], [36.0, 36.0], [37.0, 37.0], [38.0, 38.0], [39.0, 39.0], [40.0, 40.0], [41.0, 41.0], [42.0, 42.0], [43.0, 43.0], [44.0, 44.0], [45.0, 45.0], [46.0, 46.0], [47.0, 47.0], [48.0, 48.0], [49.0, 49.0], [50.0, 50.0], [51.0, 51.0], [52.0, 52.0], [53.0, 53.0], [54.0, 54.0], [55.0, 55.0], [56.0, 56.0], [57.0, 57.0], [58.0, 58.0], [59.0, 59.0], [60.0, 60.0], [61.0, 61.0]]}, "id": "el877104402198736"}
+
+        mpld3.draw_figure("loops_fig", loops_json);
+
+    </script>
+
+
+
+    <script type="text/javascript">
+    var simple_json =
+
+    {"axes": [{"xlim": [0.0, 10.0], "yscale": "linear", "axesbg": "#FFFFFF", "texts": [{"v_baseline": "auto", "h_anchor": "start", "color": "#000000", "text": "None", "coordinates": "axes", "zorder": 1000003.0, "alpha": 1, "fontsize": 12.0, "position": [-0.16129032258064516, -2.8250000000000002], "rotation": -0.0, "id": "el877254520336208"}, {"v_baseline": "auto", "h_anchor": "start", "color": "#000000", "text": "p0 vs p1", "coordinates": "axes", "zorder": 1000003.0, "alpha": 1, "fontsize": 14.399999999999999, "position": [0.11935483870967742, 0.76624999999999943], "rotation": -0.0, "id": "el877254520334928"}], "zoomable": true, "images": [], "xdomain": [0.0, 10.0], "ylim": [0.0, 10.0], "paths": [{"edgecolor": "#000000", "facecolor": "#FFFFFF", "edgewidth": 1.0, "pathcodes": ["M", "L", "L", "L", "Z"], "yindex": 1, "coordinates": "axes", "dasharray": "10,0", "zorder": 1000001.0, "alpha": 1, "xindex": 0, "data": "data03", "id": "el877254520334416"}], "sharey": [], "sharex": [], "axesbgalpha": null, "axes": [{"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "bottom", "nticks": 6, "tickvalues": null}, {"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "left", "nticks": 6, "tickvalues": null}], "lines": [{"color": "#000000", "yindex": 1, "coordinates": "data", "dasharray": "10,0", "zorder": 2, "alpha": 1, "xindex": 0, "linewidth": 1.0, "data": "data01", "id": "el877254520226256"}], "markers": [], "id": "el877254519631952", "ydomain": [0.0, 10.0], "collections": [{"paths": [[[[0.5, -9.184850993605148e-17], [-0.4999999999999999, 0.5000000000000001], [-0.5000000000000001, -0.4999999999999999]], ["M", "L", "L", "Z"]]], "edgecolors": ["#000000"], "edgewidths": [2.0], "offsets": "data02", "yindex": 1, "id": "el877254520223824", "pathtransforms": [[9.938079899999066, 0.0, 0.0, 9.938079899999066, 0.0, 0.0]], "pathcoordinates": "display", "offsetcoordinates": "data", "zorder": 1, "xindex": 0, "alphas": [null], "facecolors": ["#0000FF"]}], "xscale": "linear", "bbox": [0.125, 0.66470588235294115, 0.77500000000000002, 0.23529411764705888]}, {"xlim": [0.0, 10.0], "yscale": "linear", "axesbg": "#FFFFFF", "texts": [{"v_baseline": "auto", "h_anchor": "start", "color": "#000000", "text": "None", "coordinates": "axes", "zorder": 1000003.0, "alpha": 1, "fontsize": 12.0, "position": [-0.16129032258064516, -1.6249999999999991], "rotation": -0.0, "id": "el877254520934864"}, {"v_baseline": "auto", "h_anchor": "start", "color": "#000000", "text": "p1 vs p2", "coordinates": "axes", "zorder": 1000003.0, "alpha": 1, "fontsize": 14.399999999999999, "position": [0.11935483870967742, 0.76624999999999988], "rotation": -0.0, "id": "el877254520933584"}], "zoomable": true, "images": [], "xdomain": [0.0, 10.0], "ylim": [0.0, 10.0], "paths": [{"edgecolor": "#000000", "facecolor": "#FFFFFF", "edgewidth": 1.0, "pathcodes": ["M", "L", "L", "L", "Z"], "yindex": 2, "coordinates": "axes", "dasharray": "10,0", "zorder": 1000001.0, "alpha": 1, "xindex": 0, "data": "data03", "id": "el877254520933072"}], "sharey": [], "sharex": [], "axesbgalpha": null, "axes": [{"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "bottom", "nticks": 6, "tickvalues": null}, {"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "left", "nticks": 6, "tickvalues": null}], "lines": [{"color": "#000000", "yindex": 0, "coordinates": "data", "dasharray": "10,0", "zorder": 2, "alpha": 1, "xindex": 0, "linewidth": 1.0, "data": "data01", "id": "el877254520876560"}, {"color": "#000000", "yindex": 0, "coordinates": "data", "dasharray": "10,0", "zorder": 2, "alpha": 1, "xindex": 0, "linewidth": 1.0, "data": "data01", "id": "el877254520876752"}], "markers": [], "id": "el877254520336784", "ydomain": [0.0, 10.0], "collections": [{"paths": [[[[0.0, -0.25], [0.066300775, -0.25], [0.12989496769621336, -0.22365842289706042], [0.1767766952966369, -0.1767766952966369], [0.22365842289706042, -0.12989496769621336], [0.25, -0.066300775], [0.25, 0.0], [0.25, 0.066300775], [0.22365842289706042, 0.12989496769621336], [0.1767766952966369, 0.1767766952966369], [0.12989496769621336, 0.22365842289706042], [0.066300775, 0.25], [0.0, 0.25], [-0.066300775, 0.25], [-0.12989496769621336, 0.22365842289706042], [-0.1767766952966369, 0.1767766952966369], [-0.22365842289706042, 0.12989496769621336], [-0.25, 0.066300775], [-0.25, 0.0], [-0.25, -0.066300775], [-0.22365842289706042, -0.12989496769621336], [-0.1767766952966369, -0.1767766952966369], [-0.12989496769621336, -0.22365842289706042], [-0.066300775, -0.25], [0.0, -0.25]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]], "edgecolors": ["#000000"], "edgewidths": [1.0], "offsets": "data04", "yindex": 1, "id": "el877254520874064", "pathtransforms": [[9.938079899999066, 0.0, 0.0, 9.938079899999066, 0.0, 0.0]], "pathcoordinates": "display", "offsetcoordinates": "data", "zorder": 1, "xindex": 0, "alphas": [null], "facecolors": ["#FF0000"]}], "xscale": "linear", "bbox": [0.125, 0.38235294117647056, 0.77500000000000002, 0.23529411764705888]}, {"xlim": [0.0, 10.0], "yscale": "linear", "axesbg": "#FFFFFF", "texts": [{"v_baseline": "auto", "h_anchor": "start", "color": "#000000", "text": "None", "coordinates": "axes", "zorder": 1000003.0, "alpha": 1, "fontsize": 12.0, "position": [-0.16129032258064516, -0.42499999999999932], "rotation": -0.0, "id": "el877254521561168"}, {"v_baseline": "auto", "h_anchor": "start", "color": "#000000", "text": "p0 vs p2", "coordinates": "axes", "zorder": 1000003.0, "alpha": 1, "fontsize": 14.399999999999999, "position": [0.11935483870967742, 0.7662500000000001], "rotation": -0.0, "id": "el877254521559888"}], "zoomable": true, "images": [], "xdomain": [0.0, 10.0], "ylim": [0.0, 10.0], "paths": [{"edgecolor": "#000000", "facecolor": "#FFFFFF", "edgewidth": 1.0, "pathcodes": ["M", "L", "L", "L", "Z"], "yindex": 2, "coordinates": "axes", "dasharray": "10,0", "zorder": 1000001.0, "alpha": 1, "xindex": 3, "data": "data03", "id": "el877254521559376"}], "sharey": [], "sharex": [], "axesbgalpha": null, "axes": [{"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "bottom", "nticks": 6, "tickvalues": null}, {"scale": "linear", "tickformat": null, "grid": {"gridOn": false}, "fontsize": 12.0, "position": "left", "nticks": 6, "tickvalues": null}], "lines": [{"color": "#000000", "yindex": 0, "coordinates": "data", "dasharray": "10,0", "zorder": 2, "alpha": 1, "xindex": 0, "linewidth": 1.0, "data": "data01", "id": "el877254521508560"}, {"color": "#000000", "yindex": 0, "coordinates": "data", "dasharray": "10,0", "zorder": 2, "alpha": 1, "xindex": 0, "linewidth": 1.0, "data": "data01", "id": "el877254521561744"}], "markers": [], "id": "el877254520980560", "ydomain": [0.0, 10.0], "collections": [{"paths": [[[[0.0, -0.5], [0.13260155, -0.5], [0.25978993539242673, -0.44731684579412084], [0.3535533905932738, -0.3535533905932738], [0.44731684579412084, -0.25978993539242673], [0.5, -0.13260155], [0.5, 0.0], [0.5, 0.13260155], [0.44731684579412084, 0.25978993539242673], [0.3535533905932738, 0.3535533905932738], [0.25978993539242673, 0.44731684579412084], [0.13260155, 0.5], [0.0, 0.5], [-0.13260155, 0.5], [-0.25978993539242673, 0.44731684579412084], [-0.3535533905932738, 0.3535533905932738], [-0.44731684579412084, 0.25978993539242673], [-0.5, 0.13260155], [-0.5, 0.0], [-0.5, -0.13260155], [-0.44731684579412084, -0.25978993539242673], [-0.3535533905932738, -0.3535533905932738], [-0.25978993539242673, -0.44731684579412084], [-0.13260155, -0.5], [0.0, -0.5]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]], "edgecolors": ["#000000"], "edgewidths": [1.0], "offsets": "data05", "yindex": 1, "id": "el877254521506128", "pathtransforms": [[9.938079899999066, 0.0, 0.0, 9.938079899999066, 0.0, 0.0]], "pathcoordinates": "display", "offsetcoordinates": "data", "zorder": 1, "xindex": 0, "alphas": [null], "facecolors": ["#008000"]}], "xscale": "linear", "bbox": [0.125, 0.099999999999999867, 0.77500000000000002, 0.23529411764705888]}], "height": 480.0, "width": 640.0, "plugins": [{"type": "reset"}, {"enabled": false, "button": true, "type": "zoom"}, {"enabled": false, "button": true, "type": "boxzoom"}], "data": {"data04": [[69.71, 67.8], [61.14, 56.56], [70.6, 63.99], [63.06, 56.51], [61.97, 56.85], [44.48, 44.94], [63.27, 56.87], [44.51, 44.88], [69.58, 71.64], [72.7, 45.93], [9.11, 45.38]], "data05": [[162.18, 67.8], [143.94, 56.56], [152.29, 63.99], [144.4, 56.51], [144.02, 56.85], [142.64, 44.94], [48.56, 348.68], [144.37, 56.87], [144.04, 44.88], [164.38, 71.64], [141.48, 45.93], [139.15, 45.38]], "data02": [[162.18, 69.71], [143.94, 61.14], [152.29, 70.6], [144.4, 63.06], [144.02, 61.97], [142.64, 44.48], [144.37, 63.27], [144.04, 44.51], [164.38, 69.58], [141.48, 72.7], [139.15, 9.11], [46.67, 36.12]], "data03": [[0.01612903225806453, 0.683020833333333, 0.6830208333333334, 0.01612903225806453], [0.2711189516129032, 0.683020833333333, 0.6830208333333334, 0.270866935483871], [0.2711189516129032, 0.9291666666666663, 0.9291666666666667, 0.270866935483871], [0.01612903225806453, 0.9291666666666663, 0.9291666666666667, 0.01612903225806453]], "data01": [[0.0, 0.0], [1.0, 1.0], [2.0, 2.0], [3.0, 3.0], [4.0, 4.0], [5.0, 5.0], [6.0, 6.0], [7.0, 7.0], [8.0, 8.0], [9.0, 9.0], [10.0, 10.0]]}, "id": "el877254509927632"}
+
+    
+       mpld3.draw_figure("simple_fig", simple_json);
+
+    </script>
+    
+	</body>
+</html>
+
+
