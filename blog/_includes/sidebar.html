@@ -1,20 +1,45 @@
-<nav>
-  <h1>Hi.</h1>
-  <a href="/">
-    {% if site.data.theme.social.gravatar %}
-    <img src="http://www.gravatar.com/avatar/{{ site.data.theme.social.gravatar }}?s=200" id="gravatar" alt="My photo"/>
-    {% else %}
-    <img src="/logo.png" id="logo" alt="Blog logo"/>
-    {% endif %}
-  </a>
-  <h2>I'm <a href="/">{{ site.data.theme.name }}</a>.</h2>
-  <div id="bio">
-    <p>A brief bio or something witty.</p>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+
+    <div class="sidebar-mugshot">
+        <img src="/assets/images/mugshot.png" alt="Temesghen Kahsai">
+    </div>
+
+    <div class="sidebar-about">
+      <h1>{{ site.title }}</h1>
+      <!-- <p class="lead">{{ site.description }}</p> -->
+      <!-- <p>p. email: lememta AT </p> -->
+      <!-- <p>p. email: lememta AT </p> -->
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item{% if page.title == "Home" %} active{% endif %}">
+        <a href="/">Home</a>
+      </li>
+
+      {% comment %}
+        The code below dynamically generates a sidebar nav of pages with
+        `layout: page` in the front-matter. See readme for usage.
+      {% endcomment %}
+
+      {% assign pages_list = site.pages %}
+      {% for node in pages_list %}
+        {% if node.title != null %}
+          {% if node.layout == "page" %}
+            <li class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}">
+              <a href="{{ node.url }}">{{ node.title }}</a>
+            </li>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+    </ul>
+
     <p>
-      Edit me in <code>_includes/sidebar.html</code>
+      <a href="https://www.twitter.com/teme" target="_blank"><i class="fa fa-twitter-square"></i></a>
+        <a href="http://www.linkedin.com/in/temesghen/" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+        <br/>
+        &copy; {{ site.time | date: '%Y' }}. All rights reserved.
     </p>
   </div>
-  <div id="social">
-    {% include social.html %}
-  </div>
-</nav>
+</div>

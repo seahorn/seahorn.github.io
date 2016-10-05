@@ -1,5 +1,21 @@
-# General Jekyll Config
-highlighter: pygments
-url: http://example.com
-lsi: false
-exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
+# Site settings
+title: Temesghen Kahsai
+tagline: 'Temesghen Kahsai'
+email: lememta@gmail.com
+description: 'Personal site of Teme'
+baseurl: ""
+url: "http://lememta.github.io/"
+
+author:
+  name:           'Temesghen Kahsai'
+  url:            http://lememta.github.io/
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+paginate:         5
+
+gems:
+  - jekyll-sitemap
+
