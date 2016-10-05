@@ -1,14 +1,14 @@
 # Site settings
-title: Temesghen Kahsai
-tagline: 'Temesghen Kahsai'
+title: SeaHorn 
+tagline: 'SeaHorn'
 email: lememta@gmail.com
-description: 'Personal site of Teme'
+description: 'SeaHorn Blog'
 baseurl: ""
-url: "http://lememta.github.io/"
+url: "http://seahorn.github.io/blog"
 
 author:
-  name:           'Temesghen Kahsai'
-  url:            http://lememta.github.io/
+  name:           'SeaHorn'
+  url:            http://seahorn.github.io/blog
 
 # Build settings
 markdown: kramdown
