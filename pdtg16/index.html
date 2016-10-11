@@ -82,6 +82,10 @@
 	     </tr>
 
   </table>
+
+	<table class="table table-striped" id="cfg_csv">
+
+	 </table>
 </div>
 
       <div id="simple" class="tab-pane">
@@ -99,6 +103,9 @@
                <div id="ldv_fig"></div>
 	     </tr>
         </table>
+				<table class="table table-striped" id="ldv_csv">
+
+				 </table>
       </div>
 
          <div id="loops" class="tab-pane">
@@ -211,6 +218,85 @@
 		 });
 		</script>
 
+		<script type="text/javascript" charset="utf-8">
+		 d3.csv("data/06.10.cfg.csv", function(data) {
+
+				 // the columns you'd like to display
+				 var columns = ["Benchmark", " Klee-0", " Klee-1", " Klee-2", " SeaHorn"];
+
+				 var table = d3.select("#cfg_csv"),
+				 thead = table.append("thead"),
+				 tbody = table.append("tbody");
+
+				 // append the header row
+				 thead.append("tr")
+							.selectAll("th")
+							.data(columns)
+							.enter()
+							.append("th")
+							.text(function(column) { return column; });
+
+				 // create a row for each object in the data
+				 var rows = tbody.selectAll("tr")
+												 .data(data)
+												 .enter()
+												 .append("tr");
+
+				 // create a cell in each row for each column
+				 var cells = rows.selectAll("td")
+												 .data(function(row) {
+						 return columns.map(function(column) {
+								 return {column: column, value: row[column]};
+						 });
+				 })
+						.enter()
+						.append("td")
+						.text(function(d) { return d.value; });
+
+		 $('#cfg_cvs').dataTable({"paging": false});
+
+		 });
+		</script>
+
+		<script type="text/javascript" charset="utf-8">
+		 d3.csv("data/06.10.ldv.csv", function(data) {
+
+				 // the columns you'd like to display
+				 var columns = ["Benchmark", " Klee-0", " Klee-1", " Klee-2", " SeaHorn"];
+
+				 var table = d3.select("#ldv_csv"),
+				 thead = table.append("thead"),
+				 tbody = table.append("tbody");
+
+				 // append the header row
+				 thead.append("tr")
+							.selectAll("th")
+							.data(columns)
+							.enter()
+							.append("th")
+							.text(function(column) { return column; });
+
+				 // create a row for each object in the data
+				 var rows = tbody.selectAll("tr")
+												 .data(data)
+												 .enter()
+												 .append("tr");
+
+				 // create a cell in each row for each column
+				 var cells = rows.selectAll("td")
+												 .data(function(row) {
+						 return columns.map(function(column) {
+								 return {column: column, value: row[column]};
+						 });
+				 })
+						.enter()
+						.append("td")
+						.text(function(d) { return d.value; });
+
+		 $('#ldv_cvs').dataTable({"paging": false});
+
+		 });
+		</script>
 		<!-- <script type="text/javascript" src="plugins/jquery.min.js"></script> -->
 		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
