@@ -109,7 +109,9 @@
 	     </tr>
 	   </table>
 
-        </table>
+		          <table class="table table-striped" id="loop_csv">
+
+		           </table>
       </div>
 
               </div>
@@ -133,7 +135,7 @@
 
 				 // the columns you'd like to display
 				 var columns = ["Benchmark", " Klee-0", " Klee-1", " Klee-2", " SeaHorn"];
-				 
+
 				 var table = d3.select("#pl_csv"),
 				 thead = table.append("thead"),
 				 tbody = table.append("tbody");
@@ -164,6 +166,47 @@
 						.text(function(d) { return d.value; });
 
 		 $('#pl_cvs').dataTable({"paging": false});
+
+		 });
+		</script>
+
+
+		<script type="text/javascript" charset="utf-8">
+		 d3.csv("data/06.10.loops.csv", function(data) {
+
+				 // the columns you'd like to display
+				 var columns = ["Benchmark", " Klee-0", " Klee-1", " Klee-2", " SeaHorn"];
+
+				 var table = d3.select("#loop_csv"),
+				 thead = table.append("thead"),
+				 tbody = table.append("tbody");
+
+				 // append the header row
+				 thead.append("tr")
+							.selectAll("th")
+							.data(columns)
+							.enter()
+							.append("th")
+							.text(function(column) { return column; });
+
+				 // create a row for each object in the data
+				 var rows = tbody.selectAll("tr")
+												 .data(data)
+												 .enter()
+												 .append("tr");
+
+				 // create a cell in each row for each column
+				 var cells = rows.selectAll("td")
+												 .data(function(row) {
+						 return columns.map(function(column) {
+								 return {column: column, value: row[column]};
+						 });
+				 })
+						.enter()
+						.append("td")
+						.text(function(d) { return d.value; });
+
+		 $('#loop_cvs').dataTable({"paging": false});
 
 		 });
 		</script>
