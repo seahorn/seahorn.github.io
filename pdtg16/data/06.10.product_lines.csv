@@ -1,5 +1,5 @@
 Benchmark, Klee-0, Klee-1, Klee-2, SeaHorn
-elevator_spec14_product20_false-unreach-call.cil.c , NA , NA , NA , 61.37
+elevator_spec14_product20_false-unreach-call.cil.c, NA, NA, NA, 61.37
 elevator_spec14_product24_false-unreach-call.cil.c , NA , NA , NA , 189.07
 elevator_spec14_product28_false-unreach-call.cil.c , NA , NA , NA , 206.32
 elevator_spec14_product32_false-unreach-call.cil.c , 16.29 , 15.87 , 105.79 , 175.24
