@@ -1,0 +1,26 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: SeaHorn Team Blog
+email: lememta@gmail.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://seahorn.github.io" # the base hostname & protocol for your site
+twitter_username: kaunteya28
+github_username:  seahorn
+
+permalink:  none
+
+# Build settings
+markdown: kramdown
+
+# /:categories/:title.html
+permalink: none
+
+# URLS
+link_to:
+  github:          https://github.com/seahorn/seahorn
