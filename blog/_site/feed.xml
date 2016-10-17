@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SeaHorn</title>
+    <description>Lets make verification great again. In this notes, we will explain how to use SeaHorn
+</description>
+    <link>http://seahorn.github.io//blog/</link>
+    <atom:link href="http://seahorn.github.io//blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 16 Oct 2016 20:39:03 -0700</pubDate>
+    <lastBuildDate>Sun, 16 Oct 2016 20:39:03 -0700</lastBuildDate>
+    <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Bug validation via test harness</title>
+        <description>&lt;p&gt;Coming soon&lt;/p&gt;
+</description>
+        <pubDate>Sun, 16 Oct 2016 07:56:45 -0700</pubDate>
+        <link>http://seahorn.github.io//blog/seahorn/cex/validation/2016/10/16/cex-validation.html</link>
+        <guid isPermaLink="true">http://seahorn.github.io//blog/seahorn/cex/validation/2016/10/16/cex-validation.html</guid>
+        
+        
+        <category>seahorn</category>
+        
+        <category>cex</category>
+        
+        <category>validation</category>
+        
+      </item>
+    
+      <item>
+        <title>Using SeaHorn</title>
+        <description>&lt;p&gt;How to use SeaHorn?&lt;/p&gt;
+</description>
+        <pubDate>Sat, 15 Oct 2016 07:56:45 -0700</pubDate>
+        <link>http://seahorn.github.io//blog/seahorn/usage/safety/2016/10/15/using-seahorn.html</link>
+        <guid isPermaLink="true">http://seahorn.github.io//blog/seahorn/usage/safety/2016/10/15/using-seahorn.html</guid>
+        
+        
+        <category>seahorn</category>
+        
+        <category>usage</category>
+        
+        <category>safety</category>
+        
+      </item>
+    
+      <item>
+        <title>Installing SeaHorn</title>
+        <description>&lt;p&gt;Coming to you soon&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;make&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Fri, 14 Oct 2016 16:34:01 -0700</pubDate>
+        <link>http://seahorn.github.io//blog/seahorn/install/2016/10/14/install-seahorn.html</link>
+        <guid isPermaLink="true">http://seahorn.github.io//blog/seahorn/install/2016/10/14/install-seahorn.html</guid>
+        
+        
+        <category>seahorn</category>
+        
+        <category>install</category>
+        
+      </item>
+    
+  </channel>
+</rss>
