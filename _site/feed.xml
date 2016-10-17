@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SeaHorn</title>
-    <description>Lets make verification great again. In this notes, we will explain how to use SeaHorn
+    <description>Scribbling the ins and outs of an automated code analysis tools.
 </description>
-    <link>http://seahorn.github.io//blog/</link>
-    <atom:link href="http://seahorn.github.io//blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 16 Oct 2016 22:28:39 -0700</pubDate>
-    <lastBuildDate>Sun, 16 Oct 2016 22:28:39 -0700</lastBuildDate>
+    <link>http://seahorn.github.io//</link>
+    <atom:link href="http://seahorn.github.io//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 17 Oct 2016 07:11:50 -0700</pubDate>
+    <lastBuildDate>Mon, 17 Oct 2016 07:11:50 -0700</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -15,8 +15,8 @@
         <description>&lt;p&gt;Coming soon&lt;/p&gt;
 </description>
         <pubDate>Sun, 16 Oct 2016 07:56:45 -0700</pubDate>
-        <link>http://seahorn.github.io//blog/seahorn/cex/validation/2016/10/16/cex-validation.html</link>
-        <guid isPermaLink="true">http://seahorn.github.io//blog/seahorn/cex/validation/2016/10/16/cex-validation.html</guid>
+        <link>http://seahorn.github.io//seahorn/cex/validation/2016/10/16/cex-validation.html</link>
+        <guid isPermaLink="true">http://seahorn.github.io//seahorn/cex/validation/2016/10/16/cex-validation.html</guid>
         
         
         <category>seahorn</category>
@@ -30,10 +30,26 @@
       <item>
         <title>Using SeaHorn</title>
         <description>&lt;p&gt;How to use SeaHorn?&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &quot;seahorn/seahorn.h&quot;
+&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unknown1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+ &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unknown1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;sassert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
 </description>
         <pubDate>Sat, 15 Oct 2016 07:56:45 -0700</pubDate>
-        <link>http://seahorn.github.io//blog/seahorn/usage/safety/2016/10/15/using-seahorn.html</link>
-        <guid isPermaLink="true">http://seahorn.github.io//blog/seahorn/usage/safety/2016/10/15/using-seahorn.html</guid>
+        <link>http://seahorn.github.io//seahorn/usage/safety/2016/10/15/using-seahorn.html</link>
+        <guid isPermaLink="true">http://seahorn.github.io//seahorn/usage/safety/2016/10/15/using-seahorn.html</guid>
         
         
         <category>seahorn</category>
@@ -52,8 +68,8 @@
 
 </description>
         <pubDate>Fri, 14 Oct 2016 16:34:01 -0700</pubDate>
-        <link>http://seahorn.github.io//blog/seahorn/install/2016/10/14/install-seahorn.html</link>
-        <guid isPermaLink="true">http://seahorn.github.io//blog/seahorn/install/2016/10/14/install-seahorn.html</guid>
+        <link>http://seahorn.github.io//seahorn/install/2016/10/14/install-seahorn.html</link>
+        <guid isPermaLink="true">http://seahorn.github.io//seahorn/install/2016/10/14/install-seahorn.html</guid>
         
         
         <category>seahorn</category>

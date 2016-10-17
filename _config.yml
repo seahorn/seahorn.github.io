@@ -1,8 +1,7 @@
 # Site settings
 title: SeaHorn
 description: >
-  Lets make verification great again. In this notes, we will explain how to
-  use SeaHorn
+  Scribbling the ins and outs of an automated code analysis tools.
 
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://seahorn.github.io/" # the base hostname & protocol for your site

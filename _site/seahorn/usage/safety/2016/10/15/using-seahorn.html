@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title> Using SeaHorn — Simple safety anaysis &raquo;  SeaHorn</title>
-<meta name="description" content="Lets make verification great again. In this notes, we will explain how to use SeaHorn
+<meta name="description" content="Scribbling the ins and outs of an automated code analysis tools.
 ">
 <meta name="keywords" content="">
 <link rel="canonical" href="http://seahorn.github.io//seahorn/usage/safety/2016/10/15/using-seahorn.html">
@@ -17,7 +17,7 @@
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Using SeaHorn" />
-<meta name="twitter:description" content="Lets make verification great again. In this notes, we will explain how to use SeaHorn
+<meta name="twitter:description" content="Scribbling the ins and outs of an automated code analysis tools.
 " />
 <meta name="twitter:image" content="http://seahorn.github.io/" />
 
@@ -29,18 +29,18 @@
 <meta property="og:locale" content="">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Using SeaHorn">
-<meta property="og:description" content="Lets make verification great again. In this notes, we will explain how to use SeaHorn
+<meta property="og:description" content="Scribbling the ins and outs of an automated code analysis tools.
 ">
 <meta property="og:url" content="http://seahorn.github.io//seahorn/usage/safety/2016/10/15/using-seahorn.html">
 <meta property="og:site_name" content="SeaHorn">
 
         <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="/blog/assets/vendor/normalize-css/normalize.css">
-<link rel="stylesheet" href="/blog/css/main.css">
+<link rel="stylesheet" href="/assets/vendor/normalize-css/normalize.css">
+<link rel="stylesheet" href="/css/main.css">
 
-  <link rel="stylesheet" href="/blog/assets/vendor/highlight/styles/solarized_dark.css">
+  <link rel="stylesheet" href="/assets/vendor/highlight/styles/solarized_dark.css">
 
-<link rel="stylesheet" href="/blog/assets/vendor/font-awesome/css/font-awesome.css">
+<link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.css">
     </head>
 
     <body>
@@ -50,8 +50,8 @@
         <a href="/" class="logo">SeaHorn</a>
 
         <ul class="menu">
-            <li class="menu__entry"><a href="/blog/about">About</a></li>
-            <li class="menu__entry"><a href="/blog/">Blog</a></li>
+            <li class="menu__entry"><a href="/about">About</a></li>
+            <li class="menu__entry"><a href="/">Blog</a></li>
         </ul>
     </div>
 
@@ -74,6 +74,22 @@
 <div class="content">
     <p>How to use SeaHorn?</p>
 
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include "seahorn/seahorn.h"
+</span><span class="kt">int</span> <span class="n">unknown1</span><span class="p">();</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+ <span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+ <span class="k">while</span><span class="p">(</span><span class="n">unknown1</span><span class="p">())</span> <span class="p">{</span>
+   <span class="kt">int</span> <span class="n">t1</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+   <span class="kt">int</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
+   <span class="n">x</span> <span class="o">=</span> <span class="n">t1</span><span class="o">+</span> <span class="n">t2</span><span class="p">;</span>
+   <span class="n">y</span> <span class="o">=</span> <span class="n">t1</span> <span class="o">+</span> <span class="n">t2</span><span class="p">;</span>
+ <span class="p">}</span>
+  <span class="n">sassert</span><span class="p">(</span><span class="n">y</span> <span class="o">&gt;=</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+
 </div>
 
 <div class="about">
@@ -87,7 +103,7 @@
 
         </div>
 
-        <script src="/blog/assets/vendor/highlight/highlight.pack.js"></script>
+        <script src="/assets/vendor/highlight/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
         
     </body>
