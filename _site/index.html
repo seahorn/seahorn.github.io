@@ -1,122 +1,517 @@
 <!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title> SeaHorn Blog — Let's make automated verification great again &raquo;  SeaHorn</title>
-<meta name="description" content="Lets make verification great again. In this notes, we will explain how to use SeaHorn
-">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<title>SeaHorn | A Verification Framework</title>
+		<meta name="description" content="The SeaHorn Verification Framework">
+		<meta name="author" content="htmlcoder.me">
 
-<link rel="canonical" href="http://seahorn.github.io//">
-        
+		<!-- Mobile Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="images/favicon.ico">
 
+		<!-- Web Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
 
+		<!-- Bootstrap core CSS -->
+		<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
 
-<!-- Twitter Cards -->
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="SeaHorn Blog" />
-<meta name="twitter:description" content="Lets make verification great again. In this notes, we will explain how to use SeaHorn
-" />
-<meta name="twitter:image" content="http://seahorn.github.io/" />
+		<!-- Font Awesome CSS -->
+		<link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
 
-<!-- Google plus -->
-<meta name="author" content="">
-<link rel="author" href="">
+                <link rel="stylesheet" href="css/gh-fork-ribbon.css">
 
-<!-- Open Graph -->
-<meta property="og:locale" content="">
-<meta property="og:type" content="article">
-<meta property="og:title" content="SeaHorn Blog">
-<meta property="og:description" content="Lets make verification great again. In this notes, we will explain how to use SeaHorn
-">
-<meta property="og:url" content="http://seahorn.github.io//">
-<meta property="og:site_name" content="SeaHorn">
+		<!-- Plugins -->
+		<link href="css/animations.css" rel="stylesheet">
 
-        <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="/blog/assets/vendor/normalize-css/normalize.css">
-<link rel="stylesheet" href="/blog/css/main.css">
+		<!-- Worthy core CSS file -->
+		<link href="css/style.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="/blog/assets/vendor/highlight/styles/solarized_dark.css">
+		<!-- Custom css -->
+		<link href="css/custom.css" rel="stylesheet">
+	</head>
 
-<link rel="stylesheet" href="/blog/assets/vendor/font-awesome/css/font-awesome.css">
-    </head>
+	<body class="no-trans">
+		<!-- scrollToTop -->
+		<!-- ================ -->
+		<div class="scrollToTop"><i class="icon-up-open-big"></i></div>
 
-    <body>
-        <div class="wrapper">
-            <header class="header">
-    <div class="navigation">
-        <a href="/" class="logo">SeaHorn</a>
-
-        <ul class="menu">
-            <li class="menu__entry"><a href="/blog/about">About</a></li>
-            <li class="menu__entry"><a href="/blog/">Blog</a></li>
-        </ul>
-    </div>
-
-    <ul class="social-links">
-        
-            <a href="https://github.com/https://github.com/seahorn/seahorn" class="social-links__entry" target="_blank">
-                <i class="fa fa-github"></i>
-            </a>
-        
-
-        
-    </ul>
-</header>
-
-            <h1 class="page-title">
-    <div class="page-title__text">SeaHorn Blog</div>
-    <div class="page-title__subtitle">Let's make automated verification great again</div>
-</h1>
-
-<ul class="list-posts">
-    
-        <li class="post-teaser">
-            <a href="/blog/seahorn/cex/validation/2016/10/16/cex-validation.html">
-                <span class="post-teaser__title">Bug validation via test harness</span>
-                <span class="post-teaser__date">16 October 2016</span>
-            </a>
-        </li>
-    
-        <li class="post-teaser">
-            <a href="/blog/seahorn/usage/safety/2016/10/15/using-seahorn.html">
-                <span class="post-teaser__title">Using SeaHorn</span>
-                <span class="post-teaser__date">15 October 2016</span>
-            </a>
-        </li>
-    
-        <li class="post-teaser">
-            <a href="/blog/seahorn/install/2016/10/14/install-seahorn.html">
-                <span class="post-teaser__title">Installing SeaHorn</span>
-                <span class="post-teaser__date">14 October 2016</span>
-            </a>
-        </li>
-    
-</ul>
+		<!-- header start -->
+		<!-- ================ -->
+		<header class="header fixed clearfix navbar navbar-fixed-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
 
 
-<div class="explore">
-    <div class="explore__devider">*****</div>
-    <div class="explore__label">Explore the different categories</div>
-    <ul class="categories">
-        
-            <li class="categories__item"><a href="/blog/categories/design">Design</a></li>
-        
-            <li class="categories__item"><a href="/blog/categories/tools">Tools</a></li>
-        
-            <li class="categories__item"><a href="/blog/categories/productivity">Productivity</a></li>
-        
-		<li class="categories__item"><a href="/blog/">All</a></li>
-    </ul>
+						<!-- header-left start -->
+						<!-- ================ -->
+						<div class="header-left clearfix">
+
+							<!-- logo -->
+							<div class="logo smooth-scroll">
+								<!-- <a href="#banner"><img id="logo" src="images/logo.png" alt="SeaHorn"></a> -->
+							</div>
+
+							<!-- name-and-slogan -->
+							<div class="site-name-and-slogan smooth-scroll">
+								<div class="site-name"><a href="#banner">SeaHorn</a></div>
+								<!-- <div class="site-slogan">A Verification FrameWork </div> -->
+							</div>
+
+						</div>
+						<!-- header-left end -->
+
+					</div>
+					<div class="col-md-8">
+
+
+						<!-- header-right start -->
+						<!-- ================ -->
+						<div class="header-right clearfix">
+
+							<!-- main-navigation start -->
+							<!-- ================ -->
+							<div class="main-navigation animated">
+
+								<!-- navbar start -->
+								<!-- ================ -->
+								<nav class="navbar navbar-default" role="navigation">
+									<div class="container-fluid">
+
+										<!-- Toggle get grouped for better mobile display -->
+										<div class="navbar-header">
+											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+												<span class="sr-only">Toggle navigation</span>
+												<span class="icon-bar"></span>
+												<span class="icon-bar"></span>
+												<span class="icon-bar"></span>
+											</button>
+										</div>
+
+										<!-- Collect the nav links, forms, and other content for toggling -->
+										<div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
+											<ul class="nav navbar-nav navbar-right">
+												<li class="active"><a href="#banner">Home</a></li>
+												<li><a href="#about">About</a></li>
+												<li><a href="#tec">Techniques</a></li>
+                        <li><a href="#download">Download</a></li>
+												<li><a href="#publications">Publications</a></li>
+                        <li><a href="#people">People</a></li>
+												<!-- <li><a href="#contact">Contact</a></li> -->
+											</ul>
+										</div>
+
+									</div>
+								</nav>
+								<!-- navbar end -->
+
+							</div>
+							<!-- main-navigation end -->
+
+                                                  </div>
+						</div>
+						<!-- header-right end -->
+                                                    <div class="github-fork-ribbon-wrapper right">
+                                                    <div class="github-fork-ribbon">
+                                                      <a href="https://github.com/seahorn/seahorn">Fork me on GitHub</a>
+                                                    </div>
+
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- header end -->
+
+		<!-- banner start -->
+		<!-- ================ -->
+		<div id="banner" class="banner">
+			<div class="banner-image"></div>
+			<div class="banner-caption">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 object-non-visible" data-animation-effect="fadeIn">
+							<h1 class="text-center"> <span>SeaHorn</span></h1>
+							<p class="lead text-center">A fully automated analysis framework for LLVM-based languages.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- banner end -->
+
+		<div class="section clearfix object-non-visible" data-animation-effect="fadeIn">
+					<div class="container">
+<h1 id="snippet" class="title text-center"><span>In Action</span></h1>
+		<div class="col-md-12">
+<p class="lead text-center">
+
+	<script type="text/javascript" src="https://asciinema.org/a/0o8yqwknuj22d3oscldc0b2lm.js" id="asciicast-0o8yqwknuj22d3oscldc0b2lm" async data-autoplay="true" data-loop="true" data-speed="3"></script>
+</p>
 </div>
+			</div>
+		</div>
+
+		<!-- section start -->
+		<!-- ================ -->
+		<div class="section clearfix object-non-visible" data-animation-effect="fadeIn">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1 id="about" class="title text-center"><span>About</span></h1>
+						<!-- <p class="lead text-center">automatic verification framework for LLVM-based languages</p> -->
+						<div class="space"></div>
+						<div class="row">
+							<div class="col-md-6">
+								<img src="images/seahorn_arch.png" alt="">
+								<div class="space"></div>
+							</div>
+							<div class="col-md-6">
+								<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+									<div class="panel panel-default">
+										<div class="panel-heading" role="tab" id="headingOne">
+											<h4 class="panel-title">
+												<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+												Front-End
+												</a>
+											</h4>
+										</div>
+										<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+											<div class="panel-body">
+                                                                                          Takes an LLVM based program (e.g., C) input
+  program and generates LLVM IR bitcode. Specifically, it performs the
+  pre-processing and optimization of the bitcode for verification
+  purposes.
+
+											</div>
+										</div>
+									</div>
+									<div class="panel panel-default">
+										<div class="panel-heading" role="tab" id="headingTwo">
+											<h4 class="panel-title">
+												<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+												Middle-End
+												</a>
+											</h4>
+										</div>
+										<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+											<div class="panel-body">
+                                                                                          Takes as input the optimized LLVM bitcode and
+  emits verification condition as Constrained Horn Clauses (CHC). The
+  middle-end is in charge of selecting encoding of the VCs and the
+  degree of precision.
+											</div>
+										</div>
+									</div>
+									<div class="panel panel-default">
+										<div class="panel-heading" role="tab" id="headingThree">
+											<h4 class="panel-title">
+											  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"> Back-End
+												</a>
+											</h4>
+										</div>
+										<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+											<div class="panel-body">
+Takes CHC as input and outputs the result of the
+  analysis. In principle, any verification engine that digests CHC
+  clauses could be used to discharge the VCs. Currently, <span>SeaHorn</span>
+  employs several SMT-based model checking engines based on
+  PDR/IC3. Complementary, <span>SeaHorn</span> uses the abstract
+  interpretation-based analyzer <a href="https://github.com/seahorn/crab">CRAB</a> (A language-agnostic framework for abstract interpretation) for providing numerical
+  invariants.
+											</div>
+										</div>
+									</div>
+								</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="section clearfix object-non-visible" data-animation-effect="fadeIn">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 ">
+						<h1 id="tec" class="title text-center"><span>Analysis techniques</span></h1>
+						<p class="lead text-center">(They way we prove things)</p>
+
+						<div class="row">
+							<div class="col-md-4">
+								<div class="image-box">
+									<div class="overlay-container">
+										<img src="images/termination.png" alt="">
+										<a class="overlay" data-toggle="modal" data-target="#term">
+											<i class="fa fa-search-plus"></i>
+											<span>(Non)-Termination checking</span>
+										</a>
+									</div>
+									 <a class="btn btn-default btn-block" data-toggle="modal" data-target="#term">(Non)-termination checking</a>
+								</div>
+								<!-- Modal -->
+								<div class="modal fade" id="term" tabindex="-1" role="dialog" aria-labelledby="project-1-label" aria-hidden="true">
+									<div class="modal-dialog modal-lg">
+										<div class="modal-content">
+
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+												<h4 class="modal-title" id="project-1-label">(Non)-Termination checking</h4>
+											</div>
+											<div class="modal-body">
+
+												<div class="row">
+													<div class="col-md-6">
+														<p>
+                              SeaHorn can be used to prove termination and non-termination of programs.
+															The core of the approach lies on the innovative use of the backend verification engines to build termination arguments.
+															 More specifically, the backend verification engines are used to systematically sample terminating program execution
+															 and to extrapolate from these a candidate ranking function for the program.
+															 The candidate ranking function can be a piecewise-defined, lexicographic, or multiphase combination of affine functions
+															 of the program variables. The backend verification engines are then used to validate the candidate ranking function,
+															 or to otherwise provide a witness for program non-termination.
+															 More information about this can be found this <a href="papers/termination_tacas16.pdf">paper</a>.
+														</p>
 
 
-        </div>
+													</div>
+													<div class="col-md-6">
+														<img src="images/termination.png" alt="">
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Modal end -->
+							</div>
+							<div class="col-md-4">
+								<div class="image-box">
+									<div class="overlay-container">
 
-        <script src="/blog/assets/vendor/highlight/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-        
-    </body>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="image-box">
+									<div class="overlay-container">
+										<img src="images/inc.png" alt="">
+										<a class="overlay" data-toggle="modal" data-target="#inc">
+											<i class="fa fa-search-plus"></i>
+											<span>Inconsistency Checking</span>
+										</a>
+									</div>
+									 <a class="btn btn-default btn-block" data-toggle="modal" data-target="#inc">Inconsistecncy Checking</a>
+								</div>
+								<!-- Modal -->
+								<div class="modal fade" id="inc" tabindex="-1" role="dialog" aria-labelledby="project-2-label" aria-hidden="true">
+									<div class="modal-dialog modal-lg">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+												<h4 class="modal-title" id="project-2-label">Inconsistency Checking</h4>
+											</div>
+											<div class="modal-body">
+
+												<div class="row">
+													<div class="col-md-6">
+														<p>
+															Inconsistent code is an important class of program abnormalities that appears in real-world code bases and often reveals serious bugs.
+															A piece of code is inconsistent if it is not part of any safely terminating execution.
+															Existing approaches to inconsistent code detection scale to programs with millions of lines of code,
+															and have lead to patches in applications like the web-server Tomcat or the Linux kernel.
+															However, the ability of existing tools to detect inconsistencies is limited by gross over-approximation of looping control-flow.
+                            SeaHorn is able to detect inconsistent code fragments.
+														This is done by computing a path coverage for the generated system of Horn clauses.
+														More information about this can be found in this <a href="papers/lpar2015.pdf">paper</a>.
+														</p>
+
+														</div>
+													<div class="col-md-6">
+														<img src="images/inc.png" alt="">
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Modal end -->
+							</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- section end -->
+
+
+
+
+
+		<!-- section end -->
+
+		<!-- section start -->
+		<!-- ================ -->
+		<div class="section">
+			<div class="container object-non-visible" data-animation-effect="fadeIn">
+				<h1 id="publications" class="title text-center"><span>Publications</span></h1>
+				<div class="row">
+				  <ul class="list-unstyled">
+                                    <li><i class="fa fa-caret-right pr-10 text-colored"></i>A. Gurfinkel: <a href="http://arieg.bitbucket.org/ssft15.html"> SeaHorn Tutorial</a>.</li>
+
+ <li><i class="fa fa-caret-right pr-10 text-colored"></i>C. Urban, A. Gurfinkel, T.Kahsai. <a href="papers/termination_tacas16.pdf">Synthesizing Ranking Functions from Bits and Pieces</a>. At TACAS 2016. </li>
+                         <li><i class="fa fa-caret-right pr-10 text-colored"></i>T.Kahsai, J.Navas, D. Jovanovic, M. Schaf. <a href="papers/lpar2015.pdf"> Finding Inconsistencies in Programs with Loops</a>. At LPAR 2015. LNCS 9450, pp. 499-514, 2015. </li>
+
+                         <li><i class="fa fa-caret-right pr-10 text-colored"></i>G.Gange, J.A.Navas, P.Schachte, H.Sondergaard, P.Stuckey. <a href="papers/vmcai16.pdf"> An Abstract Domain of Uninterpreted Functions</a>. At VMCAI 2016. </li>
+                      <li><i class="fa fa-caret-right pr-10 text-colored"></i>A. Gurfinkel <a href="http://arieg.bitbucket.org/pdf/seahorn_synasc15.pdf"> Algoritmic Logic-Based Verification with SeaHorn</a>. Invited tutorial at SYNASC 2015. </li>
+                       <li><i class="fa fa-caret-right pr-10 text-colored"></i>A. Komuravelli, N.Bjorner, A. Gurfinkel, K. McMillan. <i>Compositional Verification of Procedural Programs using Horn Clauses over Integers and Arrays</i>. At FMCAD 2015. IEEE, pp. 89-96, 2015.</li>
+                                    	    <li><i class="fa fa-caret-right pr-10 text-colored"></i>A.Gurfinkel, T.Kahsai, A. Komuravelli, J.A.Navas. <a href="papers/cav15.pdf"> The SeaHorn Verification Framework</a>. At CAV 2015. LNCS 9206, pp. 343-361. 2015</li>
+  <li><i class="fa fa-caret-right pr-10 text-colored"></i>A.Gurfinkel, T.Kahsai, J.A.Navas. <a href="http://siglog.hosting.acm.org/wp-content/uploads/2015/04/siglog_news_4.pdf">Algorithmic Logic-Based Verification</a>. At ACM SIGLOG Newsletter, April 2015.</li>
+				    <li><i class="fa fa-caret-right pr-10 text-colored"></i>A.Gurfinkel, T.Kahsai, J.A.Navas. <a href="http://clip.dia.fi.upm.es/~jorge/docs/seahorn-svcomp15.pdf">SeaHorn: A Framework for Verifying C Programs (Competition Contribution)</a>. At TACAS 2015. LNCS 9035. pp 447-450. 2015</li>
+<li><i class="fa fa-caret-right pr-10 text-colored"></i>A. Komuravelli, A.Gurfinkel, S.Chaki<a href="papers/spacer2014.pdf"> SMT-Based Model Checking for Recursive Programs.</a>. At CAV 2014. LNCS 8559, pp. 17-34. 2014</li>
+				  </ul>
+				</div>
+			</div>
+		</div>
+
+                	<div class="section">
+		  <div class="container object-non-visible" data-animation-effect="fadeIn">
+		    <h1 class="text-center title" id="download"><span>Download</span></h1>
+
+	            <div class="filters text-center">
+	              <ul class="nav nav-pills">
+									<li>
+									<img class="circular"  src="images/docker.png" height="100" width="100">
+										<a href="https://hub.docker.com/r/seahorn/seahorn/"> SeaHorn Docker Image</a>
+									</li>
+
+									<li>
+										<img class="circular"  src="images/download.jpg" height="150" width="150">
+										<a href="https://github.com/seahorn/seahorn/releases/download/v0.1.0/SeaHorn-0.1.0-Linux-x86_64.tar.gz"> v0.1.0 (Linux X86_64)</a>
+									</li>
+
+                        <li>
+                        <img class="circular"  src="images/download.jpg" height="150" width="150">
+                          <a href="https://github.com/seahorn/seahorn/releases/download/v0.1.0-rc2/SeaHorn-0.1.0-rc2-Linux-x86_64.tar.gz"> v0.1.0-rc2 (Linux X86_64)</a>
+                        </li>
+
+
+                        <li>
+                          <img class="circular"  src="images/download.jpg" height="150" width="150">
+                          <a href="https://github.com/seahorn/seahorn/releases/download/v0.1.0-rc2/SeaHorn-0.1.0-rc2-Darwin-x86_64.tar.gz"> v0.1.0-rc2 ( Darwin X86_64)</a>
+                        </li>
+
+                        <li>
+                          <img class="circular"  src="images/download.jpg" height="150" width="150">
+                          <a href="https://github.com/seahorn/seahorn/releases/download/v0.1.0-rc2/SeaHorn-0.1.0-rc2-Linux-i386.tar.gz"> v0.1.0-rc2 (Linux i386)</a>
+                        </li>
+
+                      </ul>
+		    </div>
+                  </div>
+		</div>
+
+                	<!-- section start -->
+		<!-- ================ -->
+		<div class="section">
+		  <div class="container object-non-visible" data-animation-effect="fadeIn">
+		    <h1 class="text-center title" id="people"><span>People</span></h1>
+
+	            <div class="filters text-center">
+	              <ul class="nav nav-pills">
+                        <li>
+                        <img class="circular"  src="images/arie.jpg" height="150" width="150">
+                        <a href="http://arieg.bitbucket.org">Arie Gurfinkel <br><a href="http://ece.uwaterloo.ca">(UWaterloo)</a></a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li>
+                          <img class="circular"  src="images/teme.jpg" height="130" width="130">
+                          <a href="http://lememta.info">Temesghen Kahsai <br>(NASA Ames / CMU)</a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li>
+                          <img class="circular"  src="images/jorge.jpg" height="150" width="150">
+                          <a href="http://ti.arc.nasa.gov/profile/jorge/">Jorge Navas <br>(NASA Ames / SGT)</a>
+                        </li>
+                      </ul>
+		    </div>
+                  </div>
+		</div>
+		<!-- footer start -->
+		<!-- ================ -->
+		<footer id="footer">
+
+			<!-- .footer start -->
+			<!-- ================ -->
+			<!-- <div class="footer section"> -->
+			<!-- 	<div class="container"> -->
+			<!-- 		<h1 class="title text-center" id="contact">Contact</h1> -->
+			<!-- 		<div class="space"></div> -->
+			<!-- 		<div class="row"> -->
+			<!-- 			<div class="col-sm-6"> -->
+			<!-- 				<div class="footer-content"> -->
+			<!-- 					<ul class="list-icons"> -->
+			<!-- 						<li><i class="fa fa-envelope-o pr-10"></i> your@email.com</li> -->
+			<!-- 					</ul> -->
+			<!-- 				</div> -->
+			<!-- 			</div> -->
+			<!-- 		</div> -->
+			<!-- 	</div> -->
+			<!-- </div> -->
+			<!-- .footer end -->
+
+			<!-- .subfooter start -->
+			<!-- ================ -->
+			<div class="subfooter">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<p class="text-center">© Carnegie Mellon University 2016 | <a target="_blank" href="http://twitter.github.io/bootstrap">Bootstrap</a> | <a target="_blank" href="http://htmlcoder.me">Worthy</a>.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- .subfooter end -->
+
+		</footer>
+		<!-- footer end -->
+
+		<!-- JavaScript files placed at the end of the document so the pages load faster
+		================================================== -->
+		<!-- Jquery and Bootstap core js files -->
+		<script type="text/javascript" src="plugins/jquery.min.js"></script>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- Modernizr javascript -->
+		<script type="text/javascript" src="plugins/modernizr.js"></script>
+
+		<!-- Isotope javascript -->
+		<script type="text/javascript" src="plugins/isotope/isotope.pkgd.min.js"></script>
+
+		<!-- Backstretch javascript -->
+		<script type="text/javascript" src="plugins/jquery.backstretch.min.js"></script>
+
+		<!-- Appear javascript -->
+		<script type="text/javascript" src="plugins/jquery.appear.js"></script>
+
+		<!-- Initialization of Plugins -->
+		<script type="text/javascript" src="js/template.js"></script>
+
+		<!-- Custom Scripts -->
+		<script type="text/javascript" src="js/custom.js"></script>
+
+	</body>
 </html>

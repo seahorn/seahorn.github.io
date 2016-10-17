@@ -4,7 +4,7 @@ description: >
   Lets make verification great again. In this notes, we will explain how to
   use SeaHorn
 
-baseurl: "/blog" # the subpath of your site, e.g. /blog/
+baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://seahorn.github.io/" # the base hostname & protocol for your site
 
 author:
