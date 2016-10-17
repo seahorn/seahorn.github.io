@@ -8,7 +8,7 @@ categories: [seahorn, usage, safety]
 
 How to use SeaHorn?
 
-{% highlight c %}
+{% highlight C linenos %}
 #include "seahorn/seahorn.h"
 int unknown1();
 
