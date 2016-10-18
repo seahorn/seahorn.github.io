@@ -38,7 +38,7 @@ In this code, we would like to check if `y<1`. The first step is to run the veri
 sea pf -m64 -cex=witness.ll code.c
 {% endhighlight %}
 
-If the property is violated, SeaHorn will produce a test harness (`witness.ll`) as LLVM bitcode:
+If the property is violated, SeaHorn will produce a test harness (`witness.ll`) as [LLVM bitcode](http://llvm.org/docs/BitCodeFormat.html):
 
 {% highlight c %}
 ; ModuleID = 'harness'
@@ -61,7 +61,7 @@ entry:
 declare i32 @__seahorn_get_value_i32(i32, i32*, i32)
 {% endhighlight %}
 
-In a second step, you can use another option provided in SeaHorn to link the witness object file with the original code:
+In a second step, you can use another option provided in SeaHorn to link the witness object file (`witness.ll`) with the original code (`code.c`):
 
 {% highlight c %}
 sea exe -m64 -g code.c witness.ll -o code_debug
@@ -80,7 +80,7 @@ __seahorn_get_value_i32 0 1
 __VERIFIER_error was executed
 {% endhighlight %}
 
-Which indicates that `__VERIFIER_error` (the error state) is reachable from the initial state. Hence, the property `y<1` is violated.
+Which indicates that `__VERIFIER_error` (the error state) is reachable from the initial state. Hence, the property `y<1` is violated. We are in the process of writing an article to explain in detail the behind the scene of this new feature. Stay tuned :)
 
 The following screencast illustrate a complete run of this new feature:
 

@@ -6,6 +6,7 @@ date:   2016-10-14 23:34:01
 categories: [seahorn, install]
 ---
 
+Currently, the best way to install SeaHorn is to build it from the source code.
 
 * `cd seahorn ; mkdir build ; cd build`
 * `cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=run ../ `

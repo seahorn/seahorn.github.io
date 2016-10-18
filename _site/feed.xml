@@ -6,15 +6,15 @@
 </description>
     <link>http://seahorn.github.io//</link>
     <atom:link href="http://seahorn.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 18 Oct 2016 08:34:42 -0700</pubDate>
-    <lastBuildDate>Tue, 18 Oct 2016 08:34:42 -0700</lastBuildDate>
+    <pubDate>Tue, 18 Oct 2016 11:35:43 -0700</pubDate>
+    <lastBuildDate>Tue, 18 Oct 2016 11:35:43 -0700</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
         <title>Bug validation via test harness</title>
-        <description>&lt;p&gt;Explaining why a piece of code violates a particular specification is one of the most important feature that an automated software analysis tool should provide. Infact, tools participating at the International Competition on Software Verification &lt;a href=&quot;http://sv-comp.sosy-lab.org/2017/&quot;&gt;SV-COMP&lt;/a&gt; they are mandated to provide a witness in a &lt;a href=&quot;https://github.com/sosy-lab/sv-witnesses/&quot;&gt;specific format&lt;/a&gt; that illustrate why a specification is violated. Subsequently, the provided witness is validated by external tools (e.g. &lt;a href=&quot;https://cpachecker.sosy-lab.org/&quot;&gt;CPAChecker&lt;/a&gt; or &lt;a href=&quot;https://monteverdi.informatik.uni-freiburg.de/tomcat/Website/?ui=tool&amp;amp;tool=automizer&quot;&gt;Ultimated Automizer&lt;/a&gt;). We leave the discussion of the pros and cons of using such fixed format for future blog posts ;).&lt;/p&gt;
+        <description>&lt;p&gt;Explaining why a piece of code violates a particular specification is one of the most important feature that an automated software analysis tool should provide. In fact, tools participating at the International Competition on Software Verification &lt;a href=&quot;http://sv-comp.sosy-lab.org/2017/&quot;&gt;SV-COMP&lt;/a&gt; are mandated to provide a witness in a &lt;a href=&quot;https://github.com/sosy-lab/sv-witnesses/&quot;&gt;specific format&lt;/a&gt; that illustrate why a specification is violated. In a second step, the provided witness is validated by external tools (e.g. &lt;a href=&quot;https://cpachecker.sosy-lab.org/&quot;&gt;CPAChecker&lt;/a&gt; or &lt;a href=&quot;https://monteverdi.informatik.uni-freiburg.de/tomcat/Website/?ui=tool&amp;amp;tool=automizer&quot;&gt;Ultimated Automizer&lt;/a&gt;). We leave the discussion of the pros and cons of using such fixed format for future blog posts ;).&lt;/p&gt;
 
-&lt;p&gt;A few months back we set on a mission to provide an alternative format for witness validation. We wanted to a have a format that is “dynamic” and that is able to give a better understanding why a property is failing. For example, routinely developers use debuggers like &lt;code class=&quot;highlighter-rouge&quot;&gt;gdb&lt;/code&gt; to trace the state of a  program at the moment it crashed. So if you want to use a debugger in order to understand why a property is violated you need a witness that can be executed on a mahine. In this post, we describe a shiny new feature implemented in SeaHorn – the automated generation of &lt;strong&gt;executable&lt;/strong&gt; test harness for failed properties. That is instead of providing a fixed format, SeaHorn will provide an object file (&lt;em&gt;the witness&lt;/em&gt;) that can be linked with the original program and executed. How does this work in practice? Lets start with a simple piece of C code (&lt;code class=&quot;highlighter-rouge&quot;&gt;code.c&lt;/code&gt;):&lt;/p&gt;
+&lt;p&gt;A few months back we set on a mission to provide an alternative format for witness validation. We wanted to a have a format that is “dynamic” and that is able to give a better understanding why a property is failing. For example, routinely developers use debuggers like &lt;code class=&quot;highlighter-rouge&quot;&gt;gdb&lt;/code&gt; to trace the state of a  program at the moment it crashed. So if you want to use a debugger in order to understand why a property is violated you need a witness that can be executed on a machine. In this post, we describe a shiny new feature implemented in SeaHorn – the automated generation of &lt;strong&gt;executable&lt;/strong&gt; test harness for failed properties. That is, instead of providing a fixed format, SeaHorn will provide an object file (&lt;em&gt;the witness&lt;/em&gt;) that can be linked with the original program and executed. How does this work in practice? Lets start with a simple piece of C code (&lt;code class=&quot;highlighter-rouge&quot;&gt;code.c&lt;/code&gt;):&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
@@ -49,45 +49,43 @@
 
 &lt;p&gt;In this code, we would like to check if &lt;code class=&quot;highlighter-rouge&quot;&gt;y&amp;lt;1&lt;/code&gt;. The first step is to run the verification engine of SeaHorn:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;sea pf -m64 -cex&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;witness.ll code.c&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;n&quot;&gt;sea&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pf&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m64&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;witness&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ll&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;If the property is violated, SeaHorn will produce a test harness (&lt;code class=&quot;highlighter-rouge&quot;&gt;witness.ll&lt;/code&gt;) as LLVM bitcode:&lt;/p&gt;
+&lt;p&gt;If the property is violated, SeaHorn will produce a test harness (&lt;code class=&quot;highlighter-rouge&quot;&gt;witness.ll&lt;/code&gt;) as &lt;a href=&quot;http://llvm.org/docs/BitCodeFormat.html&quot;&gt;LLVM bitcode&lt;/a&gt;:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-llvm&quot; data-lang=&quot;llvm&quot;&gt;&lt;span class=&quot;c1&quot;&gt;; ModuleID = 'harness'&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;target&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;datalayout&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;e-m:o-i64:64-f80:128-n8:16:32:64-S128&quot;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ModuleID&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;harness&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;target&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datalayout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;e-m:o-i64:64-f80:128-n8:16:32:64-S128&quot;&lt;/span&gt;
 
-&lt;span class=&quot;vg&quot;&gt;@0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;constant&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;i32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;zeroinitializer&lt;/span&gt;
-&lt;span class=&quot;vg&quot;&gt;@1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;i32&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;constant&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;zeroinitializer&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i32&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
 
-&lt;span class=&quot;k&quot;&gt;define&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;i32&lt;/span&gt; &lt;span class=&quot;vg&quot;&gt;@unknown1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(...)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;nl&quot;&gt;entry:&lt;/span&gt;
-  &lt;span class=&quot;nv&quot;&gt;%0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;load&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;i32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;vg&quot;&gt;@1&lt;/span&gt;
-  &lt;span class=&quot;nv&quot;&gt;%1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;i32&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;%0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;store&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;i32&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;%1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;i32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;vg&quot;&gt;@1&lt;/span&gt;
-  &lt;span class=&quot;nv&quot;&gt;%2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;call&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;i32&lt;/span&gt; &lt;span class=&quot;vg&quot;&gt;@__seahorn_get_value_i32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;i32&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;%0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;i32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;getelementptr&lt;/span&gt;
-                                    &lt;span class=&quot;k&quot;&gt;inbounds&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;i32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]*&lt;/span&gt; &lt;span class=&quot;vg&quot;&gt;@0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;i32&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;i32&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-                                    &lt;span class=&quot;kt&quot;&gt;i32&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;ret&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;i32&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;%2&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;define&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i32&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unknown1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(...)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;load&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i32&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i32&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;store&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i32&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i32&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;call&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i32&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__seahorn_get_value_i32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i32&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i32&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getelementptr&lt;/span&gt;
+                                    &lt;span class=&quot;n&quot;&gt;inbounds&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i32&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i32&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+                                    &lt;span class=&quot;n&quot;&gt;i32&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;ret&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i32&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;k&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;i32&lt;/span&gt; &lt;span class=&quot;vg&quot;&gt;@__seahorn_get_value_i32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;i32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;i32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;*,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;i32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;n&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i32&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__seahorn_get_value_i32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i32&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;In a second step, you can use another option provided in SeaHorn to link the witness object file with the original code:&lt;/p&gt;
+&lt;p&gt;In a second step, you can use another option provided in SeaHorn to link the witness object file (&lt;code class=&quot;highlighter-rouge&quot;&gt;witness.ll&lt;/code&gt;) with the original code (&lt;code class=&quot;highlighter-rouge&quot;&gt;code.c&lt;/code&gt;):&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;sea exe -m64 -g code.c witness.ll -o code_debug&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;n&quot;&gt;sea&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exe&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m64&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;witness&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ll&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;o&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;code_debug&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Here, the file &lt;code class=&quot;highlighter-rouge&quot;&gt;code_debug&lt;/code&gt; is an executable file. In fact, if you run such file:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;./code_debug&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code_debug&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;it will output:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;__seahorn_get_value_i32 0 1
-__VERIFIER_error was executed&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;n&quot;&gt;__seahorn_get_value_i32&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;__VERIFIER_error&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;was&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;executed&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Which indicates that &lt;code class=&quot;highlighter-rouge&quot;&gt;__VERIFIER_error&lt;/code&gt; (the error state) is reachable from the initial state.&lt;/p&gt;
-
-&lt;p&gt;We are in the process of writing a paper explaining the&lt;/p&gt;
+&lt;p&gt;Which indicates that &lt;code class=&quot;highlighter-rouge&quot;&gt;__VERIFIER_error&lt;/code&gt; (the error state) is reachable from the initial state. Hence, the property &lt;code class=&quot;highlighter-rouge&quot;&gt;y&amp;lt;1&lt;/code&gt; is violated. We are in the process of writing an article to explain in detail the behind the scene of this new feature. Stay tuned :)&lt;/p&gt;
 
 &lt;p&gt;The following screencast illustrate a complete run of this new feature:&lt;/p&gt;
 
@@ -108,7 +106,7 @@ __VERIFIER_error was executed&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
     
       <item>
         <title>Using SeaHorn</title>
-        <description>&lt;p&gt;How to use SeaHorn?&lt;/p&gt;
+        <description>&lt;p&gt;How to use SeaHorn? Given a simple C code (&lt;code class=&quot;highlighter-rouge&quot;&gt;code.c&lt;/code&gt;)&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
@@ -139,6 +137,21 @@ __VERIFIER_error was executed&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
+&lt;p&gt;you can use SeaHorn verification engine as follows:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;n&quot;&gt;sea&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pf&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;horn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stats&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;this will output a bunch stuff including the following:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;o&quot;&gt;**************&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BRUNCH&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;STATS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*****************&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;BRUNCH_STAT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Result&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TRUE&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;BRUNCH_STAT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Horn&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;01&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;BRUNCH_STAT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HornClauseDB&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loadZFixedPoint&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;00&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;BRUNCH_STAT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HornifyModule&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;00&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;BRUNCH_STAT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LargeHornifyFunction&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;00&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;BRUNCH_STAT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;seahorn_total&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;01&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;**************&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BRUNCH&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;STATS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;END&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*****************&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
 </description>
         <pubDate>Sat, 15 Oct 2016 07:56:45 -0700</pubDate>
         <link>http://seahorn.github.io//seahorn/usage/safety/2016/10/15/using-seahorn.html</link>
@@ -155,10 +168,21 @@ __VERIFIER_error was executed&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
     
       <item>
         <title>Installing SeaHorn</title>
-        <description>&lt;p&gt;Coming to you soon&lt;/p&gt;
+        <description>&lt;p&gt;Currently, the best way to install SeaHorn is to build it from the source code.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;make&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cd seahorn ; mkdir build ; cd build&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=run ../ &lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;(optional) &lt;code class=&quot;highlighter-rouge&quot;&gt;cmake --build . --target extra&lt;/code&gt; to download extra packages&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cmake --build .&lt;/code&gt; to build dependencies (Z3 and LLVM)&lt;/li&gt;
+  &lt;li&gt;(optional) &lt;code class=&quot;highlighter-rouge&quot;&gt;cmake --build .&lt;/code&gt; to build extra packages (crab-llvm)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cmake --build .&lt;/code&gt; to build seahorn&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cmake --build . --target install&lt;/code&gt; to install everything in &lt;code class=&quot;highlighter-rouge&quot;&gt;run&lt;/code&gt; directory&lt;/li&gt;
+&lt;/ul&gt;
 
+&lt;p&gt;A common problem after installation is a mismatch between Clang and
+LLVM versions. SeaHorn installs LLVM 3.6 so make sure you SeaHorn can
+find Clang 3.6.&lt;/p&gt;
 </description>
         <pubDate>Fri, 14 Oct 2016 16:34:01 -0700</pubDate>
         <link>http://seahorn.github.io//seahorn/install/2016/10/14/install-seahorn.html</link>

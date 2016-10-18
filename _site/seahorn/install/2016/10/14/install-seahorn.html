@@ -51,7 +51,7 @@
 
         <ul class="menu">
             <li class="menu__entry"><a href="/about">About</a></li>
-            <li class="menu__entry"><a href="/">Blog</a></li>
+            <li class="menu__entry"><a href="/blog">Blog</a></li>
         </ul>
     </div>
 
@@ -66,16 +66,28 @@
     </ul>
 </header>
 
+
             <h1 class="page-title post-title">
     <div class="page-title__text post-title__text">Installing SeaHorn</div>
     <div class="page-title__subtitle post-title__subtitle">Feel home!</div>
 </h1>
 
 <div class="content">
-    <p>Coming to you soon</p>
+    <p>Currently, the best way to install SeaHorn is to build it from the source code.</p>
 
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell">make</code></pre></figure>
+<ul>
+  <li><code class="highlighter-rouge">cd seahorn ; mkdir build ; cd build</code></li>
+  <li><code class="highlighter-rouge">cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=run ../ </code></li>
+  <li>(optional) <code class="highlighter-rouge">cmake --build . --target extra</code> to download extra packages</li>
+  <li><code class="highlighter-rouge">cmake --build .</code> to build dependencies (Z3 and LLVM)</li>
+  <li>(optional) <code class="highlighter-rouge">cmake --build .</code> to build extra packages (crab-llvm)</li>
+  <li><code class="highlighter-rouge">cmake --build .</code> to build seahorn</li>
+  <li><code class="highlighter-rouge">cmake --build . --target install</code> to install everything in <code class="highlighter-rouge">run</code> directory</li>
+</ul>
 
+<p>A common problem after installation is a mismatch between Clang and
+LLVM versions. SeaHorn installs LLVM 3.6 so make sure you SeaHorn can
+find Clang 3.6.</p>
 
 </div>
 

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title> Using SeaHorn — Simple safety anaysis &raquo;  SeaHorn</title>
+<title> Using SeaHorn — Simple safety analysis &raquo;  SeaHorn</title>
 <meta name="description" content="Scribbling the ins and outs of an automated code analyze.
 ">
 <meta name="keywords" content="">
@@ -51,7 +51,7 @@
 
         <ul class="menu">
             <li class="menu__entry"><a href="/about">About</a></li>
-            <li class="menu__entry"><a href="/">Blog</a></li>
+            <li class="menu__entry"><a href="/blog">Blog</a></li>
         </ul>
     </div>
 
@@ -66,13 +66,14 @@
     </ul>
 </header>
 
+
             <h1 class="page-title post-title">
     <div class="page-title__text post-title__text">Using SeaHorn</div>
-    <div class="page-title__subtitle post-title__subtitle">Simple safety anaysis</div>
+    <div class="page-title__subtitle post-title__subtitle">Simple safety analysis</div>
 </h1>
 
 <div class="content">
-    <p>How to use SeaHorn?</p>
+    <p>How to use SeaHorn? Given a simple C code (<code class="highlighter-rouge">code.c</code>)</p>
 
 <figure class="highlight"><pre><code class="language-c" data-lang="c"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -102,6 +103,21 @@
   <span class="n">sassert</span><span class="p">(</span><span class="n">y</span> <span class="o">&gt;=</span><span class="mi">1</span><span class="p">);</span>
 <span class="p">}</span><span class="w">
 </span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>you can use SeaHorn verification engine as follows:</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="n">sea</span> <span class="n">pf</span> <span class="o">--</span><span class="n">horn</span><span class="o">-</span><span class="n">stats</span> <span class="n">code</span><span class="p">.</span><span class="n">c</span></code></pre></figure>
+
+<p>this will output a bunch stuff including the following:</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="o">**************</span> <span class="n">BRUNCH</span> <span class="n">STATS</span> <span class="o">*****************</span>
+<span class="n">BRUNCH_STAT</span> <span class="n">Result</span> <span class="n">TRUE</span>
+<span class="n">BRUNCH_STAT</span> <span class="n">Horn</span> <span class="mi">0</span><span class="p">.</span><span class="mo">01</span>
+<span class="n">BRUNCH_STAT</span> <span class="n">HornClauseDB</span><span class="o">::</span><span class="n">loadZFixedPoint</span> <span class="mi">0</span><span class="p">.</span><span class="mo">00</span>
+<span class="n">BRUNCH_STAT</span> <span class="n">HornifyModule</span> <span class="mi">0</span><span class="p">.</span><span class="mo">00</span>
+<span class="n">BRUNCH_STAT</span> <span class="n">LargeHornifyFunction</span> <span class="mi">0</span><span class="p">.</span><span class="mo">00</span>
+<span class="n">BRUNCH_STAT</span> <span class="n">seahorn_total</span> <span class="mi">0</span><span class="p">.</span><span class="mo">01</span>
+<span class="o">**************</span> <span class="n">BRUNCH</span> <span class="n">STATS</span> <span class="n">END</span> <span class="o">*****************</span></code></pre></figure>
 
 
 </div>

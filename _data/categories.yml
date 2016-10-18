@@ -1,8 +1,8 @@
-- slug: design
-  name: Design
+- slug: seahorn
+  name: SeaHorn
 
-- slug: tools
-  name: Tools
+- slug: cex
+  name: counter-examples
 
-- slug: productivity
-  name: Productivity
+- slug: safety
+  name: Safety
