@@ -14,3 +14,7 @@ categories: [seahorn, install]
 * (optional) `cmake --build .` to build extra packages (crab-llvm)
 * `cmake --build .` to build seahorn
 * `cmake --build . --target install` to install everything in `run` directory
+
+A common problem after installation is a mismatch between Clang and
+LLVM versions. SeaHorn installs LLVM 3.6 so make sure you SeaHorn can
+find Clang 3.6.
