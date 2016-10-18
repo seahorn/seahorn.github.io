@@ -8,6 +8,8 @@ categories: [seahorn, usage, safety]
 
 How to use SeaHorn?
 
+Given a simple C code (`code.c`)
+
 {% highlight C linenos %}
 #include "seahorn/seahorn.h"
 int unknown1();
@@ -23,4 +25,10 @@ int main()
  }
   sassert(y >=1);
 }
+{% endhighlight %}
+
+you can use SeaHorn verification engine as follows:
+
+{% highlight C linenos %}
+sea pf --horn-stats code.c
 {% endhighlight %}
