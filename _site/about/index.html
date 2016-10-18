@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title> About — Automated analysis framework &raquo;  SeaHorn</title>
+<title> About SeaHorn —  &raquo;  SeaHorn</title>
 <meta name="description" content="Scribbling the ins and outs of an automated code analyze.
 ">
 
@@ -16,7 +16,7 @@
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="About" />
+<meta name="twitter:title" content="About SeaHorn" />
 <meta name="twitter:description" content="Scribbling the ins and outs of an automated code analyze.
 " />
 <meta name="twitter:image" content="http://seahorn.github.io/" />
@@ -28,7 +28,7 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="About">
+<meta property="og:title" content="About SeaHorn">
 <meta property="og:description" content="Scribbling the ins and outs of an automated code analyze.
 ">
 <meta property="og:url" content="http://seahorn.github.io//about/">
@@ -47,7 +47,7 @@
         <div class="wrapper">
             <header class="header">
     <div class="navigation">
-        <a href="/" class="logo">SeaHorn</a>
+    <a href="/" class="logo">SeaHorn</a> 
 
         <ul class="menu">
             <li class="menu__entry"><a href="/about">About</a></li>
@@ -68,11 +68,34 @@
 
 
             <h1 class="page-title">
-    <div class="page-title__text">About</div>
-    <div class="page-title__subtitle">Automated analysis framework</div>
+    <div class="page-title__text">About SeaHorn</div>
+    <div class="page-title__subtitle"></div>
 </h1>
 
-<p>SeaHorn is an automated analysis framework for LLVM-based languages.</p>
+<p><a href="http://seahorn.github.io/">SeaHorn</a> is an automated analysis framework for LLVM-based languages. The key distinguishing feature of <a href="http://seahorn.github.io/">SeaHorn</a> is its modular
+design that separates the concerns of the syntax of the programming
+language, its operational semantics, and the verification semantics. SeaHorn
+encompasses several novelties:</p>
+
+<ul>
+  <li>
+    <p>encodes verification conditions using an efficient yet precise inter-procedural technique</p>
+  </li>
+  <li>
+    <p>it provides flexibility in the verification semantics to allow different levels of precision,</p>
+  </li>
+  <li>
+    <p>it leverages the state-of-the-art in software model checking
+and abstract interpretation for verification, and</p>
+  </li>
+  <li>
+    <p>it uses Horn-clauses as
+an intermediate language to represent verification conditions which simplifies
+interfacing with multiple verification tools based on Horn-clauses.</p>
+  </li>
+</ul>
+
+<p>In this blog, we will write different aspects of <a href="http://seahorn.github.io/">SeaHorn</a>.</p>
 
 
 <div class="explore">
@@ -82,7 +105,7 @@
         
             <li class="categories__item"><a href="/categories/seahorn">SeaHorn</a></li>
         
-            <li class="categories__item"><a href="/categories/cex">counter-examples</a></li>
+            <li class="categories__item"><a href="/categories/cex">cex</a></li>
         
             <li class="categories__item"><a href="/categories/safety">Safety</a></li>
         

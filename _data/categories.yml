@@ -2,7 +2,7 @@
   name: SeaHorn
 
 - slug: cex
-  name: counter-examples
+  name: cex
 
 - slug: safety
   name: Safety

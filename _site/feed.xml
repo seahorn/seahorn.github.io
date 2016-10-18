@@ -6,13 +6,13 @@
 </description>
     <link>http://seahorn.github.io//</link>
     <atom:link href="http://seahorn.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 18 Oct 2016 11:48:46 -0700</pubDate>
-    <lastBuildDate>Tue, 18 Oct 2016 11:48:46 -0700</lastBuildDate>
+    <pubDate>Tue, 18 Oct 2016 12:48:08 -0700</pubDate>
+    <lastBuildDate>Tue, 18 Oct 2016 12:48:08 -0700</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
         <title>Bug validation via test harness</title>
-        <description>&lt;p&gt;Explaining why a piece of code violates a particular specification is one of the most important features that an automated software analysis tool should provide. In fact, tools participating at the International Competition on Software Verification &lt;a href=&quot;http://sv-comp.sosy-lab.org/2017/&quot;&gt;SV-COMP&lt;/a&gt; are mandated to provide a witness in a &lt;a href=&quot;https://github.com/sosy-lab/sv-witnesses/&quot;&gt;specific format&lt;/a&gt; that illustrate why a specification is violated. In a second step, the provided witness is validated by external tools (e.g. &lt;a href=&quot;https://cpachecker.sosy-lab.org/&quot;&gt;CPAChecker&lt;/a&gt; or &lt;a href=&quot;https://monteverdi.informatik.uni-freiburg.de/tomcat/Website/?ui=tool&amp;amp;tool=automizer&quot;&gt;Ultimated Automizer&lt;/a&gt;). We leave the discussion of the pros and cons of using such fixed format for future blog posts ;).&lt;/p&gt;
+        <description>&lt;p&gt;Explaining why a piece of code violates a particular specification is one of the most important features that an automated software analysis tool should provide. In fact, tools participating at the International Competition on Software Verification &lt;a href=&quot;http://sv-comp.sosy-lab.org/2017/&quot;&gt;SV-COMP&lt;/a&gt; are mandated to provide a witness in a &lt;a href=&quot;https://github.com/sosy-lab/sv-witnesses/&quot;&gt;specific format&lt;/a&gt; that illustrate why a specification is violated. In a second step, the provided witness is validated by external tools (e.g. &lt;a href=&quot;https://cpachecker.sosy-lab.org/&quot;&gt;CPAChecker&lt;/a&gt; or &lt;a href=&quot;https://monteverdi.informatik.uni-freiburg.de/tomcat/Website/?ui=tool&amp;amp;tool=automizer&quot;&gt;Ultimate Automizer&lt;/a&gt;). We leave the discussion of the pros and cons of using such fixed format for future blog posts ;).&lt;/p&gt;
 
 &lt;p&gt;A few months back, we embarked on a journey to provide an alternative format for witness validation. Our goal was to have a format that is “dynamic” and provided a better understanding of why a property fails. For example, developers routinely use debuggers like &lt;a href=&quot;https://www.gnu.org/software/gdb/&quot;&gt;gdb&lt;/a&gt; to trace the state of a program at the moment it crashes. So if you want to use a debugger in order to understand why a property is violated you need a witness that can be executed on a machine.&lt;/p&gt;
 
