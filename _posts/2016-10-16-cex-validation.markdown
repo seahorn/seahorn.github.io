@@ -34,13 +34,13 @@ int unknown1();
 
 In this code, we would like to check if `y<1`. The first step is to run the verification engine of SeaHorn:
 
-{% highlight shell %}
+{% highlight c %}
 sea pf -m64 -cex=witness.ll code.c
 {% endhighlight %}
 
 If the property is violated, SeaHorn will produce a test harness (`witness.ll`) as LLVM bitcode:
 
-{% highlight llvm  %}
+{% highlight c %}
 ; ModuleID = 'harness'
 target datalayout = "e-m:o-i64:64-f80:128-n8:16:32:64-S128"
 
@@ -63,19 +63,19 @@ declare i32 @__seahorn_get_value_i32(i32, i32*, i32)
 
 In a second step, you can use another option provided in SeaHorn to link the witness object file with the original code:
 
-{% highlight shell %}
+{% highlight c %}
 sea exe -m64 -g code.c witness.ll -o code_debug
 {% endhighlight %}
 
 Here, the file `code_debug` is an executable file. In fact, if you run such file:
 
-{% highlight shell %}
+{% highlight c %}
 ./code_debug
 {% endhighlight %}
 
 it will output:
 
-{% highlight shell %}
+{% highlight c %}
 __seahorn_get_value_i32 0 1
 __VERIFIER_error was executed
 {% endhighlight %}

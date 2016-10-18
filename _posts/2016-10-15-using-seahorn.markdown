@@ -29,6 +29,6 @@ int main()
 
 you can use SeaHorn verification engine as follows:
 
-{% highlight C linenos %}
+{% highlight C  %}
 sea pf --horn-stats code.c
 {% endhighlight %}
