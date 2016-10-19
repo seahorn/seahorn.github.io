@@ -86,4 +86,4 @@ Which indicates that `__VERIFIER_error` (the error state) is reachable from the 
 
 The following screencast illustrate a complete run of this new feature:
 
-[![asciicast](https://asciinema.org/a/5jer5yp602ys6x885yl2674yw.png)](https://asciinema.org/a/5jer5yp602ys6x885yl2674yw)
+[![asciicast](https://asciinema.org/a/5jer5yp602ys6x885yl2674yw.png)](https://asciinema.org/a/5jer5yp602ys6x885yl2674yw?autoplay=1")

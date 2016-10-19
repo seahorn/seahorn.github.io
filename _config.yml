@@ -1,7 +1,7 @@
 # Site settings
 title: SeaHorn
 description: >
-  Scribbling the ins and outs of an automated code analyze.
+  Scribbling the ins and outs of an automated code analyzer.
 
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://seahorn.github.io/" # the base hostname & protocol for your site

@@ -6,15 +6,15 @@
 </description>
     <link>http://seahorn.github.io//</link>
     <atom:link href="http://seahorn.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 18 Oct 2016 12:48:08 -0700</pubDate>
-    <lastBuildDate>Tue, 18 Oct 2016 12:48:08 -0700</lastBuildDate>
+    <pubDate>Tue, 18 Oct 2016 12:55:05 -0700</pubDate>
+    <lastBuildDate>Tue, 18 Oct 2016 12:55:05 -0700</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
         <title>Bug validation via test harness</title>
         <description>&lt;p&gt;Explaining why a piece of code violates a particular specification is one of the most important features that an automated software analysis tool should provide. In fact, tools participating at the International Competition on Software Verification &lt;a href=&quot;http://sv-comp.sosy-lab.org/2017/&quot;&gt;SV-COMP&lt;/a&gt; are mandated to provide a witness in a &lt;a href=&quot;https://github.com/sosy-lab/sv-witnesses/&quot;&gt;specific format&lt;/a&gt; that illustrate why a specification is violated. In a second step, the provided witness is validated by external tools (e.g. &lt;a href=&quot;https://cpachecker.sosy-lab.org/&quot;&gt;CPAChecker&lt;/a&gt; or &lt;a href=&quot;https://monteverdi.informatik.uni-freiburg.de/tomcat/Website/?ui=tool&amp;amp;tool=automizer&quot;&gt;Ultimate Automizer&lt;/a&gt;). We leave the discussion of the pros and cons of using such fixed format for future blog posts ;).&lt;/p&gt;
 
-&lt;p&gt;A few months back, we embarked on a journey to provide an alternative format for witness validation. Our goal was to have a format that is “dynamic” and provided a better understanding of why a property fails. For example, developers routinely use debuggers like &lt;a href=&quot;https://www.gnu.org/software/gdb/&quot;&gt;gdb&lt;/a&gt; to trace the state of a program at the moment it crashes. So if you want to use a debugger in order to understand why a property is violated you need a witness that can be executed on a machine.&lt;/p&gt;
+&lt;p&gt;A few months back, we embarked on a journey to provide an alternative format for witness validation. Our goal was to have a format that is “dynamic” and provide a better understanding of why a property fails. For example, developers routinely use debuggers like &lt;a href=&quot;https://www.gnu.org/software/gdb/&quot;&gt;gdb&lt;/a&gt; to trace the state of a program at the moment it crashes. So if you want to use a debugger in order to understand why a property is violated, you need a witness that can be executed on a machine.&lt;/p&gt;
 
 &lt;p&gt;In this post, we describe a shiny new feature implemented in SeaHorn – the automated generation of executable test harness for failed properties. Instead of providing a fixed format, SeaHorn will provide an object file (the witness) that can be linked with the original program and executed. How does this work in practice? Lets start with a simple piece of C code (&lt;code class=&quot;highlighter-rouge&quot;&gt;code.c&lt;/code&gt;):&lt;/p&gt;
 
@@ -91,7 +91,7 @@
 
 &lt;p&gt;The following screencast illustrate a complete run of this new feature:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://asciinema.org/a/5jer5yp602ys6x885yl2674yw&quot;&gt;&lt;img src=&quot;https://asciinema.org/a/5jer5yp602ys6x885yl2674yw.png&quot; alt=&quot;asciicast&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://asciinema.org/a/5jer5yp602ys6x885yl2674yw?autoplay=1&amp;quot;&quot;&gt;&lt;img src=&quot;https://asciinema.org/a/5jer5yp602ys6x885yl2674yw.png&quot; alt=&quot;asciicast&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 16 Oct 2016 07:56:45 -0700</pubDate>
         <link>http://seahorn.github.io//seahorn/cex/validation/2016/10/16/cex-validation.html</link>

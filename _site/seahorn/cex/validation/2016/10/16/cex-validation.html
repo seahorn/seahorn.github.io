@@ -75,7 +75,7 @@
 <div class="content">
     <p>Explaining why a piece of code violates a particular specification is one of the most important features that an automated software analysis tool should provide. In fact, tools participating at the International Competition on Software Verification <a href="http://sv-comp.sosy-lab.org/2017/">SV-COMP</a> are mandated to provide a witness in a <a href="https://github.com/sosy-lab/sv-witnesses/">specific format</a> that illustrate why a specification is violated. In a second step, the provided witness is validated by external tools (e.g. <a href="https://cpachecker.sosy-lab.org/">CPAChecker</a> or <a href="https://monteverdi.informatik.uni-freiburg.de/tomcat/Website/?ui=tool&amp;tool=automizer">Ultimate Automizer</a>). We leave the discussion of the pros and cons of using such fixed format for future blog posts ;).</p>
 
-<p>A few months back, we embarked on a journey to provide an alternative format for witness validation. Our goal was to have a format that is “dynamic” and provided a better understanding of why a property fails. For example, developers routinely use debuggers like <a href="https://www.gnu.org/software/gdb/">gdb</a> to trace the state of a program at the moment it crashes. So if you want to use a debugger in order to understand why a property is violated you need a witness that can be executed on a machine.</p>
+<p>A few months back, we embarked on a journey to provide an alternative format for witness validation. Our goal was to have a format that is “dynamic” and provide a better understanding of why a property fails. For example, developers routinely use debuggers like <a href="https://www.gnu.org/software/gdb/">gdb</a> to trace the state of a program at the moment it crashes. So if you want to use a debugger in order to understand why a property is violated, you need a witness that can be executed on a machine.</p>
 
 <p>In this post, we describe a shiny new feature implemented in SeaHorn – the automated generation of executable test harness for failed properties. Instead of providing a fixed format, SeaHorn will provide an object file (the witness) that can be linked with the original program and executed. How does this work in practice? Lets start with a simple piece of C code (<code class="highlighter-rouge">code.c</code>):</p>
 
@@ -152,7 +152,7 @@
 
 <p>The following screencast illustrate a complete run of this new feature:</p>
 
-<p><a href="https://asciinema.org/a/5jer5yp602ys6x885yl2674yw"><img src="https://asciinema.org/a/5jer5yp602ys6x885yl2674yw.png" alt="asciicast" /></a></p>
+<p><a href="https://asciinema.org/a/5jer5yp602ys6x885yl2674yw?autoplay=1&quot;"><img src="https://asciinema.org/a/5jer5yp602ys6x885yl2674yw.png" alt="asciicast" /></a></p>
 
 </div>
 
