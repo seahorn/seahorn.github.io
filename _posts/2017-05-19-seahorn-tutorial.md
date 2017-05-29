@@ -98,7 +98,7 @@ This command sequence converts first the bitcode to `.dot` format and
 then to a `png` file. If you open the `png` file then you should see
 something like this:
 
-![Control Flow Graph of test.true.c in LLVM bitcode](images/main.dot.png)
+![Control Flow Graph of test.true.c in LLVM bitcode](http://seahorn.github.io/images/main.dot.png)
 
 Next, we can use SeaHorn to translate the LLVM bitcode into
 verification conditions. We
@@ -120,7 +120,7 @@ SMT-lib:
 (declare-rel main@orig.main.exit (Int ))
 (declare-rel main@orig.main.exit.split ())
 
-;;; declare variables 
+;;; declare variables
 (declare-var main@%_8_0 Bool )
 (declare-var main@%_9_0 Bool )
 (declare-var main@%_10_0 Bool )
@@ -177,8 +177,8 @@ SMT-lib:
          (= main@%_11_0 (= main@%_8_0 false))
          main@%_11_0)
     main@orig.main.exit.split))
-	
-;;; query	
+
+;;; query
 (query main@orig.main.exit.split)
 {% endhighlight %}
 
@@ -309,7 +309,7 @@ can run now our favorite debugger and inspect why the program failed:
 {% highlight c %}
 lldb ./out
 (lldb) b main
-(lldb) run 
+(lldb) run
    14  	int main(void) {  
    15  	  int n, k, j;
 -> 16  	  n = nd();
@@ -395,7 +395,7 @@ To mitigate this, we can tell SeaHorn to call `crab-llvm` and use all
 the invariants inferred by `crab-llvm` as *lemmas* in `spacer`:
 
 {% highlight c %}
-sea pf -O0 crab1.c --show-invars --crab --crab-dom=int 
+sea pf -O0 crab1.c --show-invars --crab --crab-dom=int
 {% endhighlight %}
 
 You should see that SeaHorn can now produce an answer. These are the
@@ -444,7 +444,7 @@ int main () {
   for (j=0;j<n;j++) {
     sassert (a[j] >= 0);
   }
-#endif 
+#endif
   return 0;
 }
 {% endhighlight %}
@@ -458,7 +458,7 @@ sea pf crab2.c --show-invars
 then, SeaHorn proves the program is safe. Let us try now the command:
 
 {% highlight c %}
-sea pf crab2.c -DFORALL --show-invars 
+sea pf crab2.c -DFORALL --show-invars
 {% endhighlight %}
 
 In this case, we don't get an answer in a reasonable amount of
@@ -467,7 +467,7 @@ the array are positive. This is tantamount to infer an universally
 quantified invariant over all array cells. This is currently beyond
 the capabilities of `spacer`. However, `crab-llvm` provides several
 array domains that can easily infer invariants like the one we need
-for our example. 
+for our example.
 
 We can tell SeaHorn to call `crab-llvm` with an array domain using
 intervals to model array contents as follows:
@@ -538,8 +538,8 @@ int main() {
 The following command outputs in a file `sally.mcmt` a transition
 system in MCMT format which is the format understood by Sally:
 
-{% highlight c %} 
-sea smt -O0 sally.c --step=flarge --horn-format=mcmt -o sally.mcmt 
+{% highlight c %}
+sea smt -O0 sally.c --step=flarge --horn-format=mcmt -o sally.mcmt
 {% endhighlight %}
 
 TODO: add output an excerpt of `sally.mcmt`?
@@ -610,7 +610,7 @@ extern int nd();
 
 #define N 10
 
-int main(int argc, char**argv) 
+int main(int argc, char**argv)
 {
   int i;
   int a[N];
@@ -626,20 +626,20 @@ int main(int argc, char**argv)
   for (i = 0; i < N; i++) {
     // update offset
     offset = sizeof(int)*i;
-	// check the array write is in-bounds 
+	// check the array write is in-bounds
     sassert (offset < size);
     sassert (offset >= 0);
-	
+
     a[i] = i;
   }
 
 #ifndef ERROR
   // update offset
   offset = sizeof(int)*(i-1);  
-  // check the array read is in-bounds 
+  // check the array read is in-bounds
   sassert (offset < size);
   sassert (offset >= 0);
-  
+
   printf("%d\n", a[i-1]);
 #else
   // update offset
@@ -647,7 +647,7 @@ int main(int argc, char**argv)
   // check the array read is in-bounds
   sassert (offset < size);
   sassert (offset >= 0);
-  
+
   printf("%d\n", a[i]);
 #endif   
   return 0;
@@ -657,14 +657,14 @@ int main(int argc, char**argv)
 
 Now, we are ready to prove `abc1_inst.c`:
 
-{% highlight c}
+{% highlight c linenos=table %}
 sea pf -O0 abc1_inst.c --show-invars
 {% endhighlight %}
 
 SeaHorn can prove the program is safe! (i.e., all array accesses are
 in-bounds). The invariants produced by SeaHorn are:
 
-{% highlight c}
+{% highlight c linenos=table %}
 unsat
 Function: sassert
 sassert@_call: true
@@ -680,7 +680,7 @@ main@verifier.error.split: false
 Let us also try a buggy version where the array index `i` is accessed
 when `i=10`:
 
-{% highlight c}
+{% highlight c linenos=table %}
 sea pf -O0 abc1_inst.c -DERROR --show-invars
 {% endhighlight %}
 
@@ -702,10 +702,10 @@ extern int nd();
 #define N 10
 
 int main(int argc, char**argv) {
-  
+
   int8_t a[N];
   int8_t b[N];
-  
+
   int i;
   for (i = 0; i < N; i++) {
     a[i] = i;
@@ -715,14 +715,14 @@ int main(int argc, char**argv) {
   for (j = 0; j < N; j++) {
     b[j] = j;
   }
-  
+
 #ifndef ERROR
   printf("%d\n", a[i-1]);
   printf("%d\n", b[i-1]);  
 #else
   printf("%d\n", b[i]);    
 #endif
-  
+
   return 0;
 }
 {% endhighlight %}
@@ -764,9 +764,9 @@ static int8_t* ptr;
 static sea_ptrdiff_t offset;
 static sea_size_t size;
 
-int main(int argc, char**argv) 
+int main(int argc, char**argv)
 {
-  
+
   // -- init
   base = nd_int8_ptr ();
   assume (base > 0);
@@ -774,9 +774,9 @@ int main(int argc, char**argv)
   assume (size >= 0);
   ptr = 0;  
   offset = 0;
- 
+
   int8_t a[N];
-  
+
   // -- allocation of a
   int8_t *b_a  = &(a[0]);  
   if (!ptr  && (b_a == base)) {
@@ -804,7 +804,7 @@ int main(int argc, char**argv)
 
   int8_t b[N];
   int8_t *b_b  = &(b[0]);
-  
+
   // -- allocation of b
   if (!ptr  && (b_b == base)) {
     // ptr = base;
@@ -815,7 +815,7 @@ int main(int argc, char**argv)
   } else {
     assume (base+size < b_b);
   }
-  
+
   int j=0;
   int8_t* q_b = b_b;
   for (; j < N; j++, q_b++) {
@@ -828,7 +828,7 @@ int main(int argc, char**argv)
     // -- b[j] = j;
     *q_b = j;
   }
-  
+
 #ifndef ERROR
   // -- safe memory access
   if (ptr && (ptr  == (b_a + (i-1)))) {
@@ -841,7 +841,7 @@ int main(int argc, char**argv)
     sassert (offset < size);
   }
   printf("%d\n", b[j-1]);
-  
+
 #else
   // -- safe memory access
   if (ptr && (ptr  == (b_a + (i-1)))) {
@@ -854,7 +854,7 @@ int main(int argc, char**argv)
     sassert (offset < size);
   }
   printf("%d\n", b[j]);
-  
+
 #endif   
   return 0;
 }
@@ -864,13 +864,13 @@ TODO: explain the instrumentation
 
 We can now try to prove `abc2_inst.c`:
 
-{% highlight c}
+{% highlight c %}
 sea pf -O0 abc2_inst.c --show-invars
 {% endhighlight %}
 
 And we can also check that the buggy version is indeed unsafe:
 
-{% highlight c}
+{% highlight c %}
 sea pf -O0 abc2_inst.c --show-invars -DERROR
 {% endhighlight %}
 
@@ -882,13 +882,13 @@ fun! But if you do not want to instrument manually your program,
 SeaHorn can add fully automatically the array bounds checks. For
 instance, if you execute the command:
 
-{% highlight c}
-sea pf -O0 abc2.c --abc=global --show-invars 
+{% highlight c %}
+sea pf -O0 abc2.c --abc=global --show-invars
 {% endhighlight %}
 
 then you should see the following output:
 
-{% highlight c}
+{% highlight c %}
 unsat
 Function: main
 main@entry: true
@@ -911,9 +911,3 @@ verification tools. Moreover, we have shown two different ways of
 instrumenting a program to prove absence of buffer overflows. Luckily,
 SeaHorn can add the instrumentation automatically so that we do not
 need to do it by ourselves.
-
-
-
-
-
-
