@@ -3,6 +3,51 @@
   
     
     <url>
+      <loc>http://seahorn.github.io//seahorn/crab/abstract%20interpretation/2017/05/29/seahorn-crab-llvm.html/</loc>
+      
+        <lastmod>2017-05-29T14:24:45-07:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.7</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://seahorn.github.io//seahorn/sally/2017/05/28/seahorn-sally.html/</loc>
+      
+        <lastmod>2017-05-28T14:24:45-07:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.7</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://seahorn.github.io//seahorn/memory%20safety/2017/05/27/seahorn-memory-safety.html/</loc>
+      
+        <lastmod>2017-05-27T14:24:45-07:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.7</priority>
+      
+    </url>
+    
+  
+    
+    <url>
       <loc>http://seahorn.github.io//seahorn/usage/memory%20safety/2017/05/20/seahorn-tutorial.html/</loc>
       
         <lastmod>2017-05-20T07:56:45-07:00</lastmod>
@@ -68,7 +113,7 @@
     <url>
       <loc>http://seahorn.github.io//about/</loc>
       
-        <lastmod>2017-05-29T11:13:44-07:00</lastmod>
+        <lastmod>2017-05-29T21:37:37-07:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -83,7 +128,7 @@
     <url>
       <loc>http://seahorn.github.io//categories/design/</loc>
       
-        <lastmod>2017-05-29T11:13:44-07:00</lastmod>
+        <lastmod>2017-05-29T21:37:37-07:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -100,7 +145,7 @@
     <url>
       <loc>http://seahorn.github.io//blog/</loc>
       
-        <lastmod>2017-05-29T11:13:44-07:00</lastmod>
+        <lastmod>2017-05-29T21:37:37-07:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -117,7 +162,7 @@
     <url>
       <loc>http://seahorn.github.io//categories/productivity/</loc>
       
-        <lastmod>2017-05-29T11:13:44-07:00</lastmod>
+        <lastmod>2017-05-29T21:37:37-07:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -136,7 +181,7 @@
     <url>
       <loc>http://seahorn.github.io//categories/tools/</loc>
       
-        <lastmod>2017-05-29T11:13:44-07:00</lastmod>
+        <lastmod>2017-05-29T21:37:37-07:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
