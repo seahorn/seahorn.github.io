@@ -14,7 +14,7 @@ invariants from LLVM bitcode based on abstract interpretation, to
 strengthen the invariants inferred by `spacer`, the PDR/IC3 back-end
 solver. Consider the next example `crab1.c`:
 
-{% highlight c linenos=table %}
+{% highlight c  %}
 #include "seahorn.h"
 extern int nd();
 
@@ -35,7 +35,7 @@ int main (){
 If we run the command:
 
 {% highlight c %}
-sea pf -O0 crab1.c --show-invars
+     sea pf -O0 crab1.c --show-invars
 {% endhighlight %}
 
 You will notice that SeaHorn is unresponsive for a while. In fact,
@@ -53,6 +53,7 @@ safe invariants produced by `spacer` together with `crab-llvm`:
 
 {% highlight c %}
 unsat
+
 Function: main
 main@entry: true
 main@_un:
@@ -73,7 +74,7 @@ Another example where `spacer` can substantially benefit from abstract
 interpretation is when universal quantifiers are needed to prove a
 property. Consider the next example `crab2`:
 
-{% highlight c linenos=table %}
+{% highlight c  %}
 #include "seahorn.h"
 extern int nd();
 
@@ -102,13 +103,13 @@ int main () {
 If the following command is executed:
 
 {% highlight c %}
-sea pf crab2.c --show-invars
+        sea pf crab2.c --show-invars
 {% endhighlight %}
 
-then, SeaHorn proves the program is safe. Let us try now the command:
+then, SeaHorn proves the program is safe. Let us try now the following command:
 
 {% highlight c %}
-sea pf crab2.c -DFORALL --show-invars
+        sea pf crab2.c -DFORALL --show-invars
 {% endhighlight %}
 
 In this case, we don't get an answer in a reasonable amount of
@@ -119,16 +120,14 @@ the capabilities of `spacer`. However, `crab-llvm` provides several
 array domains that can easily infer invariants like the one we need
 for our example.
 
-We can tell SeaHorn to call `crab-llvm` with an array domain using
+We can instruct SeaHorn to call `crab-llvm` with an array domain using
 intervals to model array contents as follows:
 
 {% highlight c %}
-sea pf crab2.c -DFORALL --show-invars  --crab --crab-track=arr --crab-dom=int
+       sea pf crab2.c -DFORALL --show-invars  --crab --crab-track=arr --crab-dom=int
 {% endhighlight %}
 
-However, note that we don't get an answer yet.
-
-The reason is that even if `crab-llvm` infers that all elements of the
+However, note that we don't get an answer yet. The reason is that even if `crab-llvm` infers that all elements of the
 array between `[0,n)` is greater or equal than `0`, `spacer` does not
 support lemmas with quantifiers. Therefore, it seems that our effort
 of computing universally quantified invariants using `crab-llvm` is
@@ -148,6 +147,7 @@ we can quickly get the following answer:
 
 {% highlight c %}
 unsat
+
 Function: main
 main@.lr.ph: true
 main@_un:
