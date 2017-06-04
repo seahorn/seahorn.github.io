@@ -35,7 +35,7 @@ int main (){
 If we run the command:
 
 {% highlight c %}
-     sea pf -O0 crab1.c --show-invars
+sea pf -O0 crab1.c --show-invars
 {% endhighlight %}
 
 You will notice that SeaHorn is unresponsive for a while. In fact,
@@ -103,13 +103,13 @@ int main () {
 If the following command is executed:
 
 {% highlight c %}
-        sea pf crab2.c --show-invars
+sea pf crab2.c --show-invars
 {% endhighlight %}
 
 then, SeaHorn proves the program is safe. Let us try now the following command:
 
 {% highlight c %}
-        sea pf crab2.c -DFORALL --show-invars
+sea pf crab2.c -DFORALL --show-invars
 {% endhighlight %}
 
 In this case, we don't get an answer in a reasonable amount of
@@ -124,7 +124,7 @@ We can instruct SeaHorn to call `crab-llvm` with an array domain using
 intervals to model array contents as follows:
 
 {% highlight c %}
-       sea pf crab2.c -DFORALL --show-invars  --crab --crab-track=arr --crab-dom=int
+sea pf crab2.c -DFORALL --show-invars  --crab --crab-track=arr --crab-dom=int
 {% endhighlight %}
 
 However, note that we don't get an answer yet. The reason is that even if `crab-llvm` infers that all elements of the

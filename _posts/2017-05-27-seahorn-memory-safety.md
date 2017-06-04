@@ -107,14 +107,14 @@ int main(int argc, char**argv)
 
 Now, we are ready to prove `abc1_inst.c`:
 
-{% highlight c linenos=table %}
+{% highlight c %}
 sea pf -O0 abc1_inst.c --show-invars
 {% endhighlight %}
 
 SeaHorn can prove the program is safe! (i.e., all array accesses are
 in-bounds). The invariants produced by SeaHorn are:
 
-{% highlight c linenos=table %}
+{% highlight c %}
 unsat
 Function: sassert
 sassert@_call: true
@@ -130,7 +130,7 @@ main@verifier.error.split: false
 Let us also try a buggy version where the array index `i` is accessed
 when `i=10`:
 
-{% highlight c linenos=table %}
+{% highlight c %}
 sea pf -O0 abc1_inst.c -DERROR --show-invars
 {% endhighlight %}
 
@@ -310,27 +310,30 @@ int main(int argc, char**argv)
 }
 {% endhighlight %}
 
-TODO: explain the instrumentation
-
-We can now try to prove `abc2_inst.c`:
+We can now prove that `abc2_inst.c` is safe by running the command:
 
 {% highlight c %}
 sea pf -O0 abc2_inst.c --show-invars
 {% endhighlight %}
 
-And we can also check that the buggy version is indeed unsafe:
+We do not show the invariants but we recommend you to run this command
+and look at the invariants to convince yourself why the program is
+safe.
+
+We can also check that the buggy version is indeed unsafe by running:
 
 {% highlight c %}
 sea pf -O0 abc2_inst.c --show-invars -DERROR
 {% endhighlight %}
 
-TODO: output of these two commands. SeaHorn proves safe `abc2_inst.c`
-but it unrolls the program.
+We will not show either the counterexample but if you have read
+previous posts then you should be able to generate a harness program
+and find out why the program is unsafe using your favorite debugger.
 
-Instrument a program so that we can prove memory safety is a lot of
-fun! But if you do not want to instrument manually your program,
-SeaHorn can add fully automatically the array bounds checks. For
-instance, if you execute the command:
+So we have seen that instrumenting a program to prove absence of
+buffer overflows it is a lot of fun. But if you do not want to
+instrument manually your program, SeaHorn can add fully automatically
+the array bounds checks. For instance, if you execute the command:
 
 {% highlight c %}
 sea pf -O0 abc2.c --abc=global --show-invars
@@ -355,9 +358,7 @@ main@verifier.error.split: false
 SeaHorn proves absence of buffer overflows by typing one single
 command!
 
-Well, this is the end of our post where we have described the basics
-of SeaHorn as well as how SeaHorn can be combined with other
-verification tools. Moreover, we have shown two different ways of
-instrumenting a program to prove absence of buffer overflows. Luckily,
-SeaHorn can add the instrumentation automatically so that we do not
-need to do it by ourselves.
+Well, this is the end of our post where we have shown two different
+ways of instrumenting a program to prove absence of buffer
+overflows. Luckily, SeaHorn can add the instrumentation automatically
+so that we do not need to do it by ourselves.
