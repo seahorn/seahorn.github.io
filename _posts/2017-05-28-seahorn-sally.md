@@ -31,14 +31,14 @@ The following command outputs in a file `sally.mcmt` a transition
 system in MCMT format which is the format understood by Sally:
 
 {% highlight c %}
-   sea smt -O0 sally.c --step=flarge --horn-format=mcmt -o sally.mcmt
+sea smt -O0 sally.c --step=flarge --horn-format=mcmt -o sally.mcmt
 {% endhighlight %}
 
 Then, we can run `sally` using its `pdkind` (PDR + k-induction) engine
 using the SMT solvers yices2 and MathSat5 (`y2m5`) as follows:
 
 {% highlight c %}
-  sally --no-input-namespace --engine pdkind sally.mcmt --solver=y2m5 --show-invariant --no-lets
+sally --no-input-namespace --engine pdkind sally.mcmt --solver=y2m5 --show-invariant --no-lets
 {% endhighlight %}
 
 `sally` returns `valid`.

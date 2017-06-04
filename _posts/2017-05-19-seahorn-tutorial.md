@@ -3,7 +3,7 @@ layout: post
 title:  "A basic use of SeaHorn"
 subtitle: "A practical introduction to SeaHorn"
 date:   2017-05-20 14:56:45
-categories: [seahorn, usage, memory safety]
+categories: [seahorn, usage]
 ---
 
 It has been a while since our last blog but here we are again! We
@@ -53,7 +53,7 @@ SeaHorn during its search for inductive invariants. The annotation
 as
 
 {% highlight c %}
- # define sassert(X) if(!(X)) __VERIFIER_error ()
+# define sassert(X) if(!(X)) __VERIFIER_error ()
 {% endhighlight %}
 
 This definition allows SeaHorn to reduce the validation of an
@@ -72,7 +72,7 @@ Let us continue now by running SeaHorn on the program. The first thing
 that SeaHorn can do is to translate the C program into LLVM bitcode:
 
 {% highlight c %}
-    sea fe test.true.c -o test.true.bc
+sea fe test.true.c -o test.true.bc
 {% endhighlight %}
 
 The option `fe` (front-end) calls `clang` to translate C into bitcode
@@ -81,7 +81,7 @@ can see the content of `test.true.bc` by translating it into
 human-readable bitcode format:
 
 {% highlight c %}
-    llvm-dis test.true.bc -o test.true.ll
+llvm-dis test.true.bc -o test.true.ll
 {% endhighlight %}
 
 A better option is to use the SeaHorn utility `inspect` as follows:
@@ -104,14 +104,14 @@ use [Horn Clauses](https://en.wikipedia.org/wiki/Horn_clause) as the
 language to represent verification conditions.
 
 {% highlight c %}
-    sea horn test.true.bc --step=small -o test.true.smt
+sea horn test.true.bc --step=small -o test.true.smt
 {% endhighlight %}
 
 The option `horn` outputs the verification conditions in
 `test.true.smt`. By default, this option uses a format that resembles
 SMT-lib:
 
-{% highlight lisp %}
+{% highlight c %}
 ;;; declare relations: one per basic block
 (declare-rel main@.lr.ph ())
 (declare-rel main@_bb (Int Int Int ))
@@ -184,7 +184,7 @@ Once we have generated the verification conditions we can use SeaHorn
 back-end solvers to try to solve them by adding the option `--solve`:
 
 {% highlight c %}
-   sea horn --solve test.true.bc --step=small --show-invars
+sea horn --solve test.true.bc --step=small --show-invars
 {% endhighlight %}
 
 The default solver used in SeaHorn
@@ -225,7 +225,7 @@ For convenience, SeaHorn allows to write all the above commands in
 a single command:
 
 {% highlight c %}
-   sea pf test.true.c --step=small --show-invars
+sea pf test.true.c --step=small --show-invars
 {% endhighlight %}
 
 Now, lets see a buggy version called `test.false.c`:
@@ -251,7 +251,7 @@ int main(void) {
 Let us try to prove that it is safe:
 
 {% highlight c %}
-  sea pf test.false.c --show-invars
+sea pf test.false.c --show-invars
 {% endhighlight %}
 
 SeaHorn outputs the following:
@@ -277,8 +277,8 @@ generate automatically executable test harnesses for failed
 properties. Let us execute these two commands:
 
 {% highlight c %}
-  sea pf test.false.c --cex=harness.ll
-  sea exe -m64 -g test.false.c harness.ll  -o out
+sea pf test.false.c --cex=harness.ll
+sea exe -m64 -g test.false.c harness.ll  -o out
 {% endhighlight %}
 
 The above commands produce an executable `out` which can be executed
@@ -347,3 +347,4 @@ __VERIFIER_error was executed
 The reason for failure was that `n` and `k` can be set initially to
 `3` and `2`. Then, the program executes the loop three times and when
 the exit of the loop is taken the value of `k` is `-1`.
+
