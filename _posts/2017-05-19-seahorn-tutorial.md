@@ -23,7 +23,7 @@ we shown a case study on how to prove memory safety using SeaHorn.
 
 We started our tutorial with this simple C program `test.true.c`:
 
-{% highlight c  %}
+{% highlight c %}
 #include "seahorn.h"
 extern int nd();
 int main(void) {  
@@ -53,7 +53,7 @@ SeaHorn during its search for inductive invariants. The annotation
 as
 
 {% highlight c %}
-# define sassert(X) if(!(X)) __VERIFIER_error ()
+ # define sassert(X) if(!(X)) __VERIFIER_error ()
 {% endhighlight %}
 
 This definition allows SeaHorn to reduce the validation of an
@@ -230,7 +230,7 @@ sea pf test.true.c --step=small --show-invars
 
 Now, lets see a buggy version called `test.false.c`:
 
-{% highlight c  %}
+{% highlight c %}
 #include "seahorn.h"
 extern int nd();
 int main(void) {  
