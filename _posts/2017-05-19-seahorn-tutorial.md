@@ -3,7 +3,7 @@ layout: post
 title:  "A basic use of SeaHorn"
 subtitle: "A practical introduction to SeaHorn"
 date:   2017-05-20 14:56:45
-categories: [seahorn, usage]
+categories: [seahorn, usage, memory safety]
 ---
 
 It has been a while since our last blog but here we are again! We
@@ -53,7 +53,7 @@ SeaHorn during its search for inductive invariants. The annotation
 as
 
 {% highlight c %}
- # define sassert(X) if(!(X)) __VERIFIER_error ()
+  # define sassert(X) if(!(X)) __VERIFIER_error ()
 {% endhighlight %}
 
 This definition allows SeaHorn to reduce the validation of an

@@ -3,7 +3,7 @@ layout: post
 title:  "Abstract Interpretation engine in SeaHorn"
 subtitle: "SeaHorn and Crab-llvm"
 date:   2017-05-29 21:24:45
-categories: [seahorn, crab-llvm, abstract interpretation]
+categories: [seahorn, crab, abstract interpretation]
 ---
 
 [Abstract Interpretation](https://en.wikipedia.org/wiki/Abstract_interpretation) is
