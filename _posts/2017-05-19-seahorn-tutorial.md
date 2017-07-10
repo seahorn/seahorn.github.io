@@ -25,7 +25,7 @@ We started our tutorial with this simple C program `test.true.c`:
 
 {% highlight c %}
 #include "seahorn.h"
-extern int nd();
+extern int nd(void);
 int main(void) {  
   int n, k, j;
   n = nd();
@@ -232,7 +232,7 @@ Now, lets see a buggy version called `test.false.c`:
 
 {% highlight c %}
 #include "seahorn.h"
-extern int nd();
+extern int nd(void);
 int main(void) {  
   int n, k, j;
   n = nd();
