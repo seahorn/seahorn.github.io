@@ -71,7 +71,7 @@ int main(int argc, char**argv)
 
   // initialization of the ghost variables
   offset = 0;
-  size = sz;
+  size = sizeof(a);
 
   for (i = 0; i < N; i++) {
     // update offset
