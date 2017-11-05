@@ -14,9 +14,9 @@ In this post, we describe a shiny new feature implemented in SeaHorn – the aut
 
 {% highlight c linenos=table %}
 #include "seahorn.h"
-int unknown1();
+extern int unknown1(void);
 
- int main() {
+ int main(void) {
  int x=1; int y=1;
  while(unknown1()) {
    int t1 = x;
@@ -25,6 +25,7 @@ int unknown1();
    y = t1 + t2;
   }
    sassert(y < 1);
+   return 0;
  }
 {% endhighlight %}
 
@@ -37,7 +38,7 @@ int unknown1();
 In this code, we would like to check if `y<1`. The first step is to run the verification engine of SeaHorn:
 
 {% highlight c %}
-sea pf -m64 -cex=witness.ll code.c
+sea pf --cex=witness.ll code.c
 {% endhighlight %}
 
 If the property is violated, SeaHorn will produce a test harness (`witness.ll`) as [LLVM bitcode](http://llvm.org/docs/BitCodeFormat.html):

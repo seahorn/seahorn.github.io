@@ -24,15 +24,16 @@ we shown a case study on how to prove memory safety using SeaHorn.
 We started our tutorial with this simple C program `test.true.c`:
 
 {% highlight c %}
-#include "seahorn.h"
-extern int nd();
-int main(void) {  
+#include "seahorn/seahorn.h"
+extern int nd(void);
+int main(void) {
   int n, k, j;
   n = nd();
   assume (n>0);
   k = nd();
   assume (k>n);
   j = 0;
+#pragma clang loop unroll(disable)
   while( j < n ) {
     j++;
     k--;
@@ -231,14 +232,15 @@ sea pf test.true.c --step=small --show-invars
 Now, lets see a buggy version called `test.false.c`:
 
 {% highlight c %}
-#include "seahorn.h"
-extern int nd();
-int main(void) {  
+#include "seahorn/seahorn.h"
+extern int nd(void);
+int main(void) {
   int n, k, j;
   n = nd();
   k = nd();
   assume(k >= 2);
   j = 0;
+#pragma clang loop unroll(disable)
   while( j < n ) {
     j++;
     k--;
@@ -304,14 +306,14 @@ can run now our favorite debugger and inspect why the program failed:
 lldb ./out
 (lldb) b main
 (lldb) run
-   14  	int main(void) {  
+   14  	int main(void) {
    15  	  int n, k, j;
 -> 16  	  n = nd();
    17  	  k = nd();
    18  	  assume(k >= 2);
    19  	  j = 0;
 (lldb) n
-   14  	int main(void) {  
+   14  	int main(void) {
    15  	  int n, k, j;
    16  	  n = nd();
 -> 17  	  k = nd();
@@ -347,4 +349,3 @@ __VERIFIER_error was executed
 The reason for failure was that `n` and `k` can be set initially to
 `3` and `2`. Then, the program executes the loop three times and when
 the exit of the loop is taken the value of `k` is `-1`.
-
