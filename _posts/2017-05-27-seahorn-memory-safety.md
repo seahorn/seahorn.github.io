@@ -147,6 +147,8 @@ two arrays `a` and `b` are initialized instead of one:
 
 {% highlight c linenos=table %}
 #include "seahorn.h"
+#include <stdint.h>
+
 extern int nd();
 
 #define N 10
@@ -198,6 +200,9 @@ encoding:
 
 {% highlight c linenos=table %}
 #include "seahorn.h"
+#include <stddef.h>
+#include <stdint.h>
+
 extern int nd();
 
 #define N 10
