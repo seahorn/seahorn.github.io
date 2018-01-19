@@ -341,7 +341,7 @@ instrument manually your program, SeaHorn can add fully automatically
 the array bounds checks. For instance, if you execute the command:
 
 {% highlight c %}
-sea pf -O0 abc2.c --abc=global --show-invars
+sea abc -O0 abc2.c --show-invars
 {% endhighlight %}
 
 then you should see the following output:
