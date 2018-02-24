@@ -24,7 +24,6 @@ Run SeaHorn in a container  using
 ```docker run -v $(pwd):/host -it seahorn/seahorn```
 This should change your shell prompt to something
 like: `usea@00e7e5010518:/opt/seahorn`. At this point, you can
-
     * use SeaHorn executable found in `/opt/seahorn/bin/sea`
     * run SeaHorn tests using the command `cd /opt/seahorn/share/seahorn/test; lit simple solve abc dsa`
     * move files between the container and the rest of your machine using `/host` to represent the directory where you executed the `docker run` command (for example, `cp /host/a b` will copy a file named `a` from your host directory to a file named `b` inside the container)
@@ -35,7 +34,6 @@ like: `usea@00e7e5010518:/opt/seahorn`. At this point, you can
 
 It is also possible to build a local Docker container based on SeaHorn
 source code by following the instructions below:
-
     * Optionally build thrid-party dependencies. These are also available as a `seahorn/seahorn-build` container on DockerHub.
     ```docker build --build-arg UBUNTU=xenial --build-arg BUILD_TYPE=Release -t seahorn/seahorn-build:xenial -f docker/seahorn-build.Dockerfile ```
     * Compile SeaHorn binary in a docker cotnainer
