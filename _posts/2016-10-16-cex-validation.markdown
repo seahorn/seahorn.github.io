@@ -85,6 +85,6 @@ __VERIFIER_error was executed
 
 Which indicates that `__VERIFIER_error` (the error state) is reachable from the initial state. Hence, the property `y<1` is violated. We are in the process of writing an article to explain in detail the behind the scene of this new feature. Stay tuned :)
 
-The following screencast illustrate a complete run of this new feature:
+The following screencast demonstrate a complete run of this new feature:
 
 [![asciicast](https://asciinema.org/a/5jer5yp602ys6x885yl2674yw.png)](https://asciinema.org/a/5jer5yp602ys6x885yl2674yw?autoplay=1")
