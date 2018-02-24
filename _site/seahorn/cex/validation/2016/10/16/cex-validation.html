@@ -91,10 +91,11 @@
 10
 11
 12
-13</pre></td><td class="code"><pre><span class="cp">#include "seahorn.h"
-</span><span class="kt">int</span> <span class="n">unknown1</span><span class="p">();</span>
+13
+14</pre></td><td class="code"><pre><span class="cp">#include "seahorn.h"
+</span><span class="k">extern</span> <span class="kt">int</span> <span class="n">unknown1</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
 
- <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+ <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
  <span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
  <span class="k">while</span><span class="p">(</span><span class="n">unknown1</span><span class="p">())</span> <span class="p">{</span>
    <span class="kt">int</span> <span class="n">t1</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
@@ -103,6 +104,7 @@
    <span class="n">y</span> <span class="o">=</span> <span class="n">t1</span> <span class="o">+</span> <span class="n">t2</span><span class="p">;</span>
   <span class="p">}</span>
    <span class="n">sassert</span><span class="p">(</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">);</span>
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
  <span class="p">}</span><span class="w">
 </span></pre></td></tr></tbody></table></code></pre></figure>
 
@@ -112,7 +114,7 @@
 
 <p>In this code, we would like to check if <code class="highlighter-rouge">y&lt;1</code>. The first step is to run the verification engine of SeaHorn:</p>
 
-<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="n">sea</span> <span class="n">pf</span> <span class="o">-</span><span class="n">m64</span> <span class="o">-</span><span class="n">cex</span><span class="o">=</span><span class="n">witness</span><span class="p">.</span><span class="n">ll</span> <span class="n">code</span><span class="p">.</span><span class="n">c</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="n">sea</span> <span class="n">pf</span> <span class="o">--</span><span class="n">cex</span><span class="o">=</span><span class="n">witness</span><span class="p">.</span><span class="n">ll</span> <span class="n">code</span><span class="p">.</span><span class="n">c</span></code></pre></figure>
 
 <p>If the property is violated, SeaHorn will produce a test harness (<code class="highlighter-rouge">witness.ll</code>) as <a href="http://llvm.org/docs/BitCodeFormat.html">LLVM bitcode</a>:</p>
 
@@ -150,7 +152,7 @@
 
 <p>Which indicates that <code class="highlighter-rouge">__VERIFIER_error</code> (the error state) is reachable from the initial state. Hence, the property <code class="highlighter-rouge">y&lt;1</code> is violated. We are in the process of writing an article to explain in detail the behind the scene of this new feature. Stay tuned :)</p>
 
-<p>The following screencast illustrate a complete run of this new feature:</p>
+<p>The following screencast demonstrate a complete run of this new feature:</p>
 
 <p><a href="https://asciinema.org/a/5jer5yp602ys6x885yl2674yw?autoplay=1&quot;"><img src="https://asciinema.org/a/5jer5yp602ys6x885yl2674yw.png" alt="asciicast" /></a></p>
 

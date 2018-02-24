@@ -3,6 +3,21 @@
   
     
     <url>
+      <loc>http://seahorn.github.io//seahorn/install/docker/2018/02/24/seahorn-with-docker.html/</loc>
+      
+        <lastmod>2018-02-24T02:53:01-08:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.7</priority>
+      
+    </url>
+    
+  
+    
+    <url>
       <loc>http://seahorn.github.io//seahorn/crab/abstract%20interpretation/2017/05/29/seahorn-crab-llvm.html/</loc>
       
         <lastmod>2017-05-29T14:24:45-07:00</lastmod>
@@ -98,7 +113,7 @@
     <url>
       <loc>http://seahorn.github.io//about/</loc>
       
-        <lastmod>2017-06-04T13:27:41-07:00</lastmod>
+        <lastmod>2018-02-24T14:02:10-08:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -113,7 +128,7 @@
     <url>
       <loc>http://seahorn.github.io//categories/design/</loc>
       
-        <lastmod>2017-06-04T13:27:41-07:00</lastmod>
+        <lastmod>2018-02-24T14:02:10-08:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -132,7 +147,7 @@
     <url>
       <loc>http://seahorn.github.io//categories/productivity/</loc>
       
-        <lastmod>2017-06-04T13:27:41-07:00</lastmod>
+        <lastmod>2018-02-24T14:02:10-08:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -151,7 +166,7 @@
     <url>
       <loc>http://seahorn.github.io//categories/tools/</loc>
       
-        <lastmod>2017-06-04T13:27:41-07:00</lastmod>
+        <lastmod>2018-02-24T14:02:10-08:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
