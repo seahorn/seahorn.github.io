@@ -27,7 +27,11 @@ Run SeaHorn in a container  using
 ```docker run -v $(pwd):/host -it seahorn/seahorn```
 
 This should change your shell prompt to something
-like: `usea@00e7e5010518:/opt/seahorn`. At this point, you can
+like:
+
+```usea@00e7e5010518:/opt/seahorn$ ```
+
+At this point, you can
 
 * use SeaHorn executable found in `/opt/seahorn/bin/sea`
 
@@ -53,9 +57,7 @@ source code by following the instructions below:
 * Optionally build thrid-party dependencies. These are also available
     as a `seahorn/seahorn-build` container on DockerHub.
 
-```docker build --build-arg UBUNTU=xenial --build-arg
-BUILD_TYPE=Release -t seahorn/seahorn-build:xenial -f
-docker/seahorn-build.Dockerfile ```
+```docker build --build-arg UBUNTU=xenial --build-arg BUILD_TYPE=Release -t seahorn/seahorn-build:xenial -f docker/seahorn-build.Dockerfile ```
 
 * Compile SeaHorn binary in a docker container
 
@@ -69,8 +71,7 @@ BUILD_TYPE=Release --build-arg TRAVIS=true -t seahorn_xenial_rel
 build/*.tar.gz /host/"```
 
 * Create a docker image with SeaHorn based on the binary package created in the previous step:
-
-```docker build -t seahorn/seahorn -f docker/seahorn.Dockerfile ```
+    ```docker build -t seahorn/seahorn -f docker/seahorn.Dockerfile ```
 
 ### Warning about default user in the container
 
