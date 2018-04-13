@@ -66,12 +66,12 @@ source code by following the instructions below:
 * Optionally build thrid-party dependencies. These are also available
     as a `seahorn/seahorn-build` container on DockerHub.
 {% highlight sh %}
-$ docker build --build-arg UBUNTU=xenial --build-arg BUILD_TYPE=Release -t seahorn/seahorn-build:xenial -f docker/seahorn-build.Dockerfile
+$ docker build --build-arg UBUNTU=xenial --build-arg BUILD_TYPE=Release -t seahorn/seahorn-build:xenial -f docker/seahorn-build.Dockerfile .
 {% endhighlight %}
 
 * Compile SeaHorn binary in a docker container
 {% highlight sh %}
-$ docker build --build-arg UBUNTU=xenial --build-arg BUILD_TYPE=Release --build-arg TRAVIS=true -t seahorn_xenial_rel -f docker/seahorn-full-size-rel.Dockerfile
+$ docker build --build-arg UBUNTU=xenial --build-arg BUILD_TYPE=Release --build-arg -t seahorn_xenial_rel -f docker/seahorn-full-size-rel.Dockerfile .
 {% endhighlight %}
 
 * Extracted compiled binary package from the container to the host system
@@ -81,7 +81,7 @@ $ docker run -v $(pwd):/host -it seahorn_xenial_rel /bin/sh -c "cp build/*.tar.g
 
 * Create a docker image with SeaHorn based on the binary package created in the previous step:
 {% highlight sh %}
-$ docker build -t seahorn/seahorn -f docker/seahorn.Dockerfile
+$ docker build -t seahorn/seahorn -f docker/seahorn.Dockerfile .
 {% endhighlight %}
 
 # Warning about default user in the container
