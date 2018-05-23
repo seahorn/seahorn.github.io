@@ -16,8 +16,8 @@ interesting parts of the tutorial.
 
 In the first part of the tutorial, we described the basic usage of
 SeaHorn as well as how it can be combined with two interesting
-tools: [crab-llvm](github.com/caballa/crab-llvm), an abstract
-interpreter for LLVM programs, and [sally](github.com/SRI-CSL/sally),
+tools: [crab-llvm](http://github.com/caballa/crab-llvm), an abstract
+interpreter for LLVM programs, and [sally](http://github.com/SRI-CSL/sally),
 a model checker for infinite transition systems. In the second part,
 we shown a case study on how to prove memory safety using SeaHorn.
 
