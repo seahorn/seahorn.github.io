@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Proving Equivalence of x86 programs with McSema + SeaHorn"
+title:  "Proving Equivalence of x86 programs with McSema + SeaHorn (II)"
 subtitle: "McSema"
 date:   2018-12-13 08:53:00
 categories: [seahorn, mcsema, equivalence, x86, binary, llvm]
