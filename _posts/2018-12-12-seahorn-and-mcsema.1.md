@@ -31,18 +31,19 @@ is the infrastructure needed to monitor the execution of the variants.
 The purpose of the equivalence proofs is to establish that a
 DoubleHelix binary transform results in a variant that is functionally
 equivalent to the original when not under attack.  We start with two
-different x86 binaries: the original code and a variant. The first
-step in the analysis is to convert both binaries to LLVM bitcode. We
-then merge the two LLVM bitcode files into a single file. The
-verification is done one function at a time. For every function in the
-original binary, we identify the corresponding function in the
-variant. Both of them are converted to two functions in the LLVM
-bitcode. We merge the bitcode for both functions and we perform an
-equivalence check for each function pair. We assume that both the
-original and variant start from identical global states and we prove
-that executing both functions leads them to identical states. This
-check is performed by SeaHorn using our bounded model checking (BMC)
-engine.  In
+different x86 binaries: the original code and a variant. 
+
+The first step in our analysis is to convert both binaries to LLVM
+bitcode. We then merge the two LLVM bitcode files into a single
+file. The verification is done one function at a time. For every
+function in the original binary, we identify the corresponding
+function in the variant. Both of them are converted to two functions
+in the LLVM bitcode. We merge the bitcode for both functions and we
+perform an equivalence check for each function pair. We assume that
+both the original and variant start from identical global states and
+we prove that executing both functions leads them to identical
+states. This check is performed by SeaHorn using our bounded model
+checking (BMC) engine.  In
 general,
 [BMC](http://www.cs.cmu.edu/~emc/papers/Books%20and%20Edited%20Volumes/Bounded%20Model%20Checking.pdf) searches
 for finite executions of a system that start from initial state and
