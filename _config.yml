@@ -8,7 +8,7 @@ url: "http://seahorn.github.io/" # the base hostname & protocol for your site
 
 author:
   fullname: SeaHorn
-  github: https://github.com/seahorn/seahorn
+  github: seahorn/seahorn
   #twitter: electrik_frog
   # disqus: your_disqus_forum_shortname
 
