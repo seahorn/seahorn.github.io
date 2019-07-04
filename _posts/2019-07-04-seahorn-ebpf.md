@@ -30,7 +30,7 @@ hardware. eBPF programs are Turing-complete and today, they have many
 interesting uses beyond packet filtering such as profiling, kernel
 debugging, security policies, etc.
 
-![eBPF architecture](http://seahorn.github.io/images/ebpf-arch.jpg)
+![eBPF architecture](http://seahorn.github.io/images/ebpf-arch.jpg "eBPF architecture")
 
 This sounds great, but why are we interested in eBPF programs?
 
