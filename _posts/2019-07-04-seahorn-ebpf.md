@@ -79,7 +79,7 @@ our [paper](https://jorgenavas.github.io/papers/ebpf-pldi19.pdf) to
 learn more about how we formalize eBPF programs, how we verify them,
 and more about our evaluation.
 
-![verification as enabler](http://seahorn.github.io/images/ebpf.jpg)
+![verification as enabler](http://seahorn.github.io/images/starovoitov-tweet.png)
 
 
 
