@@ -76,7 +76,7 @@ that were not possible to write before.
 
 That's all for this post. 
 
-Please, read
+If you are interested about this topic, you can read
 our [paper](https://jorgenavas.github.io/papers/ebpf-pldi19.pdf) to
 learn more about how we formalize eBPF programs, how we verify them,
 and more about our evaluation. Our new verifier is called PREVAIL and
