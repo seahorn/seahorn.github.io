@@ -30,7 +30,7 @@ hardware. eBPF programs are Turing-complete and today, they have many
 interesting uses beyond packet filtering such as profiling, kernel
 debugging, security policies, etc.
 
-![eBPF architecture](http://seahorn.github.io/images/ebpf-arch.pdf)
+![eBPF architecture](http://seahorn.github.io/images/ebpf-arch.jpg)
 
 This sounds great, but why are we interested in eBPF programs?
 
@@ -79,7 +79,7 @@ our [paper](https://jorgenavas.github.io/papers/ebpf-pldi19.pdf) to
 learn more about how we formalize eBPF programs, how we verify them,
 and more about our evaluation.
 
-![prevail](ebpf.jpg)
+![verification as enabler](http://seahorn.github.io/images/ebpf.jpg)
 
 
 
