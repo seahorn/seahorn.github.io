@@ -63,7 +63,7 @@ dreaded eBPF verifier. It's a merciless judge of all eBPF code that will reject 
 programs that it deems not worthy of running in kernel-space."
 ```
 
-In our paper, we propose a new solution based
+To mitigate all these problems, we propose a new solution based
 on
 [abstract interpretation](https://en.wikipedia.org/wiki/Abstract_interpretation) and
 develop a new memory abstract domain on the top of our Crab
@@ -74,10 +74,13 @@ with a very low false positive ratio (we proved all programs except
 one). Even more importantly, our verifier accepts programs with loops
 that were not possible to write before.
 
-That's all. Please, read
+That's all for this post. 
+
+Please, read
 our [paper](https://jorgenavas.github.io/papers/ebpf-pldi19.pdf) to
 learn more about how we formalize eBPF programs, how we verify them,
-and more about our evaluation.
+and more about our evaluation. Our new verifier is called PREVAIL and
+is publicly available [here](https://vbpf.github.io/).
 
 ![verification as enabler](http://seahorn.github.io/images/starovoitov-tweet.png)
 
