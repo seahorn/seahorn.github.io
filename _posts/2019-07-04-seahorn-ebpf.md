@@ -57,11 +57,9 @@ has several important limitations that we try to tackle in the paper:
 All these limitations are well known by eBPF developers. As an
 example, we quote here Jakub Sitnicki from CloudFlare:
 
-```
-"If you've spent any time using eBPF, you must have experienced first hand the
-dreaded eBPF verifier. It's a merciless judge of all eBPF code that will reject any
-programs that it deems not worthy of running in kernel-space."
-```
+> "If you've spent any time using eBPF, you must have experienced first hand the
+> dreaded eBPF verifier. It's a merciless judge of all eBPF code that will reject any
+> programs that it deems not worthy of running in kernel-space."
 
 To mitigate all these problems, we propose a new solution based
 on
@@ -74,9 +72,7 @@ with a very low false positive ratio (we proved all programs except
 one). Even more importantly, our verifier accepts programs with loops
 that were not possible to write before.
 
-That's all for this post. 
-
-If you are interested about this topic, you can read
+If you are interested about this topic, read
 our [paper](https://jorgenavas.github.io/papers/ebpf-pldi19.pdf) to
 learn more about how we formalize eBPF programs, how we verify them,
 and more about our evaluation. Our new verifier is called PREVAIL and
