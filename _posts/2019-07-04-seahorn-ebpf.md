@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "New paper in PLDI'19"
-subtitle: "Static Analysis of Linux Kernel Extensions (aka eBPF programs)"
+title:  "Static Analysis of Linux Kernel Extensions (aka eBPF programs)"
+subtitle: "New paper in PLDI'19"
 date:   2019-07-04 10:26:05
 categories: [seahorn, crab, static analysis, linux extensions, eBPF]
 ---
