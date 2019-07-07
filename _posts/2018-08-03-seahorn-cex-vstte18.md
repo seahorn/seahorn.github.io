@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "New paper in VSTTE'18"
-subtitle: "Executable Counterexamples in Software Model Checking"
+title:  "Executable Counterexamples in Software Model Checking"
+subtitle: "New paper in VSTTE'18"
 date:   2018-08-03 14:56:45
 categories: [seahorn, cex, validation]
 ---

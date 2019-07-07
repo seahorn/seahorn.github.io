@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "New paper in SAS'17"
-subtitle: "A Context-Sensitive Memory Model for Verification of C/C++ Programs"
+title:  "A Context-Sensitive Memory Model for Verification of C/C++ Programs"
+subtitle: "New paper in SAS'17"
 date:   2017-10-01 15:56:45
 categories: [seahorn, memory]
 ---
