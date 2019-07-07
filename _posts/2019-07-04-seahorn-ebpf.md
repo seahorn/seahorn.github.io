@@ -57,9 +57,10 @@ has several important limitations that we try to tackle in the paper:
 All these limitations are well known by eBPF developers. As an
 example, we quote here Jakub Sitnicki from CloudFlare:
 
-> "If you've spent any time using eBPF, you must have experienced first hand the
-> dreaded eBPF verifier. It's a merciless judge of all eBPF code that will reject any
-> programs that it deems not worthy of running in kernel-space."
+> If you've spent any time using eBPF, you must have experienced first
+> hand the dreaded eBPF verifier. It's a merciless judge of all eBPF
+> code that will reject any programs that it deems not worthy of
+> running in kernel-space.
 
 To mitigate all these problems, we propose a new solution based
 on
