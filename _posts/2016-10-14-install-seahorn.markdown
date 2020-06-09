@@ -24,4 +24,5 @@ find Clang 3.8.
 
 ### Use the Docker image:
 
-Read about using SeaHorn with Docker [here](2018-02-24-seahorn-with-docker.md).
+Read about using SeaHorn with Docker
+[here](http://seahorn.github.io/seahorn/install/docker/2018/02/24/seahorn-with-docker.html).
