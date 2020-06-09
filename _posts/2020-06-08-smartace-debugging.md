@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "3. Debugging Smart Contracts with SmartACE"
+title: "Debugging Smart Contracts with SmartACE"
 subtitle: "Fixing Smart Contracts with SmartACE"
-date: 2020-06-08 21:30:00
+date: 2020-06-08 21:32:00
 categories: [smartace, verification]
 ---
 
-# 3. Debugging Smart Contracts with SmartACE
+# Debugging Smart Contracts with SmartACE
 
 Solidity supports pre- and post-conditions through the `require` and `assert`
 statements. As shown in the

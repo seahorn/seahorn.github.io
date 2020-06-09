@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "4. Verifying Client Properties in SmartACE"
+title: "Verifying Client Properties in SmartACE"
 subtitle: "An Introduction to Local Reasoning"
-date: 2020-06-08 21:30:00
+date: 2020-06-08 21:33:00
 categories: [smartace, verification, local reasoning]
 ---
 
-# 4. Verifying Client Properties in SmartACE
+# Verifying Client Properties in SmartACE
 
 In our
 [previous tutorial](http://seahorn.github.io/smartace/verification/2020/06/08/smartace-debugging.html),

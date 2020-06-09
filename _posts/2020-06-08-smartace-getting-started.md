@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "2. Finding Representation Invariants for Smart Contracts"
+title: "Finding Representation Invariants for Smart Contracts"
 subtitle: "Basic Auditing with SmartACE"
-date: 2020-06-08 21:30:00
+date: 2020-06-08 21:31:00
 categories: [smartace, verification, fuzzing]
 ---
 
-# 2. Finding Representation Invariants for Smart Contracts
+# Finding Representation Invariants for Smart Contracts
 
 An important aspect of smart contract analysis is functional verification. That
 is, the ability to check if a *bundle* (a set of smart contracts) satisfies a
