@@ -1,14 +1,15 @@
 ---
 layout: post
-title: "Installing SmartACE"
+title: "SmartACE: A Solidity Verification Framework"
 date: 2020-06-08 21:30:00
 categories: [smartace, install, docker]
 ---
 
-# Installing SmartACE
+# SmartACE: A Solidity Verification Framework
 
-SmartACE can be built from source, or obtained as a pre-built Docker container.
-For end-users of SmartACE, we **strongly recommend** Docker as the
+SmartACE is an experimental verification framework for Solidity smart contracts.
+It can be built from source, or obtained as a pre-built Docker container. For
+end-users of SmartACE, we **strongly recommend** Docker as the
 [choice of installation](#setup-through-docker).
 
 Note that currently, SmartACE is locked at Solidity version `0.5.9`.
