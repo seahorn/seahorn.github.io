@@ -8,6 +8,9 @@ categories: [smartace, verification, fuzzing]
 
 # Finding Representation Invariants for Smart Contracts
 
+By Maria Christakis, Arie Gurfinkel, Xinwen Hu, Jorge Navas, Scott Wesley, and
+Valentin Wüstholz.
+
 An important aspect of smart contract analysis is functional verification. That
 is, the ability to check if a *bundle* (a set of smart contracts) satisfies a
 given requirement. Often these requirements are written independently from the

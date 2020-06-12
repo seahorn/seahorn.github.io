@@ -8,6 +8,9 @@ categories: [smartace, verification, local reasoning]
 
 # Verifying Client Properties in SmartACE
 
+By Maria Christakis, Arie Gurfinkel, Xinwen Hu, Jorge Navas, Scott Wesley, and
+Valentin Wüstholz.
+
 In our
 [previous tutorial](http://seahorn.github.io/smartace/verification/2020/06/08/smartace-debugging.html),
 we used SmartACE to identify ownership exploits in a simple smart contract. We

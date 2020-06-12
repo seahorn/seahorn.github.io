@@ -7,6 +7,9 @@ categories: [smartace, install, docker]
 
 # SmartACE: A Solidity Verification Framework
 
+By Maria Christakis, Arie Gurfinkel, Xinwen Hu, Jorge Navas, Scott Wesley, and
+Valentin Wüstholz.
+
 SmartACE is an experimental verification framework for Solidity smart contracts.
 It can be built from source, or obtained as a pre-built Docker container. For
 end-users of SmartACE, we **strongly recommend** Docker as the
