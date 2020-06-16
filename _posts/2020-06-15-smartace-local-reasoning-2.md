@@ -6,7 +6,7 @@ date: 2020-06-15 20:30:00
 categories: [smartace, verification, model checking, local reasoning]
 ---
 
-# 5. Reasoning About Client State in SmartACE
+# Reasoning About Client State in SmartACE
 
 By Scott Wesley in collaboration Maria Christakis, Arie Gurfinkel, Xinwen Hu,
 Jorge Navas, and Valentin Wüstholz.
