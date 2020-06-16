@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "5. Reasoning About Client State in SmartACE"
+title: "Reasoning About Client State in SmartACE"
 subtitle: "Local Reasoning Part Two"
 date: 2020-06-15 20:30:00
 categories: [smartace, verification, model checking, local reasoning]
