@@ -9,7 +9,7 @@ categories: [smartace, verification, model checking, local reasoning]
 # Reasoning About Client State in SmartACE
 
 By Scott Wesley in collaboration Maria Christakis, Arie Gurfinkel, Xinwen Hu,
-Jorge Navas, and Valentin Wüstholz.
+Jorge Navas, Richard Trefler, and Valentin Wüstholz.
 
 [Last time](http://seahorn.github.io/smartace/verification/local%20reasoning/2020/06/08/smartace-local-reasoning-1.html),
 we used SmartACE to prove safety properties for any number of clients. The
