@@ -9,7 +9,7 @@ categories: [smartace, verification, local reasoning]
 # Verifying Client Properties in SmartACE
 
 By Scott Wesley in collaboration Maria Christakis, Arie Gurfinkel, Xinwen Hu,
-Jorge Navas, and Valentin Wüstholz.
+Jorge Navas, Richard Trefler, and Valentin Wüstholz.
 
 In our
 [previous tutorial](http://seahorn.github.io/smartace/verification/2020/06/08/smartace-debugging.html),
