@@ -6,7 +6,7 @@ date:   2023-07-12 13:30:00
 categories: [seahorn, rust]
 ---
 
-When using `SeaHorn` to verify Rust programs, the standard library print macros can cause increased runtime and can sometimes cause errors. Most of the time, the print macros aren't the focus of our verification jobs so we wanted to elimiate this issue. To accomplish this, we used the [custom_print](https://docs.rs/custom-print/latest/custom_print/) crate to define custom print macros void of any functionality and replace the standard library print macros with them.
+When using `SeaHorn` to verify Rust programs, the standard library print macros can cause increased runtime and can sometimes cause errors. Most of the time, the print macros aren't the focus of our verification jobs so we wanted to eliminate this issue. To accomplish this, we used the [custom_print](https://docs.rs/custom-print/latest/custom_print/) crate to define custom print macros void of any functionality and replace the standard library print macros with them.
 
 ## Code
 
@@ -30,7 +30,7 @@ All print macros require a `Writer` in order to function properly, however the d
 
 ## Usage in Other Crates
 
-The `#[macro_export]` line and the namespace on `NullWriter` are required to be able use these macros in other crates within a workspace. If the macros were only for use in the same crate, these would not be necessary.
+The `#[macro_export]` line and the namespace on `NullWriter` are required to use these macros in other crates within a workspace. If the macros were only for use in the same crate, these would not be necessary.
 
 ## Alternatives
 
