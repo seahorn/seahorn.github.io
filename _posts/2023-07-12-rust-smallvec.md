@@ -2,18 +2,18 @@
 layout: post
 title:  "Rust SmallVec"
 subtitle: "An array-backed alternative to the standard library vector class, expandable with heap allocations."
-date:   2023-07-12 14:30:00
+date:   2023-07-26 18:00:00
 categories: [seahorn, rust]
 ---
 
 
-`SmallVec` is an alternative to `tinyvec` that provides an array-backed vector implementation but also allows the vector to be expanded at run time by allocating more memory on the heap. This saves time over a normal vector by minimizing the number of allocations that must be done and keeping most of the vector in a fixed capacity array.
+`SmallVec` is an alternative to `tinyvec` that provides an array-backed vector implementation but also allows the vector to be expanded at run time by allocating more memory on the heap. This saves time over a normal vector by minimizing the number of allocations required and keeping most of the vector in a fixed capacity array.
 
 To test whether `SmallVec` could be used for verification of Rust programs using `SeaHorn`, I created verification jobs for each of the methods.
 
 ## Limitations
 
-Since the fixed capacity of `SmallVec` is constant and must be known at compile time, it isn't possible to verify the class for non-deterministic capacities. In addition, since `SeaHorn` has issues with some of the tests, I had to limit the capacity of the vector to 1 in some cases. This means that the tests are not as general as they could be.
+Since the fixed capacity of `SmallVec` is constant and must be known at compile time, it isn't possible to verify the class for non-deterministic capacities. In addition, `SeaHorn` takes a long time to run for certain tests, so I had to limit the capacity to very small values, as low as 2, in some cases.
 
 ## Test Format
 
@@ -46,38 +46,10 @@ In this example, I push non-deterministic values to a vector in a loop of non-de
 
 ## Issues
 
-`SeaHorn` has issues with verifying `SmallVec` whenever it goes beyond its fixed capacity and requires more memory allocated on the heap. Even if only one additional space in the vector is required, a very large call to `alloca` is generated, causing `SeaHorn` to take excessive time to get through this stage and in some cases failing. I have attempted to reduce the size of the vectors and to make the verification jobs more simple, however I haven't been able able to come up with a solution yet.
+For several tests, I was facing issues where `SeaHorn` was not reaching certain points in the code. After debugging this issue, I determined that it was being caused by loops not unrolling completely. For most of the tests, I push non-deterministic values to the vector in a loop to initialize it for testing. All of the tests using loops like this were only having one iteration unrolled, essentially limiting the length of the vector to 1. I was able to fix this issue by using the `bound` option and setting it to whatever capacity was being used for the vector in that specific case.
 
-Another issue that comes up with certain tests such as `test_push` is that some assertions are not reached if the capacity of the vector is too large.
-
-```rust
-fn test_push() {
-    const CAP: usize = 1;
-    let mut v: SmallVec<[u32; CAP]> = SmallVec::new();
-
-    let len: usize = sea::nd_usize();
-    sea::assume(len <= CAP);
-
-    for i in 0..len {
-        v.push(sea::nd_u32());
-        sea::sassert!(v.len() == i + 1);
-    }
-
-    sea::sassert!(v.len() == len);
-    sea::sassert!(v.capacity() == CAP);
-
-    sea::sea_printf!("len", len);
-    if len == CAP {
-        v.push(sea::nd_u32());
-        // Only reached when CAP == 1
-        sea::sassert!(v.len() == CAP + 1);
-        sea::sassert!(v.capacity() > CAP);
-    }
-}
-```
-
-In this code, the final two assertions inside the if statement are only reached when the vector has a capacity of 1. I am still looking into this issue to determine what might be causing it.
+Another issue that I faced was that `SeaHorn` was having issues with verification whenever the vectors went beyond their fixed capacity and required more memory allocated on the heap. Even if only one additional space in a vector is required, a very large `alloca` expression is generated, causing `SeaHorn` to take excessive time to get through this stage and in many cases failing. Through debugging, I determined that the expressions being generated were so large that my computer was running out of memory when trying to print them. This issue was fixed by limiting the size of expressions that can be printed and printing a placeholder string whenever they are over the limit. This fix can be found [here](https://github.com/seahorn/seahorn/pull/498).
 
 ## Source Code
 
-Full source code for the tests can be found [here](https://github.com/thomashart17/c-rust/tree/smallvec/src/rust-jobs/smallvec).
+Full source code for the tests can be found [here](https://github.com/thomashart17/c-rust/tree/main/src/rust-jobs) under the 4 directories whose names start with: "smallvec". Note that the tests are split into 4 separate jobs to allow for different `bound` settings required by certain tests.
