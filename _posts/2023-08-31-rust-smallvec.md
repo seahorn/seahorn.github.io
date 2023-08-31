@@ -2,7 +2,7 @@
 layout: post
 title:  "Rust SmallVec"
 subtitle: "An array-backed alternative to the standard library vector class, expandable with heap allocations."
-date:   2023-07-26 18:00:00
+date:   2023-08-31 15:30:00
 categories: [seahorn, rust]
 ---
 
@@ -50,6 +50,20 @@ For several tests, I was facing issues where `SeaHorn` was not reaching certain 
 
 Another issue that I faced was that `SeaHorn` was having issues with verification whenever the vectors went beyond their fixed capacity and required more memory allocated on the heap. Even if only one additional space in a vector is required, a very large `alloca` expression is generated, causing `SeaHorn` to take excessive time to get through this stage and in many cases failing. Through debugging, I determined that the expressions being generated were so large that my computer was running out of memory when trying to print them. This issue was fixed by limiting the size of expressions that can be printed and printing a placeholder string whenever they are over the limit. This fix can be found [here](https://github.com/seahorn/seahorn/pull/498).
 
+## Custom Allocation Function
+
+Through various tests, I was able to determine that the issue I was facing with the large `alloca` expressions was being caused by the `try_reserve` function in the `SmallVec` class. The logic to determine the size of the allocation was using a function to determine the next power of 2 which generated all of the logic in the `alloca` calls. To eliminate this issue, I modified the source code for `SmallVec` to instead use this logic to determine the size of the allocation:
+
+```rust
+let new_cap: usize = if cap <= 8 {
+    16
+} else {
+    panic!();
+};
+```
+
+As I only used vectors of size 8 or less in my verification jobs, this was a sufficient compromise to allow the tests to run successfully. Not only did this custom allocation logic eliminate the issue with the large `alloca` expressions, but it also significantly improved on run times, especially on some of the longer tests.
+
 ## Source Code
 
-Full source code for the tests can be found [here](https://github.com/thomashart17/c-rust/tree/main/src/rust-jobs) under the 4 directories whose names start with: "smallvec". Note that the tests are split into 4 separate jobs to allow for different `bound` settings required by certain tests.
+Full source code for the tests can be found [here](https://github.com/thomashart17/c-rust/tree/main/src/rust-jobs) under the directories: `smallvec`, `smallvec-bound2`, `smallvec-bound4` and `smallvec-bound8`. The tests that use the custom allocation function can be found under the directories: `smallvec-allocation`, `smallvec-allocation-bound2`, `smallvec-allocation-bound4` and `smallvec-allocation-bound8`.
